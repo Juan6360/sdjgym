@@ -1,6 +1,6 @@
-package co.edu.uco.ucobet.crosscutting.exceptions;
+package co.sdj.sdjgym.crosscutting.exceptions;
 
-import co.edu.uco.crosscutting.exceptions.enums.Layer;
+import co.sdj.crosscutting.exceptions.enums.Layer;
 
 public class ControllerUcoBetException extends UcoBetException {
 
