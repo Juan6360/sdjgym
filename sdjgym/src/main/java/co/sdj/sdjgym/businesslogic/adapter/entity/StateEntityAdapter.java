@@ -1,10 +1,10 @@
-package co.edu.uco.ucobet.businesslogic.adapter.entity;
+package co.sdj.sdjgym.businesslogic.adapter.entity;
 
-import co.edu.uco.ucobet.businesslogic.adapter.Adapter;
+import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 
-import co.edu.uco.ucobet.domain.StateDomain;
+import co.sdj.sdjgym.domain.StateDomain;
 
-import co.edu.uco.ucobet.entity.StateEntity;
+import co.sdj.sdjgym.entity.StateEntity;
 
 public final class StateEntityAdapter implements Adapter<StateDomain, StateEntity> {
 

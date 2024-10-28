@@ -1,11 +1,11 @@
-package co.edu.uco.ucobet.businesslogic.adapter.dto;
+package co.sdj.sdjgym.businesslogic.adapter.dto;
 
-import co.edu.uco.crosscutting.helpers.ObjectHelper;
-import co.edu.uco.crosscutting.helpers.TextHelper;
-import co.edu.uco.crosscutting.helpers.UUIDHelper;
-import co.edu.uco.ucobet.businesslogic.adapter.Adapter;
-import co.edu.uco.ucobet.domain.CountryDomain;
-import co.edu.uco.ucobet.dto.CountryDTO;
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.businesslogic.adapter.Adapter;
+import co.sdj.sdjgym.domain.CountryDomain;
+import co.sdj.sdjgym.dto.CountryDTO;
 
 public class CountryDTOAdapter implements Adapter<CountryDomain,CountryDTO> {
 

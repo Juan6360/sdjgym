@@ -1,4 +1,4 @@
-package co.edu.uco.ucobet.businesslogic.adapter.dto;
+package co.sdj.sdjgym.businesslogic.adapter.dto;
 
 public class CityDTOAdapter {
 

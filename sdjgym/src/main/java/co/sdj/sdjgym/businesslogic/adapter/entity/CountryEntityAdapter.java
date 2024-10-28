@@ -1,10 +1,10 @@
-package co.edu.uco.ucobet.businesslogic.adapter.entity;
+package co.sdj.sdjgym.businesslogic.adapter.entity;
 
-import co.edu.uco.crosscutting.helpers.ObjectHelper;
-import co.edu.uco.ucobet.businesslogic.adapter.Adapter;
-import co.edu.uco.ucobet.domain.CountryDomain;
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.sdjgym.businesslogic.adapter.Adapter;
+import co.sdj.sdjgym.domain.CountryDomain;
 
-import co.edu.uco.ucobet.entity.CountryEntity;
+import co.sdj.sdjgym.entity.CountryEntity;
 
 
 public final class CountryEntityAdapter implements Adapter<CountryDomain,CountryEntity> {

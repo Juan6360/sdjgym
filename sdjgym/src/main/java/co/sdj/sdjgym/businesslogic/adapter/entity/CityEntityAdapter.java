@@ -1,8 +1,8 @@
-package co.edu.uco.ucobet.businesslogic.adapter.entity;
+package co.sdj.sdjgym.businesslogic.adapter.entity;
 
-import co.edu.uco.ucobet.businesslogic.adapter.Adapter;
-import co.edu.uco.ucobet.domain.CityDomain;
-import co.edu.uco.ucobet.entity.CityEntity;
+import co.sdj.sdjgym.businesslogic.adapter.Adapter;
+import co.sdj.sdjgym.domain.CityDomain;
+import co.sdj.sdjgym.entity.CityEntity;
 
 public final class CityEntityAdapter implements Adapter<CityDomain,CityEntity> {
 
