@@ -1,8 +1,8 @@
-package co.edu.uco.crosscutting.exceptions;
+package co.sdj.crosscutting.exceptions;
 
-import co.edu.uco.crosscutting.exceptions.enums.Layer;
-import co.edu.uco.crosscutting.helpers.ObjectHelper;
-import co.edu.uco.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.exceptions.enums.Layer;
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
 
 public class UcoApplicationException extends RuntimeException {
 

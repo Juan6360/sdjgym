@@ -1,11 +1,11 @@
-package co.edu.uco.crosscutting.helpers;
+package co.sdj.crosscutting.helpers;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import co.edu.uco.crosscutting.exceptions.UcoApplicationException;
-import co.edu.uco.crosscutting.exceptions.enums.Layer;
+import co.sdj.crosscutting.exceptions.UcoApplicationException;
+import co.sdj.crosscutting.exceptions.enums.Layer;
 
 public final class SqlConnectionHelper {
 
