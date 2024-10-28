@@ -5,7 +5,7 @@ import java.util.UUID;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 
-class CountryDomain extends Domain{
+public class CountryDomain extends Domain{
 
 	private String name;
 	

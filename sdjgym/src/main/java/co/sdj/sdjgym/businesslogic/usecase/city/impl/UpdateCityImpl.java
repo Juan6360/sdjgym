@@ -1,9 +1,9 @@
-package co.edu.uco.ucobet.businesslogic.usecase.city.impl;
+package co.sdj.sdjgym.businesslogic.usecase.city.impl;
 
-import co.edu.uco.crosscutting.helpers.ObjectHelper;
-import co.edu.uco.ucobet.businesslogic.usecase.city.UpdateCity;
-import co.edu.uco.ucobet.data.dao.DAOFactory;
-import co.edu.uco.ucobet.domain.CityDomain;
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.sdjgym.businesslogic.usecase.city.UpdateCity;
+import co.sdj.sdjgym.data.dao.DAOFactory;
+import co.sdj.sdjgym.domain.CityDomain;
 
 public final class UpdateCityImpl implements UpdateCity{
 

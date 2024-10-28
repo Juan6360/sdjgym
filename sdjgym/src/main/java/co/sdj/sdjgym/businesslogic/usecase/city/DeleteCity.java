@@ -1,6 +1,8 @@
-package co.edu.uco.ucobet.businesslogic.usecase.city;
+package co.sdj.sdjgym.businesslogic.usecase.city;
 
-import co.edu.uco.ucobet.businesslogic.usecase.UseWithoutReturn;
+import java.util.UUID;
+
+import co.sdj.sdjgym.businesslogic.usecase.UseWithoutReturn;
 
 public interface DeleteCity extends UseWithoutReturn<UUID> {
 	

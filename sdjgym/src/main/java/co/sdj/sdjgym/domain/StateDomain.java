@@ -6,7 +6,7 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 
-class StateDomain extends Domain{
+public class StateDomain extends Domain{
 
 	private String name;
 	private CountryDomain country;

@@ -1,12 +1,13 @@
-package co.edu.uco.ucobet.businesslogic.usecase.city.impl;
+package co.sdj.sdjgym.businesslogic.usecase.city.impl;
 
-import co.edu.uco.ucobet.businesslogic.usecase.city.DeleteCity;
-import co.edu.uco.ucobet.businesslogic.usecase.city.UUID;
+import java.util.UUID;
+
+import co.sdj.sdjgym.businesslogic.usecase.city.DeleteCity;
 
 public final class DeleteCityImpl implements DeleteCity {
 
 	@Override
-	public void execute(UUID data) {
+	public void execute(final UUID data) {
 		// TODO Auto-generated method stub
 		
 	}

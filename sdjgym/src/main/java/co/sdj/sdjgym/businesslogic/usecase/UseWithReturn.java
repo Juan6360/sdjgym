@@ -1,4 +1,4 @@
-package co.edu.uco.ucobet.businesslogic.usecase;
+package co.sdj.sdjgym.businesslogic.usecase;
 
 public interface UseWithReturn<D,R> {
 	R execute(D data);

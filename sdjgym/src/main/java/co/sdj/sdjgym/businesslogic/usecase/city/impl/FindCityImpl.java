@@ -1,9 +1,9 @@
-package co.edu.uco.ucobet.businesslogic.usecase.city.impl;
+package co.sdj.sdjgym.businesslogic.usecase.city.impl;
 
 import java.util.List;
 
-import co.edu.uco.ucobet.businesslogic.usecase.city.FindCity;
-import co.edu.uco.ucobet.domain.CityDomain;
+import co.sdj.sdjgym.businesslogic.usecase.city.FindCity;
+import co.sdj.sdjgym.domain.CityDomain;
 
 public final class FindCityImpl implements FindCity {
 

@@ -1,7 +1,7 @@
-package co.edu.uco.ucobet.businesslogic.usecase.city.impl;
+package co.sdj.sdjgym.businesslogic.usecase.city.impl;
 
-import co.edu.uco.ucobet.businesslogic.usecase.city.RegisterNewCity;
-import co.edu.uco.ucobet.domain.CityDomain;
+import co.sdj.sdjgym.businesslogic.usecase.city.RegisterNewCity;
+import co.sdj.sdjgym.domain.CityDomain;
 
 public final class RegisterNewCityImpl implements RegisterNewCity{
 
