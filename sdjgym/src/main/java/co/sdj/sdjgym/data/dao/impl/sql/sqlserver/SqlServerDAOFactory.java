@@ -1,12 +1,12 @@
-package co.edu.uco.ucobet.data.dao.impl.sql.sqlserver;
+package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
 import java.sql.Connection;
 
-import co.edu.uco.crosscutting.helpers.SqlConnectionHelper;
-import co.edu.uco.ucobet.data.dao.CityDAO;
-import co.edu.uco.ucobet.data.dao.CountryDAO;
-import co.edu.uco.ucobet.data.dao.DAOFactory;
-import co.edu.uco.ucobet.data.dao.StateDAO;
+import co.sdj.crosscutting.helpers.SqlConnectionHelper;
+import co.sdj.sdjgym.data.dao.CityDAO;
+import co.sdj.sdjgym.data.dao.CountryDAO;
+import co.sdj.sdjgym.data.dao.DAOFactory;
+import co.sdj.sdjgym.data.dao.StateDAO;
 
 public final class SqlServerDAOFactory extends DAOFactory {
 

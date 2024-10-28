@@ -1,8 +1,8 @@
-package co.edu.uco.ucobet.data.dao;
+package co.sdj.sdjgym.data.dao;
 
 import java.util.UUID;
 
-import co.edu.uco.ucobet.entity.CityEntity;
+import co.sdj.sdjgym.entity.CityEntity;
 
 
 public interface CityDAO 

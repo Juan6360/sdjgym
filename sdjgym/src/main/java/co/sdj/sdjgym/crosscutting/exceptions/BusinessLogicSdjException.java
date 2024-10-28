@@ -2,7 +2,7 @@ package co.sdj.sdjgym.crosscutting.exceptions;
 
 import co.sdj.crosscutting.exceptions.enums.Layer;
 
-public class BusinessLogicSdjException extends UcoBetException {
+public class BusinessLogicSdjException extends SdjException {
 
 	private static final long serialVersionUID = 1L;
 

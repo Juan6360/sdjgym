@@ -1,14 +1,20 @@
-package co.edu.uco.ucobet.data.dao.impl.sql.sqlserver;
+package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
+import java.sql.Connection;
 import java.util.List;
 import java.util.UUID;
 
-import co.edu.uco.ucobet.data.dao.CityDAO;
-import co.edu.uco.ucobet.data.dao.CountryDAO;
-import co.edu.uco.ucobet.entity.CityEntity;
-import co.edu.uco.ucobet.entity.CountryEntity;
+import co.sdj.sdjgym.data.dao.CityDAO;
+import co.sdj.sdjgym.data.dao.CountryDAO;
+import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
+import co.sdj.sdjgym.entity.CityEntity;
+import co.sdj.sdjgym.entity.CountryEntity;
 
-public class CitySqlServerDAO implements CityDAO {
+public class CitySqlServerDAO extends SqlDAO implements CityDAO {
+	
+	public CitySqlServerDAO(final Connection connection) {
+		super(connection);
+	}
 
 	@Override
 	public void create(CityEntity data) {

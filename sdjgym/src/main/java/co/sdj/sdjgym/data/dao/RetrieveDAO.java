@@ -1,4 +1,4 @@
-package co.edu.uco.ucobet.data.dao;
+package co.sdj.sdjgym.data.dao;
 import java.util.List;
 
 interface RetrieveDAO <T, I> {

@@ -1,12 +1,18 @@
-package co.edu.uco.ucobet.data.dao.impl.sql.sqlserver;
+package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
+import java.sql.Connection;
 import java.util.List;
 import java.util.UUID;
 
-import co.edu.uco.ucobet.data.dao.CountryDAO;
-import co.edu.uco.ucobet.entity.CountryEntity;
+import co.sdj.sdjgym.data.dao.CountryDAO;
+import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
+import co.sdj.sdjgym.entity.CountryEntity;
 
-public class CountrySqlServerDAO implements CountryDAO {
+public class CountrySqlServerDAO extends SqlDAO implements CountryDAO {
+	
+	public CountrySqlServerDAO(final Connection connection) {
+		super(connection);
+	}
 
 	@Override
 	public CountryEntity findByID(UUID id) {

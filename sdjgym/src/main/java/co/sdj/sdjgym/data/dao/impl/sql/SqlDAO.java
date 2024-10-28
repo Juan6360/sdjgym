@@ -1,9 +1,9 @@
-package co.edu.uco.ucobet.data.dao.impl.sql;
+package co.sdj.sdjgym.data.dao.impl.sql;
 
 import java.sql.Connection;
 
-import co.edu.uco.crosscutting.helpers.SqlConnectionHelper;
-import co.edu.uco.ucobet.crosscutting.exceptions.DataUcoBetException;
+import co.sdj.crosscutting.helpers.SqlConnectionHelper;
+import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 
 public class SqlDAO {
 	
@@ -26,7 +26,7 @@ public class SqlDAO {
 		if(!SqlConnectionHelper.connectionIsOpen(connection)) {
 			var userMenssage = "Se a presentado un problema inesperado tratando de llevar a cabo la operación deseada...";
 			var technicalMessage="No es posible crear un acceso a datos de tipo SQL con una conexión nula o cerrada...";
-			throw DataUcoBetException.crear(userMenssage, technicalMessage);
+			throw DataSdjException.crear(userMenssage, technicalMessage);
 		}
 	}
 }

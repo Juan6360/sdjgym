@@ -1,6 +1,6 @@
-package co.edu.uco.ucobet.data.dao;
+package co.sdj.sdjgym.data.dao;
 
-import co.edu.uco.ucobet.data.dao.enums.DAOSource;
+import co.sdj.sdjgym.data.dao.enums.DAOSource;
 
 public abstract class DAOFactory {
 

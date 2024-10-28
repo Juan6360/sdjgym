@@ -1,4 +1,4 @@
-package co.edu.uco.ucobet.data.dao.enums;
+package co.sdj.sdjgym.data.dao.enums;
 
 public enum DAOSource {
 	SQLSERVER, MYSQL, ORACLE, POSTGRESQL, XYZ
