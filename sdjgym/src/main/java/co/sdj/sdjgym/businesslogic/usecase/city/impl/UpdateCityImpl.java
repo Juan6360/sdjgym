@@ -15,7 +15,7 @@ public final class UpdateCityImpl implements UpdateCity {
 	}
 
 	@Override
-	public void execute(final CityEntity data) {
+	public void execute(final CityDomain data) {
 		
 		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptTarget(data);
 		daoFactory.getCityDAO().update(cityEntity);
@@ -30,5 +30,4 @@ public final class UpdateCityImpl implements UpdateCity {
 		}
 		this.daoFactory = daoFactory;
 	}
-
 }

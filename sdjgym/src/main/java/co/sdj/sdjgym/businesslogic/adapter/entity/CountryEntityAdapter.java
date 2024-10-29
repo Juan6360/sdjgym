@@ -21,7 +21,7 @@ private static final Adapter<CountryDomain,CountryEntity> instance = new Country
 	
 	@Override
 	public CountryDomain adaptSource(final CountryEntity data) {
-		var entityToAdapt = ObjectHelper.getDefault(data,new CountryEntityAdapter());
+		var entityToAdapt = ObjectHelper.getDefault(data,new CountryEntity());
 		return CountryDomain.create(entityToAdapt.getId(), entityToAdapt.getName());
 	}
 
