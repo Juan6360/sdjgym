@@ -1,9 +1,15 @@
 package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.CountryDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
 import co.sdj.sdjgym.entity.CountryEntity;
@@ -78,7 +84,7 @@ public final class CountrySqlServerDAO<preparedStatement> extends SqlDAO impleme
 			}
 			
 		
-			throw DataUcoBetException.crear(userMessage, technicalMessage, exception);
+			throw DataSdjException.crear(userMessage, technicalMessage, exception);
 		 }
 		
 		return resultSelect;

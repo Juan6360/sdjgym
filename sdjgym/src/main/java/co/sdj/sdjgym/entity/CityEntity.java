@@ -33,11 +33,11 @@ public class CityEntity extends DomainEntity{
 		return super.getId();
 	}
 
-	public StateEntity getCountry() {
+	public StateEntity getState() {
 		return state;
 	}
 
-	public void setCountry(StateEntity state) {
+	public void setState(StateEntity state) {
 		this.state = state;
 	}
 	
