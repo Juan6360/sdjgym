@@ -1,9 +1,9 @@
 package co.sdj.sdjgym.crosscutting.exceptions;
 
-import co.sdj.crosscutting.exceptions.UcoApplicationException;
+import co.sdj.crosscutting.exceptions.SdjApplicationException;
 import co.sdj.crosscutting.exceptions.enums.Layer;
  
-public class SdjException extends UcoApplicationException {
+public class SdjException extends SdjApplicationException {
  
 	private static final long serialVersionUID = 1L;
  

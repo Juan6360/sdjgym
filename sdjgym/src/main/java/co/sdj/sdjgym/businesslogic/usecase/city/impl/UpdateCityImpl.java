@@ -3,7 +3,7 @@ package co.sdj.sdjgym.businesslogic.usecase.city.impl;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.sdjgym.businesslogic.adapter.entity.CityEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.city.UpdateCity;
-import co.sdj.crosscutting.exceptions.BusinessLogicUcoBetException;
+import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.domain.CityDomain;
 
