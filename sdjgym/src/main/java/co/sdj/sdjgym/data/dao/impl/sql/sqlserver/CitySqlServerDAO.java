@@ -2,9 +2,13 @@ package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.CityDAO;
 import co.sdj.sdjgym.data.dao.CountryDAO;
@@ -55,7 +59,6 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 
 	@Override
 	public List<CityEntity> findByFilter(CityEntity filter) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -104,6 +107,36 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 			throw DataSdjException.crear(userMessage, technicalMessage, exception);
 		}
  
+	}
+	
+	private void createSelect(final StringBuilder statement) {
+		statement.append("SELECT id, name ");
+	}
+	private void createFrom(final StringBuilder statement) {
+		statement.append("FROM Country ");
+	}
+	
+	private void createWhere(final StringBuilder statement,
+			final CityEntity filter,
+			final List<Object> parameters) {
+		
+		if(!ObjectHelper.isNull(filter)) {
+			
+			if(UUIDHelper.isDefault(filter.getId())) {
+				statement.append("WHERE id = ?");
+				parameters.add(filter.getId());
+			}
+			
+			if(!TextHelper.isEmptyApplyingTrim(filter.getName()));{
+				statement.append((parameters.isEmpty()) ? "WHERE " : "AND ");
+				statement.append("name = ?");
+				parameters.add(filter.getName());
+			}
+		}
+	}
+	
+	private void createOrderBy(final StringBuilder statement) {
+		statement.append("ORDER BY name ASC ");
 	}
 
 }

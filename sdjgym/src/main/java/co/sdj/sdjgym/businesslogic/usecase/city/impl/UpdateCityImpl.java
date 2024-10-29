@@ -30,4 +30,8 @@ public final class UpdateCityImpl implements UpdateCity {
 		}
 		this.daoFactory = daoFactory;
 	}
+	
+	private boolean isCityNameTaken(final CityDomain data) {
+		return daoFactory.getCityDAO().findByFilter(data.getName()) != null;
+	}
 }
