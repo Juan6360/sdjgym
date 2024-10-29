@@ -4,14 +4,14 @@ import co.sdj.crosscutting.exceptions.enums.Layer;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 
-public class UcoApplicationException extends RuntimeException {
+public class SdjApplicationException extends RuntimeException {
 
 	private static final long serialVersionUID = -7682900863325465078L;
 
 	private String userMessage;
 	private Layer layer;
 
-	public UcoApplicationException(final String userMessage, final String technicalMessage,
+	public SdjApplicationException(final String userMessage, final String technicalMessage,
 			final Exception rootException, final Layer layer) {
 
 		super(TextHelper.applyTrim(technicalMessage), ObjectHelper.getDefault(rootException, new Exception()));
