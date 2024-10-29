@@ -26,7 +26,10 @@ public class CoachEntity extends DomainEntity {
 		setMiddleName(TextHelper.EMPTY);
 		setFirstSurName(TextHelper.EMPTY);
 		setSecondSurName(TextHelper.EMPTY);
-		setPhoneNumber();
+		setPhoneNumber(TextHelper.EMPTY);
+		setEmergencyNumber(TextHelper.EMPTY);
+		setEmail(TextHelper.EMPTY);
+		setBirthDate(birthDate);
 	}
 
 	public String getFirstName() {
