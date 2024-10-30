@@ -45,5 +45,10 @@ public class CityDomain extends Domain{
 	private void setState(StateDomain state) {
 		this.state = ObjectHelper.getDefault(state, StateDomain.create());
 	}
+
+	public CityDomain getState() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
