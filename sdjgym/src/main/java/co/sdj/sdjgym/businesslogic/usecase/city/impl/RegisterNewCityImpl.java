@@ -15,6 +15,7 @@ public final class RegisterNewCityImpl implements RegisterNewCity{
 	private DAOFactory daoFactory;
 	private CityNameDoesNotExistsForState cityNameDoesNotExistsForState = new CityNameDoesNotExistsForStateImpl();
 	
+	
 	public RegisterNewCityImpl(DAOFactory daoFactory) {
 		setDaoFactory(daoFactory);
 	}
@@ -22,8 +23,9 @@ public final class RegisterNewCityImpl implements RegisterNewCity{
 	@Override
 	public void execute(final CityDomain data) {
 		
-		cityNameDoesNotExistsForState.execute;
-		
+		cityNameConsistencyIsValid.execute(data.getName());
+		cityNameDoesNotExistsForState.execute(data.getName());
+		stateExists.execute(data.getState().getId(), daoFactory);
 		
 		var cityDomainToMap = CityDomain.create(generateId(), data.getName(), data.getState());
 		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptTarget(cityDomainToMap);
