@@ -22,15 +22,11 @@ public class PersonDomain extends Domain {
 	private String emergencyNumber;
 	private String email;
 	private Date birthDate;
-	private UUID identificadorTipoIdentificacion;
 	private IdentificationTypeDomain tipoIdentificacion;
 	private String identificacion;
-	private UUID identificadorEps;
 	private EpsDomain eps;
 	private String address;
-	private UUID identificatorState;
 	private StateDomain state;
-	private UUID identificadorCity;
 	private CityDomain city;
 
 	protected PersonDomain( final UUID id,
@@ -42,14 +38,11 @@ public class PersonDomain extends Domain {
 							final String emergencyNumber2,
 							final String email,
 							final Date birthDate,
-							final UUID identificadorTipoIdentificacion,
 							final IdentificationTypeDomain tipoIdentificacion,
 							final String identificacion,
 							final EpsDomain eps,
 							final String address,
-							final UUID identificatorState,
 							final StateDomain state2,
-							final UUID identificadorCity,
 							final CityDomain city2) {
 		super(id);
 		setFirstName(firstName);
@@ -60,17 +53,12 @@ public class PersonDomain extends Domain {
 		setEmergencyNumber(emergencyNumber2);
 		setEmail(email);
 		setBirthDate(birthDate);
-		setIdentificadorTipoIdentificacion(UUIDHelper.getDefault(identificadorTipoIdentificacion, UUIDHelper.getDefault()) );
 		setTipoIdentificacion(tipoIdentificacion);
 		setIdentificacion(identificacion);
-		setIdentificadorEps(UUIDHelper.getDefault(identificadorEps, UUIDHelper.getDefault()));//hacer el UUIDHelper
 		setEps(eps);
 		setAddress(address);
-		setIdentificatorState(UUIDHelper.getDefault(identificatorState, UUIDHelper.getDefault()));//hacer el UUIDHelper
 		setState(state2);
-		setIdentificadorCity(UUIDHelper.getDefault(identificadorCity, UUIDHelper.getDefault()));
 		setCity(city2);
-		
 		
 		
 		// TODO Auto-generated constructor stub
@@ -86,14 +74,11 @@ public class PersonDomain extends Domain {
 											final String emergencyNumber,
 											final String email,
 											final Date birthDate,
-											final UUID identificadorTipoIdentificacion,
 											final IdentificationTypeDomain tipoIdentificacion,
 											final String identificacion,
 											final EpsDomain eps,
 											final String address,
-											final UUID identificatorState,
 											final StateDomain state,
-											final UUID identificadorCity,
 											final CityDomain city) {
 		return new PersonDomain(id,
 								firstName,
@@ -104,35 +89,18 @@ public class PersonDomain extends Domain {
 								emergencyNumber,
 								email,
 								birthDate,
-								identificadorTipoIdentificacion,
+								
 								tipoIdentificacion,
 								identificacion,
 								eps,
 								address,
-								identificatorState,
+								
 								state,
-								identificadorCity,
+								
 								city);
 	}
 	
-	public static final PersonDomain create(final UUID id,
-			final String firstName,
-			final String middleName,
-			final String firstSurName, 
-			final String secondSurName,
-			final String phoneNumber,
-			final String emergencyNumber,
-			final String email,
-			final Date birthDate,
-			final UUID identificadorTipoIdentificacion,
-			final IdentificationTypeDomain tipoIdentificacion,
-			final String identificacion,
-			final EpsDomain eps,
-			final String address,
-			final UUID identificatorState,
-			final StateDomain state,
-			final UUID identificadorCity,
-			final CityDomain city) {
+	public static final PersonDomain create(final Date birthDate) {
 		return new PersonDomain(UUIDHelper.getDefault(),
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
@@ -141,15 +109,15 @@ public class PersonDomain extends Domain {
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
-				birthDate,
-				UUIDHelper.getDefault(),
+				birthDate, //TODO hacer el DateHelper 
+				
 				IdentificationTypeDomain.create(),
 				TextHelper.EMPTY,
 				EpsDomain.create(),
 				TextHelper.EMPTY,
-				UUIDHelper.getDefault(),
+				
 				StateDomain.create(),
-				UUIDHelper.getDefault(),
+				
 				CityDomain.create());
 	}
 	
@@ -219,13 +187,7 @@ public class PersonDomain extends Domain {
 		this.birthDate = birthDate;
 	}
 
-	public UUID getIdentificadorTipoIdentificacion() {
-		return identificadorTipoIdentificacion;
-	}
-
-	public void setIdentificadorTipoIdentificacion(UUID identificadorTipoIdentificacion) {
-		this.identificadorTipoIdentificacion = identificadorTipoIdentificacion;
-	}
+	
 
 	public IdentificationTypeDomain getTipoIdentificacion() {
 		return tipoIdentificacion;
@@ -241,14 +203,6 @@ public class PersonDomain extends Domain {
 
 	public void setIdentificacion(String identificacion) {
 		this.identificacion = identificacion;
-	}
-
-	public UUID getIdentificadorEps() {
-		return identificadorEps;
-	}
-
-	public void setIdentificadorEps(UUID identificadorEps) {
-		this.identificadorEps = identificadorEps;
 	}
 
 	public EpsDomain getEps() {
@@ -267,13 +221,6 @@ public class PersonDomain extends Domain {
 		this.address = address;
 	}
 
-	public UUID getIdentificatorState() {
-		return identificatorState;
-	}
-
-	public void setIdentificatorState(UUID identificatorState) {
-		this.identificatorState = identificatorState;
-	}
 
 	public StateDomain getState() {
 		return state;
@@ -283,13 +230,6 @@ public class PersonDomain extends Domain {
 		this.state = state;
 	}
 
-	public UUID getIdentificadorCity() {
-		return identificadorCity;
-	}
-
-	public void setIdentificadorCity(UUID identificadorCity) {
-		this.identificadorCity = identificadorCity;
-	}
 
 	public CityDomain getCity() {
 		return city;
@@ -298,5 +238,11 @@ public class PersonDomain extends Domain {
 	public void setCity(CityDomain city) {
 		this.city = city;
 	}
+	
+	@Override
+	public UUID getId() {
+		return super.getId();
+	}
+	
 
 }

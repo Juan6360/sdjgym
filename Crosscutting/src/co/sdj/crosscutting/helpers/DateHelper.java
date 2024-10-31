@@ -12,8 +12,8 @@ public class DateHelper {
 		return ObjectHelper.getDefault(string, defaultValue);
 	}
 	
-	public static String getDefault (final String string) {
-		return getDefault(string, EMPTY) ;
+	public static String getDefault () {
+		return null ;
 		
 	}
 	
