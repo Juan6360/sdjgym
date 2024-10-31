@@ -10,7 +10,7 @@ import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
 import co.sdj.sdjgym.domain.basedata.SpecialtyDomain;
 import co.sdj.sdjgym.domain.basedata.StateDomain;
 
-public class CoachDomain extends Domain, PersonDomain {
+public class CoachDomain extends PersonDomain {
 	
 	private SpecialtyDomain specialty;
 
@@ -22,4 +22,8 @@ public class CoachDomain extends Domain, PersonDomain {
 				tipoIdentificacion, identificacion, eps, address, state2, city2);
 	}
 	
+	@Override
+	public UUID getId() {
+		return super.getId();
+	}
 }
