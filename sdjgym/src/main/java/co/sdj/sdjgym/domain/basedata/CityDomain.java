@@ -39,17 +39,12 @@ public class CityDomain extends Domain{
 		return super.getId();
 	}
 
-	public StateDomain getCountry() {
-		return state;
-	}
-
 	private void setState(StateDomain state) {
 		this.state = ObjectHelper.getDefault(state, StateDomain.create());
 	}
 
-	public CityDomain getState() {
-		// TODO Auto-generated method stub
-		return null;
+	public StateDomain getState() {
+		return state;
 	}
 	
 }
