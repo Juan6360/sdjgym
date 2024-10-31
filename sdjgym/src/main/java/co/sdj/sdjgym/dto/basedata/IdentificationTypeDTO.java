@@ -26,4 +26,14 @@ public class IdentificationTypeDTO extends DomainDTO {
 		return this;
 	}
 	
+	public IdentificationTypeDTO setId(final String id) {
+		super.setIdentifier(id);
+		return this;
+	}
+	
+	@Override
+	public String getId() {
+		return super.getId();
+	}
+	
 }
