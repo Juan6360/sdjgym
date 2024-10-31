@@ -8,7 +8,7 @@ import co.sdj.sdjgym.domain.Domain;
 
 public class EpsDomain extends Domain {
 	
-	private String name;
+	public String name;
 	
 	private EpsDomain(final UUID id, final String name) {
 		super(id);
