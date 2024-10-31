@@ -6,11 +6,11 @@ import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.entity.DomainEntity;
 
-public class IdentifiactionTypeEntity extends DomainEntity {
+public class IdentificationTypeEntity extends DomainEntity {
 
 	private String name;
 	
-	protected IdentifiactionTypeEntity() {
+	public IdentificationTypeEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 	}

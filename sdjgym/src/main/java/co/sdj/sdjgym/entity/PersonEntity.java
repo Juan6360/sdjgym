@@ -5,6 +5,10 @@ import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.entity.basedata.CityEntity;
+import co.sdj.sdjgym.entity.basedata.EpsEntity;
+import co.sdj.sdjgym.entity.basedata.IdentificationTypeEntity;
+import co.sdj.sdjgym.entity.basedata.StateEntity;
 
 public class PersonEntity extends DomainEntity{
 	
@@ -12,31 +16,72 @@ public class PersonEntity extends DomainEntity{
 	private String middleName;
 	private String firstSurName;
 	private String secondSurName;
-	private int phoneNumber;
+	private String phoneNumber;
 	private String emergencyNumber;
 	private String email;
-	private Date birthDate;
-	private UUID identificadorTipoIdentificacion;
-	private IdentificacionTypeEntity tipoIdentificacion;
-	private int identificacion;
-	private UUID identificadorEps;
-	private Epsentity eps;
+	private String birthDate;
+	private IdentificationTypeEntity identificationType;
+	private String identification;
+	private EpsEntity eps;
 	private String address;
-	private UUID identificatorState;
-	private String state;
-	private UUID identificadorCity;
-	private String city;
+	private StateEntity state;
+	private CityEntity city;
 	
 
 	protected PersonEntity() {
 		super(UUIDHelper.getDefault());
 		setFirstName(TextHelper.EMPTY);
+		setMiddleName(TextHelper.EMPTY);
+		setFirstSurName(TextHelper.EMPTY);
+		setSecondSurName(TextHelper.EMPTY);
+		setEmergencyNumber(TextHelper.EMPTY);
+		setEmail(TextHelper.EMPTY);
+		setBirthDate(TextHelper.EMPTY);
+		setIdentification(TextHelper.EMPTY);
+		setEps(new EpsEntity());
+		setAddress(TextHelper.EMPTY);
+		setIdentificationType(new IdentificationTypeEntity());
+		setIdentification(TextHelper.EMPTY);
+		setState(new StateEntity());
+		setCity(new CityEntity());
 		
 		
 	}
 
 
 	
+
+
+	public StateEntity getState() {
+		return state;
+	}
+
+
+
+
+
+	public void setState(StateEntity state) {
+		this.state = state;
+	}
+
+
+
+
+
+	public CityEntity getCity() {
+		return city;
+	}
+
+
+
+
+
+	public void setCity(CityEntity city) {
+		this.city = city;
+	}
+
+
+
 
 
 	public String getFirstName() {
@@ -79,12 +124,12 @@ public class PersonEntity extends DomainEntity{
 	}
 
 
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
 
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -109,55 +154,17 @@ public class PersonEntity extends DomainEntity{
 	}
 
 
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+	public void setBirthDate(String empty) {
+		this.birthDate = empty;
 	}
 
 
-	public UUID getIdentificadorTipoIdentificacion() {
-		return identificadorTipoIdentificacion;
-	}
-
-
-	public void setIdentificadorTipoIdentificacion(UUID identificadorTipoIdentificacion) {
-		this.identificadorTipoIdentificacion = identificadorTipoIdentificacion;
-	}
-
-
-	public IdentificacionTypeEntity getTipoIdentificacion() {
-		return tipoIdentificacion;
-	}
-
-
-	public void setTipoIdentificacion(IdentificacionTypeEntity tipoIdentificacion) {
-		this.tipoIdentificacion = tipoIdentificacion;
-	}
-
-
-	public int getIdentificacion() {
-		return identificacion;
-	}
-
-
-	public void setIdentificacion(int identificacion) {
-		this.identificacion = identificacion;
-	}
-
-
-	public UUID getIdentificadorEps() {
-		return identificadorEps;
-	}
-
-
-	public void setIdentificadorEps(UUID identificadorEps) {
-		this.identificadorEps = identificadorEps;
-	}
-
+	
 
 	public EpsEntity getEps() {
 		return eps;
@@ -179,44 +186,40 @@ public class PersonEntity extends DomainEntity{
 	}
 
 
-	public UUID getIdentificatorState() {
-		return identificatorState;
+	
+
+	public IdentificationTypeEntity getIdentificationType() {
+		return identificationType;
 	}
 
 
-	public void setIdentificatorState(UUID identificatorState) {
-		this.identificatorState = identificatorState;
+
+
+
+	public void setIdentificationType(IdentificationTypeEntity identificationType) {
+		this.identificationType = identificationType;
 	}
 
 
-	public String getState() {
-		return state;
+
+
+
+	public String getIdentification() {
+		return identification;
 	}
 
 
-	public void setState(String state) {
-		this.state = state;
+
+
+
+	public void setIdentification(String identification) {
+		this.identification = identification;
 	}
 
 
-	public UUID getIdentificadorCity() {
-		return identificadorCity;
-	}
 
 
-	public void setIdentificadorCity(UUID identificadorCity) {
-		this.identificadorCity = identificadorCity;
-	}
 
-
-	public String getCity() {
-		return city;
-	}
-
-
-	public void setCity(String city) {
-		this.city = city;
-	}
 	
 	
 	

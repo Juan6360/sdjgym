@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import co.sdj.sdjgym.domain.Domain;
 
-public class UserDomain extends Domain{
+public class UserDomain extends Domain PersonDomain{
 	
 	
 	private UUID id;
