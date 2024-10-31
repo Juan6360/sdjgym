@@ -22,7 +22,7 @@ public class CityDomain extends Domain{
 		return new CityDomain(id, name, state);
 	}
 	
-	static final CityDomain create() {
+	public static final CityDomain create() {
 		return new CityDomain(UUIDHelper.getDefault(), TextHelper.EMPTY, StateDomain.create());
 	}
 	

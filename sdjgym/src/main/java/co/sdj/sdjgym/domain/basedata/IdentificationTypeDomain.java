@@ -19,7 +19,7 @@ public class IdentificationTypeDomain extends Domain {
 		return new IdentificationTypeDomain(id, name);
 	}
 	
-	static final IdentificationTypeDomain create() {
+	public static final IdentificationTypeDomain create() {
 		return new IdentificationTypeDomain(UUIDHelper.getDefault(), TextHelper.EMPTY);
 	}
 

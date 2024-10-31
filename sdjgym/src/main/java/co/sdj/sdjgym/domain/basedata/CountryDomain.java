@@ -19,7 +19,7 @@ public class CountryDomain extends Domain{
 		return new CountryDomain(id, name);
 	}
 	
-	static final CountryDomain create() {
+	public static final CountryDomain create() {
 		return new CountryDomain(UUIDHelper.getDefault(), TextHelper.EMPTY);
 	}
 	
