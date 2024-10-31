@@ -1,47 +1,77 @@
-package co.sdj.sdjgym.entity.user;
+package co.sdj.sdjgym.domain;
 
 import java.util.Date;
 import java.util.UUID;
 
-import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.domain.Eps;
-import co.sdj.sdjgym.domain.TipoIdentificacion;
-import co.sdj.sdjgym.entity.DomainEntity;
+import co.sdj.sdjgym.domain.basedata.EpsDomain;
+import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
 
-public class UserEntity extends DomainEntity {
+
+
+public class PersonDomain extends Domain {
 	
 	private String firstName;
 	private String middleName;
 	private String firstSurName;
 	private String secondSurName;
-	private String phoneNumber;
+	private int phoneNumber;
 	private String emergencyNumber;
 	private String email;
 	private Date birthDate;
 	private UUID identificadorTipoIdentificacion;
-	private IdentificationType tipoIdentificacion;
+	private IdentificationTypeDomain tipoIdentificacion;
 	private int identificacion;
 	private UUID identificadorEps;
-	private Eps eps;
+	private EpsDomain eps;
 	private String address;
 	private UUID identificatorState;
 	private String state;
 	private UUID identificadorCity;
 	private String city;
-	// TODO atributo de especialidad
-	
-	
-	
 
-
-	
-	
-	protected UserEntity() {
-		super(UUIDHelper.generate());
+	protected PersonDomain( final UUID id,
+							final String firstName,
+							final String middleName,
+							final String firstSurName, 
+							final String secondSurName,
+							final int phoneNumber,
+							final String emergencyNumber,
+							final String email,
+							final Date birthDate,
+							final UUID identificadorTipoIdentificacion,
+							final IdentificationTypeDomain tipoIdentificacion,
+							final int identificacion,
+							final EpsDomain eps,
+							final String address,
+							final UUID identificatorState,
+							final String state,
+							final UUID identificadorCity,
+							final String city) {
+		super(id);
+		setFirstName(firstName);
+		setMiddleName(middleName);
+		setFirstSurName(firstSurName);
+		setSecondSurName(secondSurName);
+		setPhoneNumber(phoneNumber);
+		setEmergencyNumber(emergencyNumber);
+		setEmail(email);
+		setBirthDate(birthDate);
+		setIdentificadorTipoIdentificacion(identificadorTipoIdentificacion);
+		setTipoIdentificacion(tipoIdentificacion);
+		setIdentificacion(identificacion);
+		setIdentificadorEps(identificadorEps);//hacer el UUIDHelper
+		setEps(eps);
+		setAddress(address);
+		setIdentificatorState(identificatorState);//hacer el UUIDHelper
+		setState(state);
+		setIdentificadorCity(identificadorCity);
+		setCity(city);
 		
+		
+		
+		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -66,21 +96,19 @@ public class UserEntity extends DomainEntity {
 		this.firstSurName = firstSurName;
 	}
 
-
 	public String getSecondSurName() {
 		return secondSurName;
 	}
-
 
 	public void setSecondSurName(String secondSurName) {
 		this.secondSurName = secondSurName;
 	}
 
-	public String getPhoneNumber() {
+	public int getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -108,14 +136,6 @@ public class UserEntity extends DomainEntity {
 		this.birthDate = birthDate;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
 	public UUID getIdentificadorTipoIdentificacion() {
 		return identificadorTipoIdentificacion;
 	}
@@ -124,11 +144,11 @@ public class UserEntity extends DomainEntity {
 		this.identificadorTipoIdentificacion = identificadorTipoIdentificacion;
 	}
 
-	public TipoIdentificacion getTipoIdentificacion() {
+	public IdentificationTypeDomain getTipoIdentificacion() {
 		return tipoIdentificacion;
 	}
 
-	public void setTipoIdentificacion(TipoIdentificacion tipoIdentificacion) {
+	public void setTipoIdentificacion(IdentificationTypeDomain tipoIdentificacion) {
 		this.tipoIdentificacion = tipoIdentificacion;
 	}
 
@@ -148,12 +168,20 @@ public class UserEntity extends DomainEntity {
 		this.identificadorEps = identificadorEps;
 	}
 
-	public Eps getEps() {
+	public EpsDomain getEps() {
 		return eps;
 	}
 
-	public void setEps(Eps eps) {
+	public void setEps(EpsDomain eps) {
 		this.eps = eps;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public UUID getIdentificatorState() {
@@ -187,7 +215,5 @@ public class UserEntity extends DomainEntity {
 	public void setCity(String city) {
 		this.city = city;
 	}
-
-	
 
 }
