@@ -35,5 +35,7 @@ public class IdentificationTypeDomain extends Domain {
 	public UUID getId() {
 		return super.getId();
 	}
+	
+	//getId
 
 }
