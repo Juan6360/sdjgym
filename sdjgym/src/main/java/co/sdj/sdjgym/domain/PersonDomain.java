@@ -66,7 +66,7 @@ public class PersonDomain extends Domain {
 	}
 	
 	
-	public static final PersonDomain create(final UUID id,
+	public static PersonDomain create(final UUID id,
 											final String firstName,
 											final String middleName,
 											final String firstSurName, 
