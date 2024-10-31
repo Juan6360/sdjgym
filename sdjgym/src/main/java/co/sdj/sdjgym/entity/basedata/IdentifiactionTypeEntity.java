@@ -10,7 +10,7 @@ public class IdentifiactionTypeEntity extends DomainEntity {
 
 	private String name;
 	
-	protected IdentifiactionTypeEntity(UUID id) {
+	protected IdentifiactionTypeEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 	}
