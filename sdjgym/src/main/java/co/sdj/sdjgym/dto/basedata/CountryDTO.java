@@ -2,6 +2,7 @@ package co.sdj.sdjgym.dto.basedata;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.dto.DomainDTO;
 
 public class CountryDTO extends DomainDTO{	
 	
