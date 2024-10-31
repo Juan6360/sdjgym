@@ -1,6 +1,8 @@
-package co.sdj.sdjgym.domain;
+package co.sdj.sdjgym.domain.user;
 
 import java.util.UUID;
+
+import co.sdj.sdjgym.domain.Domain;
 
 public class UserDomain extends Domain{
 	
