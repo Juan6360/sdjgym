@@ -9,7 +9,7 @@ import co.sdj.sdjgym.domain.Domain;
 public class SpecialtyDomain extends Domain {
 	
 	
-	public String name;
+	private String name;
 	
 	private SpecialtyDomain(UUID id, String name) {
 		super(id);
@@ -20,7 +20,7 @@ public class SpecialtyDomain extends Domain {
 		return new SpecialtyDomain(id, name);
 	}
 	
-	static final SpecialtyDomain create() {
+	public static final SpecialtyDomain create() {
 		return new SpecialtyDomain(UUIDHelper.getDefault(), TextHelper.EMPTY);
 	}
 
