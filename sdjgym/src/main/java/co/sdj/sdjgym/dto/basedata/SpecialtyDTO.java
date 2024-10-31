@@ -9,7 +9,7 @@ public class SpecialtyDTO extends DomainDTO {
 		
 		private String name;
 
-		private SpecialtyDTO() {
+		public SpecialtyDTO() {
 			super(UUIDHelper.getDefaultAsString());
 			setName(TextHelper.EMPTY);
 		}

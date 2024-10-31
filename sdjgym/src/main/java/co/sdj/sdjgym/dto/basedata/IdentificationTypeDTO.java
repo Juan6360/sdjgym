@@ -8,7 +8,7 @@ public class IdentificationTypeDTO extends DomainDTO {
 	
 	private String name;
 
-	private IdentificationTypeDTO() {
+	public IdentificationTypeDTO() {
 		super(UUIDHelper.getDefaultAsString());
 		setName(TextHelper.EMPTY);
 	}

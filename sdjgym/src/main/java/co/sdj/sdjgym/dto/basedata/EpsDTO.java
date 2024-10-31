@@ -8,7 +8,7 @@ public class EpsDTO extends DomainDTO {
 		
 		private String name;
 
-		private EpsDTO() {
+		public EpsDTO() {
 			super(UUIDHelper.getDefaultAsString());
 			setName(TextHelper.EMPTY);
 		}
