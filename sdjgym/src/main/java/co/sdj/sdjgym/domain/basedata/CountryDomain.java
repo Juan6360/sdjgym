@@ -1,9 +1,10 @@
-package co.sdj.sdjgym.domain;
+package co.sdj.sdjgym.domain.basedata;
 
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.domain.Domain;
 
 public class CountryDomain extends Domain{
 

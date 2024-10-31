@@ -4,8 +4,8 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-import co.sdj.sdjgym.domain.CountryDomain;
-import co.sdj.sdjgym.dto.CountryDTO;
+import co.sdj.sdjgym.domain.basedata.CountryDomain;
+import co.sdj.sdjgym.dto.basedata.CountryDTO;
 
 public class CountryDTOAdapter implements Adapter<CountryDomain,CountryDTO> {
 

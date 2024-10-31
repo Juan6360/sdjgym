@@ -1,9 +1,10 @@
-package co.sdj.sdjgym.entity;
+package co.sdj.sdjgym.entity.coach;
 
 import java.util.Date;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.entity.DomainEntity;
 
 public class CoachEntity extends DomainEntity {
 	
@@ -12,6 +13,7 @@ public class CoachEntity extends DomainEntity {
 	private String firstSurName;
 	private String secondSurName;
 	// TODO atributo de identificacion
+	
 	private String phoneNumber;
 	private String emergencyNumber;
 	private String email;

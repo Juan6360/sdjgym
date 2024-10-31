@@ -1,10 +1,11 @@
-package co.sdj.sdjgym.domain;
+package co.sdj.sdjgym.domain.basedata;
 
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.domain.Domain;
 
 public class CityDomain extends Domain{
 
@@ -44,6 +45,11 @@ public class CityDomain extends Domain{
 
 	private void setState(StateDomain state) {
 		this.state = ObjectHelper.getDefault(state, StateDomain.create());
+	}
+
+	public CityDomain getState() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

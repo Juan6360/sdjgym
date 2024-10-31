@@ -2,10 +2,9 @@ package co.sdj.sdjgym.domain;
 
 import java.util.UUID;
 
-import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 
-class Domain {
+public class Domain {
 	
 	private UUID id;
 	

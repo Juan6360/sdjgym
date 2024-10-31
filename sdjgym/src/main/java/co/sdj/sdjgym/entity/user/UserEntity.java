@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.entity;
+package co.sdj.sdjgym.entity.user;
 
 import java.util.Date;
 import java.util.UUID;
@@ -6,6 +6,7 @@ import java.util.UUID;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.domain.Eps;
 import co.sdj.sdjgym.domain.TipoIdentificacion;
+import co.sdj.sdjgym.entity.DomainEntity;
 
 public class UserEntity extends DomainEntity {
 	
@@ -13,7 +14,6 @@ public class UserEntity extends DomainEntity {
 	private String middleName;
 	private String firstSurName;
 	private String secondSurName;
-	// TODO atributo de identificacion
 	private String phoneNumber;
 	private String emergencyNumber;
 	private String email;
@@ -23,14 +23,11 @@ public class UserEntity extends DomainEntity {
 	private int identificacion;
 	private UUID identificadorEps;
 	private Eps eps;
-	// TODO atributos de departamento y municipio
-	
 	private String address;
 	private UUID identificatorState;
 	private String state;
 	private UUID identificadorCity;
 	private String city;
-	
 	// TODO atributo de especialidad
 	
 	

@@ -13,8 +13,8 @@ import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.CityDAO;
 import co.sdj.sdjgym.data.dao.CountryDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
-import co.sdj.sdjgym.entity.CityEntity;
-import co.sdj.sdjgym.entity.CountryEntity;
+import co.sdj.sdjgym.entity.basedata.CityEntity;
+import co.sdj.sdjgym.entity.basedata.CountryEntity;
 
 public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 
