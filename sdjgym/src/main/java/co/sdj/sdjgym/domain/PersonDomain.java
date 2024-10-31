@@ -3,6 +3,7 @@ package co.sdj.sdjgym.domain;
 import java.util.Date;
 import java.util.UUID;
 
+import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.domain.basedata.CityDomain;
@@ -29,13 +30,13 @@ public class PersonDomain extends Domain {
 	private StateDomain state;
 	private CityDomain city;
 
-	protected PersonDomain( final UUID id,
+	public PersonDomain( final UUID id,
 							final String firstName,
 							final String middleName,
 							final String firstSurName, 
 							final String secondSurName,
-							final String phoneNumber2,
-							final String emergencyNumber2,
+							final String phoneNumber,
+							final String emergencyNumber,
 							final String email,
 							final Date birthDate,
 							final IdentificationTypeDomain tipoIdentificacion,
@@ -49,8 +50,8 @@ public class PersonDomain extends Domain {
 		setMiddleName(middleName);
 		setFirstSurName(firstSurName);
 		setSecondSurName(secondSurName);
-		setPhoneNumber(phoneNumber2);
-		setEmergencyNumber(emergencyNumber2);
+		setPhoneNumber(phoneNumber);
+		setEmergencyNumber(emergencyNumber);
 		setEmail(email);
 		setBirthDate(birthDate);
 		setTipoIdentificacion(tipoIdentificacion);
@@ -100,22 +101,22 @@ public class PersonDomain extends Domain {
 								city);
 	}
 	
-	public static final PersonDomain create(final UUID id,
-			final String firstName,
-			final String middleName,
-			final String firstSurName, 
-			final String secondSurName,
-			final String phoneNumber,
-			final String emergencyNumber,
-			final String email,
-			final Date birthDate,
-			final IdentificationTypeDomain tipoIdentificacion,
-			final String identificacion,
-			final EpsDomain eps,
-			final String address,
-			final StateDomain state,
-			final CityDomain city) {
-		return new PersonDomain()
+	public static PersonDomain create() {
+		return new PersonDomain(UUIDHelper.getDefault(),
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				DateHelper.getDefault(),
+				IdentificationTypeDomain.create(),
+				TextHelper.EMPTY,
+				EpsDomain.create(),
+				TextHelper.EMPTY,
+				StateDomain.create(),
+				CityDomain.create());
 	}
 	
 	
