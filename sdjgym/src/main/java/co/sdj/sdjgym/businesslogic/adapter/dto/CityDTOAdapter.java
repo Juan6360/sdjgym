@@ -1,8 +1,8 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
+import co.sdj.sdjgym.domain.basedata.CityDomain;
 import co.sdj.sdjgym.dto.CityDTO;
-import co.sdj.sdjgym.domain.CityDomain;
 
 
 public final class CityDTOAdapter implements Adapter<CityDomain, CityDTO> {

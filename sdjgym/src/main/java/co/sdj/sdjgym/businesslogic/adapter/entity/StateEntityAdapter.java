@@ -1,9 +1,7 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-
-import co.sdj.sdjgym.domain.StateDomain;
-
+import co.sdj.sdjgym.domain.basedata.StateDomain;
 import co.sdj.sdjgym.entity.StateEntity;
 
 public final class StateEntityAdapter implements Adapter<StateDomain, StateEntity> {

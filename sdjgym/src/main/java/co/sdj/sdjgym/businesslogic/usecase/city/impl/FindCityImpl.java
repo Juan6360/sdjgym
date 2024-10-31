@@ -3,7 +3,7 @@ package co.sdj.sdjgym.businesslogic.usecase.city.impl;
 import java.util.List;
 
 import co.sdj.sdjgym.businesslogic.usecase.city.FindCity;
-import co.sdj.sdjgym.domain.CityDomain;
+import co.sdj.sdjgym.domain.basedata.CityDomain;
 
 public final class FindCityImpl implements FindCity {
 

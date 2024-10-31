@@ -12,6 +12,7 @@ public class CoachEntity extends DomainEntity {
 	private String firstSurName;
 	private String secondSurName;
 	// TODO atributo de identificacion
+	
 	private String phoneNumber;
 	private String emergencyNumber;
 	private String email;
