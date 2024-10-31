@@ -2,7 +2,7 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CityDomain;
-import co.sdj.sdjgym.entity.CityEntity;
+import co.sdj.sdjgym.entity.basedata.CityEntity;
 
 public final class CityEntityAdapter implements Adapter<CityDomain,CityEntity> {
 

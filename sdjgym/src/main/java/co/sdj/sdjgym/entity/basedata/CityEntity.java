@@ -1,9 +1,10 @@
-package co.sdj.sdjgym.entity;
+package co.sdj.sdjgym.entity.basedata;
 
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.entity.DomainEntity;
 
 public class CityEntity extends DomainEntity{	
 	

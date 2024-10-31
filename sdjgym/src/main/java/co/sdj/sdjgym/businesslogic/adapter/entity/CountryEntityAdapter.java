@@ -3,7 +3,7 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CountryDomain;
-import co.sdj.sdjgym.entity.CountryEntity;
+import co.sdj.sdjgym.entity.basedata.CountryEntity;
 
 
 public final class CountryEntityAdapter implements Adapter<CountryDomain,CountryEntity> {

@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import co.sdj.sdjgym.data.dao.StateDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
-import co.sdj.sdjgym.entity.StateEntity;
+import co.sdj.sdjgym.entity.basedata.StateEntity;
 
 
 public class StateSqlServerDAO extends SqlDAO implements StateDAO{

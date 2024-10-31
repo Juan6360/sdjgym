@@ -7,7 +7,7 @@ import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.crosscutting.exceptions.SdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.data.dao.enums.DAOSource;
-import co.sdj.sdjgym.dto.CityDTO;
+import co.sdj.sdjgym.dto.basedata.CityDTO;
 
 public class RegisterNewCityFacadeImpl implements RegisterNewCityFacade {
 

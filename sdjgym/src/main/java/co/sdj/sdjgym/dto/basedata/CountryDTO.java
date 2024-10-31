@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.dto;
+package co.sdj.sdjgym.dto.basedata;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;

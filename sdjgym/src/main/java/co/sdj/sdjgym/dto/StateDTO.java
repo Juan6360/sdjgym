@@ -3,6 +3,8 @@ package co.sdj.sdjgym.dto;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.dto.basedata.CountryDTO;
+import co.sdj.sdjgym.dto.basedata.DomainDTO;
 
 public class StateDTO extends DomainDTO{	
 	
