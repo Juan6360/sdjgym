@@ -10,7 +10,7 @@ public class IdentificationTypeDomain extends Domain {
 	
 	private String name;
 	
-	private IdentificationTypeDomain(UUID id, String name) {
+	private IdentificationTypeDomain(final UUID id, final String name) {
 		super(id);
 		setName(name);
 	}
