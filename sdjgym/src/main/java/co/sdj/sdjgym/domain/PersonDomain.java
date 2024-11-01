@@ -1,5 +1,6 @@
 package co.sdj.sdjgym.domain;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.UUID;
 
@@ -102,21 +103,27 @@ public class PersonDomain extends Domain {
 	}
 	
 	public static PersonDomain create() {
-		return new PersonDomain(UUIDHelper.getDefault(),
-				TextHelper.EMPTY,
-				TextHelper.EMPTY,
-				TextHelper.EMPTY,
-				TextHelper.EMPTY,
-				TextHelper.EMPTY,
-				TextHelper.EMPTY,
-				TextHelper.EMPTY,
-				DateHelper.getDefault(),
-				IdentificationTypeDomain.create(),
-				TextHelper.EMPTY,
-				EpsDomain.create(),
-				TextHelper.EMPTY,
-				StateDomain.create(),
-				CityDomain.create());
+		try {
+			return new PersonDomain(UUIDHelper.getDefault(),
+					TextHelper.EMPTY,
+					TextHelper.EMPTY,
+					TextHelper.EMPTY,
+					TextHelper.EMPTY,
+					TextHelper.EMPTY,
+					TextHelper.EMPTY,
+					TextHelper.EMPTY,
+					DateHelper.getDefault(),
+					IdentificationTypeDomain.create(),
+					TextHelper.EMPTY,
+					EpsDomain.create(),
+					TextHelper.EMPTY,
+					StateDomain.create(),
+					CityDomain.create());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	
