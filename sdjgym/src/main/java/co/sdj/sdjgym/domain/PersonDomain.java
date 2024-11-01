@@ -7,6 +7,7 @@ import java.util.UUID;
 import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.crosscutting.exceptions.DomainSdjException;
 import co.sdj.sdjgym.domain.basedata.CityDomain;
 import co.sdj.sdjgym.domain.basedata.EpsDomain;
 import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
@@ -119,11 +120,12 @@ public class PersonDomain extends Domain {
 					TextHelper.EMPTY,
 					StateDomain.create(),
 					CityDomain.create());
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (final ParseException exception) {
+			var userMenssage = "Se a presentado un problema inesperado tratando de llevar a cabo el registro de la fecha. Por favor intente de nuevo, y si el problema persiste reporte la novedad...";
+			var technicalMessage="Se a presentado un problema al tratar de registrar la información de la fecha. Por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
+
+			throw DomainSdjException.crear(userMenssage, technicalMessage);
 		}
-		return null;
 	}
 	
 	
