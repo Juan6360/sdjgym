@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.domain.classes;
+package co.sdj.sdjgym.domain.session;
 
 
 import java.util.Date;
@@ -12,7 +12,7 @@ import co.sdj.sdjgym.domain.Domain;
 import co.sdj.sdjgym.domain.basedata.SpecialtyDomain;
 import co.sdj.sdjgym.domain.space.SpaceDomain;
 
-public class ClassDomain extends Domain {
+public class SessionDomain extends Domain {
 	
 	private int capacity;
 	private Date startDate;
@@ -21,7 +21,7 @@ public class ClassDomain extends Domain {
 	private SpecialtyDomain specialty;
 	
 	
-	private ClassDomain(final UUID id, final int capacity, final Date startDate, final Date endDate, final SpaceDomain space, final SpecialtyDomain specialty){
+	private SessionDomain(final UUID id, final int capacity, final Date startDate, final Date endDate, final SpaceDomain space, final SpecialtyDomain specialty){
 		super(id);
 		setCapacity(capacity);
 		setStartDate(startDate);
@@ -33,12 +33,12 @@ public class ClassDomain extends Domain {
 
 
 
-	public static final ClassDomain create(final UUID id, final int capacity, final Date startDate, final Date endDate, final SpaceDomain space, final SpecialtyDomain specialty){
-		return new ClassDomain(id,capacity,startDate,endDate,space,specialty);
+	public static final SessionDomain create(final UUID id, final int capacity, final Date startDate, final Date endDate, final SpaceDomain space, final SpecialtyDomain specialty){
+		return new SessionDomain(id,capacity,startDate,endDate,space,specialty);
 	}
 
-	public static final ClassDomain create() {
-		return new ClassDomain(UUIDHelper.getDefault(), NumericHelper.ZERO,DateHelper.getDefault(null),DateHelper.getDefault(null), SpaceDomain.create(),SpecialtyDomain.create());
+	public static final SessionDomain create() {
+		return new SessionDomain(UUIDHelper.getDefault(), NumericHelper.ZERO,DateHelper.getDefault(null),DateHelper.getDefault(null), SpaceDomain.create(),SpecialtyDomain.create());
 	}
 
 	public int getCapacity() {

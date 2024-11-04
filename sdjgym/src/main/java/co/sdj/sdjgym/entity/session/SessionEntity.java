@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.entity.classes;
+package co.sdj.sdjgym.entity.session;
 
 import java.util.Date;
 import java.util.UUID;
@@ -14,7 +14,7 @@ import co.sdj.sdjgym.entity.space.SpaceEntity;
 
 
 
-public class ClassEntity extends DomainEntity{
+public class SessionEntity extends DomainEntity{
 
 	private int capacity;
 	private Date startDate;
@@ -23,7 +23,7 @@ public class ClassEntity extends DomainEntity{
 	private SpecialtyEntity specialty;
 	
 	
-	public ClassEntity(){
+	public SessionEntity(){
 		super(UUIDHelper.getDefault());
 		setCapacity(NumericHelper.getDefault(capacity));
 		setStartDate(DateHelper.getDefault(startDate));

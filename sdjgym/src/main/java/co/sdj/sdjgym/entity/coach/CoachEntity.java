@@ -22,7 +22,7 @@ public class CoachEntity extends DomainEntity {
 	private String address;
 	// TODO atributo de especialidad
 	
-	protected CoachEntity() {
+	public CoachEntity() {
 		super(UUIDHelper.getDefault());
 		setFirstName(TextHelper.EMPTY);
 		setMiddleName(TextHelper.EMPTY);

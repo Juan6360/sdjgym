@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.dto.classes;
+package co.sdj.sdjgym.dto.session;
 
 import java.util.Date;
 import co.sdj.crosscutting.helpers.DateHelper;
@@ -10,7 +10,7 @@ import co.sdj.sdjgym.dto.DomainDTO;
 import co.sdj.sdjgym.dto.basedata.SpecialtyDTO;
 import co.sdj.sdjgym.dto.space.SpaceDTO;
 
-public class ClassDTO extends DomainDTO {
+public class SessionDTO extends DomainDTO {
 
 
 	private int capacity;
@@ -20,7 +20,7 @@ public class ClassDTO extends DomainDTO {
 	private SpecialtyDTO specialty;
 	
 	
-	public ClassDTO(){
+	public SessionDTO(){
 		super(UUIDHelper.getDefaultAsString());
 		setCapacity(NumericHelper.getDefault(capacity));
 		setStartDate(DateHelper.getDefault(startDate));
@@ -34,8 +34,8 @@ public class ClassDTO extends DomainDTO {
 
 
 
-	public static final ClassDTO create() {
-		return new ClassDTO();
+	public static final SessionDTO create() {
+		return new SessionDTO();
 	}
 	
 	
@@ -44,7 +44,7 @@ public class ClassDTO extends DomainDTO {
 		return capacity;
 	}
 
-	private ClassDTO setCapacity(final int capacity) {
+	private SessionDTO setCapacity(final int capacity) {
 		this.capacity = NumericHelper.getDefault(capacity);
 		return this;
 	}
@@ -52,7 +52,7 @@ public class ClassDTO extends DomainDTO {
 		return startDate;
 	}
 
-	private ClassDTO setStartDate(final Date startDate) {
+	private SessionDTO setStartDate(final Date startDate) {
 		this.startDate = DateHelper.getDefault(startDate);
 		return this;
 		
@@ -62,7 +62,7 @@ public class ClassDTO extends DomainDTO {
 		return endDate;
 	}
 
-	private ClassDTO setEndDate(final Date endDate) {
+	private SessionDTO setEndDate(final Date endDate) {
 		this.endDate = DateHelper.getDefault(endDate);
 		return this;
 	}
@@ -77,7 +77,7 @@ public class ClassDTO extends DomainDTO {
 		return space;
 	}
 
-	public ClassDTO setSpace(final SpaceDTO space) {
+	public SessionDTO setSpace(final SpaceDTO space) {
 		this.space = ObjectHelper.getDefault(space, SpaceDTO.create());
 		return this;
 	}
@@ -86,7 +86,7 @@ public class ClassDTO extends DomainDTO {
 		return specialty;
 	}
 
-	private ClassDTO setEspecialty(final SpecialtyDTO specialty) {
+	private SessionDTO setEspecialty(final SpecialtyDTO specialty) {
 		this.specialty = ObjectHelper.getDefault(specialty, SpecialtyDTO.create());
 		return this;
 	}
