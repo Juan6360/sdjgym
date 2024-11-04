@@ -37,7 +37,7 @@ public class CoachDomain extends PersonDomain {
 	
 	public static final CoachDomain create() {
 		return new CoachDomain(UUIDHelper.getDefault(), TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY,
-								TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, DateHelper.getDefault(), IdentificationTypeDomain.create(), TextHelper.EMPTY, EpsDomain.create(), TextHelper.EMPTY,
+								TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, DateHelper.DEFAULT_DATE, IdentificationTypeDomain.create(), TextHelper.EMPTY, EpsDomain.create(), TextHelper.EMPTY,
 								StateDomain.create(), CityDomain.create());
 	}
 	

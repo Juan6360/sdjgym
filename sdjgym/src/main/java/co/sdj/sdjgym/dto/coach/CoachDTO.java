@@ -1,5 +1,7 @@
 package co.sdj.sdjgym.dto.coach;
 
-public class CoachDTO {
+import co.sdj.sdjgym.dto.PersonDTO;
+
+public class CoachDTO extends PersonDTO {
 
 }
