@@ -10,6 +10,7 @@ import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
 import co.sdj.sdjgym.domain.basedata.SpecialtyDomain;
 import co.sdj.sdjgym.domain.basedata.StateDomain;
 import co.sdj.crosscutting.helpers.DateHelper;
+import co.sdj.crosscutting.helpers.NumericHelper;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;

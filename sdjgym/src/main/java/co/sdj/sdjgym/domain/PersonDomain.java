@@ -104,28 +104,21 @@ public class PersonDomain extends Domain {
 	}
 	
 	public static PersonDomain create() {
-		try {
-			return new PersonDomain(UUIDHelper.getDefault(),
-					TextHelper.EMPTY,
-					TextHelper.EMPTY,
-					TextHelper.EMPTY,
-					TextHelper.EMPTY,
-					TextHelper.EMPTY,
-					TextHelper.EMPTY,
-					TextHelper.EMPTY,
-					DateHelper.getDefault(),
-					IdentificationTypeDomain.create(),
-					TextHelper.EMPTY,
-					EpsDomain.create(),
-					TextHelper.EMPTY,
-					StateDomain.create(),
-					CityDomain.create());
-		} catch (final ParseException exception) {
-			var userMenssage = "Se a presentado un problema inesperado tratando de llevar a cabo el registro de la fecha. Por favor intente de nuevo, y si el problema persiste reporte la novedad...";
-			var technicalMessage="Se a presentado un problema al tratar de registrar la información de la fecha. Por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
-
-			throw DomainSdjException.crear(userMenssage, technicalMessage);
-		}
+		return new PersonDomain(UUIDHelper.getDefault(),
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				TextHelper.EMPTY,
+				DateHelper.getDefault(),
+				IdentificationTypeDomain.create(),
+				TextHelper.EMPTY,
+				EpsDomain.create(),
+				TextHelper.EMPTY,
+				StateDomain.create(),
+				CityDomain.create());
 	}
 	
 	

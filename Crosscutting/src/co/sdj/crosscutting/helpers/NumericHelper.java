@@ -11,7 +11,7 @@ public final class NumericHelper {
 	}
 	
 	public static int getDefault(final int number) {
-		return getDefault(number,ZERO);
+		return getDefault(number, ZERO);
 	}
 	
 	public static final <T extends Number> boolean isGreat(final T numberOne, final T numberTwo) {
