@@ -4,11 +4,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DateHelper {
+public final class DateHelper {
 
-    private static final String TITANIC = "19/12/1997";
-    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
-    private static final Date DEFAULT_DATE;
+    public static final String TITANIC = "19/12/1997";
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
+    public static final Date DEFAULT_DATE;
 
     static {
         try {
