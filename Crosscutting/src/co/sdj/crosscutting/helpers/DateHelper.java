@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class DateHelper {
 	
+	public static final String TITANIC = "19/12/1997";
 	
 	public static boolean isNull(final Date date) {
 		return ObjectHelper.isNull(date);
@@ -22,10 +23,14 @@ public class DateHelper {
 		
 	}
 	
-	public static Date getDefault() throws ParseException{
-		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-		Date date = formato.parse("00-00-0000") ;
-		return date;
+	public static Date getDefault() {
+		try {
+			return changeStringToDate(TITANIC);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return new Date();
+		}
+		
 	}
 	
 	// TODO hacerle las condiciones al changeStrinToDate
