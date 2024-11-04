@@ -4,8 +4,16 @@ package co.sdj.crosscutting.helpers;
 
 public final class NumericHelper {
 
-
-
+	public static final int ZERO = 0;
+	
+	public static int getDefault(final int number, final int defaultValue) {
+		return ObjectHelper.getDefault(number, defaultValue);
+	}
+	
+	public static int getDefault(final int number) {
+		return getDefault(number,ZERO);
+	}
+	
 	public static final <T extends Number> boolean isGreat(final T numberOne, final T numberTwo) {
 		return numberOne.doubleValue() > numberTwo.doubleValue();
 	}
