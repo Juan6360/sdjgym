@@ -18,9 +18,9 @@ public class DateHelper {
 	}
 	
 	
-	public static Date getDefault (final String date) throws ParseException {
+	public static Date getDefault (final Date date) throws ParseException {
 		try {
-			return getDefault(changeStringToDate(date) ,changeStringToDate(TITANIC));
+			return getDefault(date ,changeStringToDate(TITANIC));
 		} catch (ParseException e) {
 			e.printStackTrace();
 			return new Date();
