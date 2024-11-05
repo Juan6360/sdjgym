@@ -1,5 +1,6 @@
 package co.sdj.sdjgym.dto;
 
+import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.dto.basedata.CityDTO;
@@ -49,12 +50,12 @@ public class PersonDTO extends DomainDTO{
 		setEmail(TextHelper.EMPTY);
 		setBirthDate(TextHelper.EMPTY);
 		setIdentification(TextHelper.EMPTY);
-		setEps(new EpsDTO());
+		setEps(EpsDTO.create());
 		setAddress(TextHelper.EMPTY);
-		setIdentificationType(new IdentificationTypeDTO());
+		setIdentificationType(IdentificationTypeDTO.create());
 		setIdentification(TextHelper.EMPTY);
-		setState(new StateDTO());
-		setCity(new CityDTO());
+		setState(StateDTO.create());
+		setCity(CityDTO.create());
 		
 
 	}
@@ -72,7 +73,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
+		this.middleName = TextHelper.applyTrim(middleName);
 	}
 
 	public String getFirstSurName() {
@@ -80,7 +81,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setFirstSurName(String firstSurName) {
-		this.firstSurName = firstSurName;
+		this.firstSurName = TextHelper.applyTrim(firstSurName);
 	}
 
 	public String getSecondSurName() {
@@ -88,7 +89,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setSecondSurName(String secondSurName) {
-		this.secondSurName = secondSurName;
+		this.secondSurName = TextHelper.applyTrim(secondSurName);
 	}
 
 	public String getPhoneNumber() {
@@ -96,7 +97,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+		this.phoneNumber = TextHelper.applyTrim(phoneNumber);
 	}
 
 	public String getEmergencyNumber() {
@@ -104,7 +105,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setEmergencyNumber(String emergencyNumber) {
-		this.emergencyNumber = emergencyNumber;
+		this.emergencyNumber = TextHelper.applyTrim(emergencyNumber);
 	}
 
 	public String getEmail() {
@@ -112,7 +113,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = TextHelper.applyTrim(email);
 	}
 
 	public String getBirthDate() {
@@ -120,15 +121,15 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setBirthDate(String birthDate) {
-		this.birthDate = birthDate;
+		this.birthDate = TextHelper.applyTrim(birthDate);
 	}
 
 	public IdentificationTypeDTO getIdentificationType() {
 		return identificationType;
 	}
 
-	public void setIdentificationType(IdentificationTypeDTO identificationType) {
-		this.identificationType = identificationType;
+	public void setIdentificationType(final IdentificationTypeDTO identificationType) {
+		this.identificationType = ObjectHelper.getDefault(identificationType, IdentificationTypeDTO.create());
 	}
 
 	public String getIdentification() {
@@ -136,15 +137,15 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setIdentification(String identification) {
-		this.identification = identification;
+		this.identification = TextHelper.applyTrim(identification);
 	}
 
 	public EpsDTO getEps() {
 		return eps;
 	}
 
-	public void setEps(EpsDTO eps) {
-		this.eps = eps;
+	public void setEps(final EpsDTO eps) {
+		this.eps = ObjectHelper.getDefault(eps, EpsDTO.create());
 	}
 
 	public String getAddress() {
@@ -160,7 +161,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setState(StateDTO state) {
-		this.state = state;
+		this.state = ObjectHelper.getDefault(state, StateDTO.create());
 	}
 
 	public CityDTO getCity() {
@@ -168,8 +169,17 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setCity(CityDTO city) {
-		this.city = city;
+		this.city = ObjectHelper.getDefault(city, CityDTO.create());
 	}
 	
+	public PersonDTO setId(final String id) {
+		super.setIdentifier(id);
+		return this;
+	}
+	
+	@Override
+	public String getId() {
+		return super.getId();
+	}
 	
 }
