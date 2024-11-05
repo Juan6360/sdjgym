@@ -8,4 +8,7 @@ public class UserDTO extends PersonDTO{
 		super();
 	}
 	
+	public static final UserDTO create() {
+		return new UserDTO();
+	}
 }
