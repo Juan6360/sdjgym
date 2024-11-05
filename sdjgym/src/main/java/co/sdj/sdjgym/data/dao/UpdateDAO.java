@@ -1,6 +1,6 @@
 package co.sdj.sdjgym.data.dao;
 
-interface UpdateDAO<T> {
+public interface UpdateDAO<T> {
 	
 	void update(T data);
 

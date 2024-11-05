@@ -1,7 +1,7 @@
 package co.sdj.sdjgym.data.dao;
 import java.util.List;
 
-interface RetrieveDAO <T, I> {
+ public interface RetrieveDAO <T, I> {
 	
 	T findByID(I id);
 	

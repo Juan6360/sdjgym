@@ -9,7 +9,7 @@ public class UserEntity extends PersonEntity {
 
 	
 	
-	protected UserEntity() {
+	public UserEntity() {
 			super();
 		
 	}

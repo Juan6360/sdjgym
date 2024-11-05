@@ -1,6 +1,6 @@
 package co.sdj.sdjgym.data.dao;
 
-interface CreateDAO<T> {
+public interface CreateDAO<T> {
 	
 	void create(T data);
 

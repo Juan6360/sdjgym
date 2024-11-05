@@ -75,7 +75,6 @@ public class UserDomain extends PersonDomain{
 	}
 	
 	public static UserDomain create() {
-		try {
 		return new UserDomain(UUIDHelper.getDefault(),
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
@@ -84,20 +83,13 @@ public class UserDomain extends PersonDomain{
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
-				DateHelper.getDefault(),
+				DateHelper.DEFAULT_DATE,
 				IdentificationTypeDomain.create(),
 				TextHelper.EMPTY,
 				EpsDomain.create(),
 				TextHelper.EMPTY,
 				StateDomain.create(),
 				CityDomain.create());
-		}catch(final ParseException exception){
-			var userMenssage = "Se a presentado un problema inesperado tratando de llevar a cabo el registro de la fecha. Por favor intente de nuevo, y si el problema persiste reporte la novedad...";
-			var technicalMessage="Se a presentado un problema al tratar de registrar la información de la fecha. Por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
-
-			throw DomainSdjException.crear(userMenssage, technicalMessage); 
-	
-		}
 	}
 
 }
