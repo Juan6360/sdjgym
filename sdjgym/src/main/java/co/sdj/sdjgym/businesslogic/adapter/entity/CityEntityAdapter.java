@@ -1,5 +1,7 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
+import java.util.List;
+
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CityDomain;
 import co.sdj.sdjgym.entity.basedata.CityEntity;
@@ -24,6 +26,12 @@ public final class CityEntityAdapter implements Adapter<CityDomain,CityEntity> {
 
 	@Override
 	public CityEntity adaptTarget(CityDomain data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CityEntity> adaptTarget(List<CityDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}

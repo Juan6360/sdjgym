@@ -1,5 +1,7 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
+import java.util.List;
+
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.StateDomain;
 import co.sdj.sdjgym.entity.basedata.StateEntity;
@@ -24,6 +26,12 @@ private static final Adapter<StateDomain, StateEntity> instance = new StateEntit
 
 	@Override
 	public StateEntity adaptTarget(StateDomain data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StateEntity> adaptTarget(List<StateDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -3,8 +3,6 @@ package co.sdj.sdjgym.dto.assistance;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.dto.DomainDTO;
-import co.sdj.sdjgym.dto.coach.CoachDTO;
-import co.sdj.sdjgym.dto.session.SessionByCoachDTO;
 import co.sdj.sdjgym.dto.session.SessionDTO;
 import co.sdj.sdjgym.dto.user.UserDTO;
 

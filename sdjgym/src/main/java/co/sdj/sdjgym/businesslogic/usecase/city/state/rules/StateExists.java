@@ -2,8 +2,9 @@ package co.sdj.sdjgym.businesslogic.usecase.city.state.rules;
 
 import java.util.UUID;
 
-import co.sdj.sdjgym.businesslogic.usecase.city.Rule;
+import co.sdj.sdjgym.businesslogic.usecase.RuleWithFactory;
 
-public interface StateExists extends Rule<UUID>{
+
+public interface StateExists extends RuleWithFactory<UUID>{
 
 }

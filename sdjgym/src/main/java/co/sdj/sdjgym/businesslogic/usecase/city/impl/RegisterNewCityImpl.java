@@ -13,10 +13,11 @@ import co.sdj.sdjgym.domain.basedata.CityDomain;
 public final class RegisterNewCityImpl implements RegisterNewCity{
 
 	private DAOFactory daoFactory;
-	private CityNameDoesNotExistsForState cityNameDoesNotExistsForState = new CityNameDoesNotExistsForStateImpl();
+	private CityNameDoesNotExistsForState cityNameDoesNotExistsForState= new CityNameDoesNotExistsForStateImpl();
+	private StateExists stateExists = new StateExistsImpl();
+	private CityNameConsistencyIsValid cityNameConsistencyIsValid = new CityNameConsistencyIsValidImpl();
 	
-	
-	public RegisterNewCityImpl(DAOFactory daoFactory) {
+	public RegisterNewCityImpl (final DAOFactory daoFactory) {
 		setDaoFactory(daoFactory);
 	}
 
@@ -27,9 +28,9 @@ public final class RegisterNewCityImpl implements RegisterNewCity{
 		cityNameDoesNotExistsForState.execute(data.getName());
 		stateExists.execute(data.getState().getId(), daoFactory);
 		
-		var cityDomainToMap = CityDomain.create(generateId(), data.getName(), data.getState());
-		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptTarget(cityDomainToMap);
-		daoFactory.getCityDAO().update(cityEntity);
+		var CityDomainToMap = CityDomain.create(generateId(), data.getName(), data.getState());
+		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptSource(data);
+		daoFactory.getCityDAO().create(cityEntity);
 		
 	}
 	
@@ -53,8 +54,6 @@ public final class RegisterNewCityImpl implements RegisterNewCity{
 		this.daoFactory = daoFactory;
 	}
 	
-	private boolean isCityNameTaken(final CityDomain data) {
-		return daoFactory.getCityDAO().findByFilter(data.getName()) != null;
-	}
+
 
 }
