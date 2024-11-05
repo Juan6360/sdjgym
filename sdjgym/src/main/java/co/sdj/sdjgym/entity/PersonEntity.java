@@ -1,6 +1,5 @@
 package co.sdj.sdjgym.entity;
 
-import java.util.Date;
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;

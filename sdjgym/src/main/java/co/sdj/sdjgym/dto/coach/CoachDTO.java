@@ -10,7 +10,6 @@ public class CoachDTO extends PersonDTO {
 	
 	protected CoachDTO() {
 		super();
-		
 		setSpecialty(specialty);
 	}
 	
