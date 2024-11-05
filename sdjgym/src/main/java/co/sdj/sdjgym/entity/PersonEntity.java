@@ -3,6 +3,7 @@ package co.sdj.sdjgym.entity;
 import java.util.Date;
 import java.util.UUID;
 
+import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.entity.basedata.CityEntity;
@@ -54,173 +55,84 @@ public class PersonEntity extends DomainEntity{
 
 	@Override
 	public UUID getId() {
-		// TODO Auto-generated method stub
 		return super.getId();
 	}
-
-
-
-
-
+	
 	@Override
 	public void setId(UUID id) {
-		// TODO Auto-generated method stub
 		super.setId(id);
 	}
-
-
-
-
-
-	@Override
-	public int hashCode() {
-		// TODO Auto-generated method stub
-		return super.hashCode();
-	}
-
-
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
-	}
-
-
-
-
-
-	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		// TODO Auto-generated method stub
-		return super.clone();
-	}
-
-
-
-
-
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
-
-
-
-
-
-	@Override
-	protected void finalize() throws Throwable {
-		// TODO Auto-generated method stub
-		super.finalize();
-	}
-
-
-
-
 
 	public StateEntity getState() {
 		return state;
 	}
 
-
-
-
-
 	public void setState(StateEntity state) {
-		this.state = state;
+		this.state = ObjectHelper.getDefault(state, new StateEntity());
 	}
-
-
-
-
 
 	public CityEntity getCity() {
 		return city;
 	}
 
-
-
-
-
 	public void setCity(CityEntity city) {
-		this.city = city;
+		this.city = ObjectHelper.getDefault(city, new CityEntity());
 	}
-
-
-
-
 
 	public String getFirstName() {
 		return firstName;
 	}
 
-
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstName = TextHelper.applyTrim(firstName);
 	}
-
 
 	public String getMiddleName() {
 		return middleName;
 	}
 
-
 	public void setMiddleName(String middleName) {
-		this.middleName = middleName;
+		this.middleName = TextHelper.applyTrim(middleName);
 	}
-
 
 	public String getFirstSurName() {
 		return firstSurName;
 	}
 
-
 	public void setFirstSurName(String firstSurName) {
-		this.firstSurName = firstSurName;
+		this.firstSurName = TextHelper.applyTrim(firstSurName);
 	}
-
 
 	public String getSecondSurName() {
 		return secondSurName;
 	}
 
-
 	public void setSecondSurName(String secondSurName) {
-		this.secondSurName = secondSurName;
+		this.secondSurName = TextHelper.applyTrim(secondSurName);
 	}
-
 
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-
 	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+		this.phoneNumber = TextHelper.applyTrim(phoneNumber);
 	}
-
 
 	public String getEmergencyNumber() {
 		return emergencyNumber;
 	}
 
-
 	public void setEmergencyNumber(String emergencyNumber) {
-		this.emergencyNumber = emergencyNumber;
+		this.emergencyNumber = TextHelper.applyTrim(emergencyNumber);
 	}
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
 	public void setEmail(String email) {
-		this.email = email;
+		this.email = TextHelper.applyTrim(email);
 	}
 
 
@@ -228,23 +140,17 @@ public class PersonEntity extends DomainEntity{
 		return birthDate;
 	}
 
-
-	public void setBirthDate(String empty) {
-		this.birthDate = empty;
+	public void setBirthDate(String birthDate) {
+		this.birthDate = TextHelper.applyTrim(birthDate);
 	}
-
-
-	
 
 	public EpsEntity getEps() {
 		return eps;
 	}
 
-
 	public void setEps(EpsEntity eps) {
-		this.eps = eps;
+		this.eps = ObjectHelper.getDefault(eps, new EpsEntity());
 	}
-
 
 	public String getAddress() {
 		return address;
@@ -252,11 +158,8 @@ public class PersonEntity extends DomainEntity{
 
 
 	public void setAddress(String address) {
-		this.address = address;
+		this.address = TextHelper.applyTrim(address);
 	}
-
-
-	
 
 	public IdentificationTypeEntity getIdentificationType() {
 		return identificationType;
@@ -267,7 +170,7 @@ public class PersonEntity extends DomainEntity{
 
 
 	public void setIdentificationType(IdentificationTypeEntity identificationType) {
-		this.identificationType = identificationType;
+		this.identificationType = ObjectHelper.getDefault(identificationType, new IdentificationTypeEntity());
 	}
 
 
@@ -283,7 +186,7 @@ public class PersonEntity extends DomainEntity{
 
 
 	public void setIdentification(String identification) {
-		this.identification = identification;
+		this.identification = TextHelper.applyTrim(identification);
 	}
 
 
