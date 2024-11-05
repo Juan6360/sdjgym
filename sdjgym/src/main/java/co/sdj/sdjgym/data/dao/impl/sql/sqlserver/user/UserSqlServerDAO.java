@@ -60,14 +60,18 @@ public final class UserSqlServerDAO extends SqlDAO implements UserDAO{
 
 	@Override
 	public UserEntity findByID(UUID id) {
-		// TODO Auto-generated method stub
-		return null;
+		var userEntityFilter = new UserEntity();
+		userEntityFilter.setId(id);
+		
+		var result = findByFilter(userEntityFilter);
+		
+		return (result.isEmpty())? new UserEntity(): result.get(0);
 	}
 
 	@Override
 	public List<UserEntity> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return findByFilter(new UserEntity());
 	}
 
 	@Override
@@ -143,7 +147,7 @@ public final class UserSqlServerDAO extends SqlDAO implements UserDAO{
 	            String column = entry.getKey();
 	            Object value = entry.getValue();
 	            
-	            if (!ObjectHelper.isNull(value) && !(value instanceof String && ((String) value).trim().isEmpty()) && !UUIDHelper.isDefault( (UUIDHelper.convertToUUID((String) value)))) {
+	            if (!ObjectHelper.isNull(value) && !(value instanceof String)?((String) value).trim().isEmpty(): !UUIDHelper.isDefault( (UUIDHelper.convertToUUID((String) value)))) {
 	                if (firstCondition) {
 	                    statement.append("WHERE ");
 	                    firstCondition = false;
