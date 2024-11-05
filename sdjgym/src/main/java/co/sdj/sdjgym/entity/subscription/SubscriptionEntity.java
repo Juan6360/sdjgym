@@ -4,9 +4,9 @@ import java.util.UUID;
 
 import co.sdj.sdjgym.entity.DomainEntity;
 
-public class subscription extends DomainEntity {
+public class SubscriptionEntity extends DomainEntity {
 
-	protected subscription(UUID id) {
+	protected SubscriptionEntity(UUID id) {
 		super(id);
 		// TODO Auto-generated constructor stub
 	}
