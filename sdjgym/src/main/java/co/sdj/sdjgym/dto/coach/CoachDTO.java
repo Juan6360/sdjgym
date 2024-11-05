@@ -1,6 +1,8 @@
 package co.sdj.sdjgym.dto.coach;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.dto.PersonDTO;
 import co.sdj.sdjgym.dto.basedata.CityDTO;
 import co.sdj.sdjgym.dto.basedata.EpsDTO;
@@ -12,14 +14,13 @@ public class CoachDTO extends PersonDTO {
 
 	private SpecialtyDTO specialty;
 	
-	protected CoachDTO(final String firstName, final String middleName, final String firstSurName, final String secondSurName,
-			final String phoneNumber, final String emergencyNumber, final String email, final String birthDate,
-			final IdentificationTypeDTO identificationType, final String identification, final EpsDTO eps, final String address, final StateDTO state,
-			final CityDTO city, final SpecialtyDTO specialty) {
+	protected CoachDTO() {
+		super(TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY,
+				TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY,
+				IdentificationTypeDTO.create(), TextHelper.EMPTY, EpsDTO.create(),
+				TextHelper.EMPTY, StateDTO.create(), CityDTO.create());
 		
-		super(firstName, middleName, firstSurName, secondSurName, phoneNumber, emergencyNumber, email, birthDate,
-				identificationType, identification, eps, address, state, city);
-		setSpecialty(SpecialtyDTO.create());
+		setSpecialty(specialty);
 	}
 	
 	public static final CoachDTO create() {

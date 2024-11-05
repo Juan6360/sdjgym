@@ -64,7 +64,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstName = TextHelper.applyTrim(firstName);
 	}
 
 	public String getMiddleName() {
