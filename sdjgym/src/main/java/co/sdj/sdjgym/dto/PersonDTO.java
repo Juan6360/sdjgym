@@ -25,7 +25,21 @@ public class PersonDTO extends DomainDTO{
 	private StateDTO state;
 	private CityDTO city;
 	
-	protected PersonDTO() {
+	protected PersonDTO(final String firstName,
+						final String middleName,
+						final String firstSurName,
+						final String secondSurName,
+						final String phoneNumber,
+						final String emergencyNumber,
+						final String email,
+						final String birthDate,
+						final IdentificationTypeDTO identificationType,
+						final String identification,
+						final EpsDTO eps,
+						final String address,
+						final StateDTO state,
+						final CityDTO city) {
+		
 		super(UUIDHelper.getDefaultAsString());
 		setFirstName(TextHelper.EMPTY);
 		setMiddleName(TextHelper.EMPTY);
@@ -50,7 +64,7 @@ public class PersonDTO extends DomainDTO{
 	}
 
 	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+		this.firstName = TextHelper.applyTrim(firstName);
 	}
 
 	public String getMiddleName() {
