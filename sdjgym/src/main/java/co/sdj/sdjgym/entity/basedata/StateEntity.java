@@ -14,6 +14,7 @@ public class StateEntity extends DomainEntity{
 	public StateEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
+		setCountry(new CountryEntity());
 	}
 
 	public String getName() {

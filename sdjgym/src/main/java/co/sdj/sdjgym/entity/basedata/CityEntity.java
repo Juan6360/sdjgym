@@ -14,6 +14,7 @@ public class CityEntity extends DomainEntity{
 	public CityEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
+		setState(new StateEntity());
 	}
 
 	public String getName() {
