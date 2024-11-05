@@ -4,6 +4,7 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.dto.DomainDTO;
+import co.sdj.sdjgym.dto.coach.CoachDTO;
 
 public class CityDTO extends DomainDTO{	
 	
