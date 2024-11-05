@@ -26,5 +26,6 @@ public class CoachDTO extends PersonDTO {
 		this.specialty = ObjectHelper.getDefault(specialty, SpecialtyDTO.create());
 		return this;
 	}
+
 	
 }

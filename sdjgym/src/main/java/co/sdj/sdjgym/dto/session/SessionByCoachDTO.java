@@ -1,12 +1,8 @@
 package co.sdj.sdjgym.dto.session;
 
-import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.domain.coach.CoachDomain;
-import co.sdj.sdjgym.domain.session.SessionByCoachDomain;
-import co.sdj.sdjgym.domain.session.SessionDomain;
 import co.sdj.sdjgym.dto.DomainDTO;
 import co.sdj.sdjgym.dto.coach.CoachDTO;
 
