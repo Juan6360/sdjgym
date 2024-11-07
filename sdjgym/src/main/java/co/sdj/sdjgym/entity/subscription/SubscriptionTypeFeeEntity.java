@@ -17,7 +17,7 @@ public class SubscriptionTypeFeeEntity extends DomainEntity {
 	private boolean subscriptionState;
 	private SubscriptionTypeEntity subscriptionType;
 
-	protected SubscriptionTypeFeeEntity(String activeSince) {
+	protected SubscriptionTypeFeeEntity() {
 		super(UUIDHelper.getDefault());
 		
 		setActiveSince(activeSince);
