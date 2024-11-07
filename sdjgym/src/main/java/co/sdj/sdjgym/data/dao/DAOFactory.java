@@ -39,4 +39,6 @@ public abstract class DAOFactory {
 	public abstract IdentificationTypeDAO getIdentificationTypeDAO();
 	
 	public abstract EpsDAO getEpsDAO();
+	
+	public abstract UserDAO getUserDAO();
 }
