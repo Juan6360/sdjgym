@@ -3,6 +3,8 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CountryDomain;
 import co.sdj.sdjgym.entity.basedata.CountryEntity;
@@ -28,7 +30,12 @@ private static final Adapter<CountryDomain,CountryEntity> instance = new Country
 
 	@Override
 	public CountryEntity adaptTarget(final CountryDomain data) {
-		// TODO Auto-generated method stub
+		var domainToAdapt = ObjectHelper.getDefault(data, CountryDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY));
+		
+		var entityAdapted = new CountryEntity();
+		entityAdapted.setId(domainToAdapt.getId());
+		entityAdapted.setName(domainToAdapt.getName());
+		
 		return null;
 	}
 

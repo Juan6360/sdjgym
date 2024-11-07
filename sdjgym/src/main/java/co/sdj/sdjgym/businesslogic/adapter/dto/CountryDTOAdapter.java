@@ -9,7 +9,7 @@ import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CountryDomain;
 import co.sdj.sdjgym.dto.basedata.CountryDTO;
 
-public class CountryDTOAdapter implements Adapter<CountryDomain,CountryDTO> {
+public final class CountryDTOAdapter implements Adapter<CountryDomain,CountryDTO> {
 
 	private static final Adapter<CountryDomain, CountryDTO> instance =  new CountryDTOAdapter();
 	
