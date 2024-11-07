@@ -36,4 +36,7 @@ public abstract class DAOFactory {
 
 	public abstract CountryDAO getCountryDAO();
 
+	public abstract IdentificationTypeDAO getIdentificationTypeDAO();
+	
+	public abstract EpsDAO getEpsDAO();
 }
