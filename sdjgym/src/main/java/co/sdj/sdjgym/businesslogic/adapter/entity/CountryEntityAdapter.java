@@ -36,11 +36,17 @@ private static final Adapter<CountryDomain,CountryEntity> instance = new Country
 		entityAdapted.setId(domainToAdapt.getId());
 		entityAdapted.setName(domainToAdapt.getName());
 		
-		return null;
+		return entityAdapted;
 	}
 
 	@Override
 	public List<CountryEntity> adaptTarget(List<CountryDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CountryDomain> adaptSource(List<CountryEntity> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}

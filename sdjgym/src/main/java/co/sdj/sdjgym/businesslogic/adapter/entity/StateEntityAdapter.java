@@ -22,9 +22,9 @@ private static final Adapter<StateDomain, StateEntity> instance = new StateEntit
 	}
 	
 	@Override
-	public StateDomain adaptSource(StateEntity data) {
-		var dtoToAdapt = ObjectHelper.getDefault(data, StateDTO.create());
-		return StateDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()), data.getName());
+	public StateDomain adaptSource(final StateEntity data) {
+		var entityToAdapt = ObjectHelper.getDefault(data, new StateEntity());
+		return StateDomain.create(entityToAdapt.getId(), entityToAdapt.getName(), CountryEntityAdapter.getCountryEntityAdapter().adaptSource(entityToAdapt.getCountry()) );
 	}
 
 	@Override
@@ -35,6 +35,12 @@ private static final Adapter<StateDomain, StateEntity> instance = new StateEntit
 
 	@Override
 	public List<StateEntity> adaptTarget(List<StateDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StateDomain> adaptSource(List<StateEntity> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}

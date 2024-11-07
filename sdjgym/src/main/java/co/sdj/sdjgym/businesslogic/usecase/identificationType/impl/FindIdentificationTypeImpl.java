@@ -5,6 +5,7 @@ import java.util.List;
 import co.sdj.crosscutting.exceptions.SdjApplicationException;
 import co.sdj.crosscutting.exceptions.enums.Layer;
 import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.sdjgym.businesslogic.adapter.entity.IdentificationTypeEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.identificationType.FindIdentificationType;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
@@ -22,7 +23,8 @@ public final class FindIdentificationTypeImpl implements FindIdentificationType 
 	
 	@Override
 	public List<IdentificationTypeDomain> execute(final IdentificationTypeDomain data) {
-		daoFactory.
+		var listIdentificationTypeEntity = IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(data);
+		return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findByFilter(listIdentificationTypeEntity)) ;
 	}
 
 
