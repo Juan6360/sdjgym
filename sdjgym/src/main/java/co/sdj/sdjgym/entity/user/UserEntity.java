@@ -9,6 +9,7 @@ import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.entity.DomainEntity;
 import co.sdj.sdjgym.entity.PersonEntity;
 import co.sdj.sdjgym.entity.basedata.CityEntity;
+import co.sdj.sdjgym.entity.basedata.CountryEntity;
 import co.sdj.sdjgym.entity.basedata.EpsEntity;
 import co.sdj.sdjgym.entity.basedata.IdentificationTypeEntity;
 import co.sdj.sdjgym.entity.basedata.StateEntity;
@@ -27,6 +28,7 @@ public class UserEntity extends DomainEntity {
 	private String identification;
 	private EpsEntity eps;
 	private String address;
+	private CountryEntity country;
 	private StateEntity state;
 	private CityEntity city;
 	
@@ -44,6 +46,7 @@ public class UserEntity extends DomainEntity {
 		setAddress(TextHelper.EMPTY);
 		setIdentificationType(new IdentificationTypeEntity());
 		setIdentification(TextHelper.EMPTY);
+		setCountry(new CountryEntity());
 		setState(new StateEntity());
 		setCity(new CityEntity());
 	}
@@ -56,6 +59,14 @@ public class UserEntity extends DomainEntity {
 	@Override
 	public void setId(UUID id) {
 		super.setId(id);
+	}
+
+	public CountryEntity getCountry() {
+		return country;
+	}
+
+	public void setCountry(CountryEntity country) {
+		this.country = ObjectHelper.getDefault(country, new CountryEntity());
 	}
 
 	public StateEntity getState() {
