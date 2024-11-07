@@ -1,7 +1,5 @@
 package co.sdj.sdjgym.dto;
 
-import java.util.UUID;
-
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 

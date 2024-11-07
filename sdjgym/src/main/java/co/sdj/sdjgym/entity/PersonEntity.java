@@ -28,7 +28,7 @@ public class PersonEntity extends DomainEntity{
 	private CityEntity city;
 	
 
-	protected PersonEntity() {
+	public PersonEntity() {
 		super(UUIDHelper.getDefault());
 		setFirstName(TextHelper.EMPTY);
 		setMiddleName(TextHelper.EMPTY);
