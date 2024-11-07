@@ -22,7 +22,7 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 		super(connection);
 	}
 
-	@Override
+	/*@Override
 	public void create(final CityEntity data) {
 		 
 		final StringBuilder statement = new StringBuilder();
@@ -43,7 +43,7 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 			throw DataSdjException.crear(userMessage, technicalMessage, exception);
 		}
  
-	}
+	}*/
 
 	@Override
 	public CityEntity findByID(UUID id) {
@@ -63,7 +63,7 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 		return null;
 	}
 
-	@Override
+	/*@Override
 	public void update(final CityEntity data) {
 		
 		final StringBuilder statement = new StringBuilder();
@@ -84,11 +84,11 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 			throw DataSdjException.crear(userMessage, technicalMessage, exception);
 		}
  
-	}
+	}*/
 		
 
 
-	@Override
+	/*@Override
 	public void delete(UUID data) {
 		
 		final StringBuilder statement = new StringBuilder();
@@ -107,6 +107,6 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
  
 			throw DataSdjException.crear(userMessage, technicalMessage, exception);
 		}
-	}
+	}*/
 }
 
