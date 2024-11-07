@@ -85,14 +85,18 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 	
 	@Override
 	public IdentificationTypeEntity findByID(UUID id) {
-		// TODO Auto-generated method stub
-		return null;
+		var IdentificationTypeEntityFilter = new IdentificationTypeEntity();
+		IdentificationTypeEntityFilter.setId(id);
+		
+		var result = findByFilter(IdentificationTypeEntityFilter);
+		
+		return (result.isEmpty())? new IdentificationTypeEntity(): result.get(0);
 	}
 	
 	@Override
 	public List<IdentificationTypeEntity> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return findByFilter(new IdentificationTypeEntity());
 	}
 	
 	@Override
