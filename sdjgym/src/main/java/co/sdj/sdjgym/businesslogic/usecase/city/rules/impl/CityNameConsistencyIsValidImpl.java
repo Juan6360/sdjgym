@@ -9,7 +9,7 @@ import co.sdj.sdjgym.domain.basedata.CityDomain;
 public class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomain>{
 
 	@Override
-	public void execute(String data) {
+	public void execute(String data, DAOFactory factory) {
 		validateNotNull(data);
 		validateLen(data);
 		validateFormat(data);
@@ -41,6 +41,12 @@ public class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomai
 		 }
 			
     }
+
+	@Override
+	public void execute(CityDomain data, DAOFactory factory) {
+		// TODO Auto-generated method stub
+		
+	}
 
 
 
