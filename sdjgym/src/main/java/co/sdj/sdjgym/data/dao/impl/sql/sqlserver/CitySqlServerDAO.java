@@ -1,13 +1,13 @@
 package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
 import java.sql.Connection;
-import java.sql.SQLException;
+
 
 import java.util.List;
 import java.util.UUID;
 
 
-import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
+
 import co.sdj.sdjgym.data.dao.CityDAO;
 
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
