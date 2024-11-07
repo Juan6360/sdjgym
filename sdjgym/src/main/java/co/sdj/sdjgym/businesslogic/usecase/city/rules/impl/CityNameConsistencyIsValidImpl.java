@@ -1,15 +1,14 @@
 package co.sdj.sdjgym.businesslogic.usecase.city.rules.impl;
 
-import co.sdj.crosscutting.helpers.TextHelper;
-import co.sdj.sdjgym.businesslogic.usecase.RuleWithFactory;
-import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
-import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.basedata.CityDomain;
 
-public class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomain>{
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.sdjgym.businesslogic.usecase.city.rules.CityNameConsistencyIsValid;
+import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
+
+public class CityNameConsistencyIsValidImpl implements CityNameConsistencyIsValid{
 
 	@Override
-	public void execute(String data, DAOFactory factory) {
+	public void execute(final String data) {
 		validateNotNull(data);
 		validateLen(data);
 		validateFormat(data);
@@ -40,14 +39,5 @@ public class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomai
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 			
-    }
-
-	@Override
-	public void execute(CityDomain data, DAOFactory factory) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
+  }
 }

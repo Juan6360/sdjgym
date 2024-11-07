@@ -7,4 +7,5 @@ import co.sdj.sdjgym.entity.basedata.CityEntity;
 
 public interface CityDAO  extends RetrieveDAO<CityEntity, UUID>{
 
+
 }

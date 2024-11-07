@@ -21,7 +21,7 @@ public class RegisterNewCityFacadeImpl implements RegisterNewCityFacade {
 			var registerNewCityUseCase = new RegisterNewCityImpl(factory);
 			var cityDomain = CityDTOAdapter.getCityDTOAdapter().adaptSource(data);
 			
-			registerNewCityUseCase.execute(factory);
+			registerNewCityUseCase.execute(cityDomain);
 			
 			factory.commitTransaction();
 		} catch(final SdjException exception) {
