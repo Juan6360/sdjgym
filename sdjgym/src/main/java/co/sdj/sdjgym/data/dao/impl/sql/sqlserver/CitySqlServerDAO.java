@@ -1,20 +1,17 @@
 package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
 import java.sql.Connection;
-
-
+import java.sql.SQLException;
 import java.util.List;
 import java.util.UUID;
 
-
-
+import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.CityDAO;
-
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
 import co.sdj.sdjgym.entity.basedata.CityEntity;
 
 
-public class CitySqlServerDAO extends SqlDAO implements CityDAO {
+final class CitySqlServerDAO extends SqlDAO implements CityDAO {
 
 
 
@@ -22,7 +19,7 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 		super(connection);
 	}
 
-	/*@Override
+	@Override
 	public void create(final CityEntity data) {
 		 
 		final StringBuilder statement = new StringBuilder();
@@ -43,7 +40,7 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 			throw DataSdjException.crear(userMessage, technicalMessage, exception);
 		}
  
-	}*/
+	}
 
 	@Override
 	public CityEntity findByID(UUID id) {
@@ -63,7 +60,7 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 		return null;
 	}
 
-	/*@Override
+	@Override
 	public void update(final CityEntity data) {
 		
 		final StringBuilder statement = new StringBuilder();
@@ -84,11 +81,11 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
 			throw DataSdjException.crear(userMessage, technicalMessage, exception);
 		}
  
-	}*/
+	}
 		
 
 
-	/*@Override
+	@Override
 	public void delete(UUID data) {
 		
 		final StringBuilder statement = new StringBuilder();
@@ -107,6 +104,6 @@ public class CitySqlServerDAO extends SqlDAO implements CityDAO {
  
 			throw DataSdjException.crear(userMessage, technicalMessage, exception);
 		}
-	}*/
+	}
 }
 
