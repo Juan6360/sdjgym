@@ -25,5 +25,15 @@ public class EpsDTO extends DomainDTO {
 			this.name = TextHelper.applyTrim(name);
 			return this;
 		}
+
+		public EpsDTO setId(final String id) {
+			super.setIdentifier(id);
+			return this;
+		}
+		
+		@Override
+		public String getId() {
+			return super.getId();
+		}
 		
 }

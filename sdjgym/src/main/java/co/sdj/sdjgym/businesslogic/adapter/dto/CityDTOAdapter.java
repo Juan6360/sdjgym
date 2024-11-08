@@ -1,11 +1,14 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
-import java.util.ArrayList;
-import java.util.List;
 
 
+
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CityDomain;
+import co.sdj.sdjgym.domain.basedata.StateDomain;
 import co.sdj.sdjgym.dto.basedata.CityDTO;
 
 
@@ -22,30 +25,19 @@ public final class CityDTOAdapter implements Adapter<CityDomain, CityDTO> {
 		return instance;
 	}
 
+	@Override
+	public CityDomain adaptSource(final CityDTO data) {
+		var dtoToAdapt = ObjectHelper.getDefault(data, CityDTO.create());
+		return CityDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()), data.getName(),StateDomain.create());
+	}
 
 	@Override
 	public CityDTO adaptTarget(final CityDomain data) {
-		// TODO Auto-generated method stub
-		return null;
+		var domainToAdapt = ObjectHelper.getDefault(data, CityDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, StateDomain.create()));
+		return CityDTO.create().setId("").setName(domainToAdapt.getName());
 	}
 
-	@Override
-	public List<CityDTO> adaptTarget(final List<CityDomain> data) {
-		
-		var results = new ArrayList<CityDTO>();
-		
-		for (CityDomain domain : data) {
-			results.add(adaptTarget(domain));
-		}
-		
-		return results ;
-	}
 
-	@Override
-	public CityDomain adaptSource(CityDTO data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 
 }

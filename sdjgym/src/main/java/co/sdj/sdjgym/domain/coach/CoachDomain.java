@@ -27,7 +27,7 @@ public class CoachDomain extends PersonDomain {
 		setSpecialty(specialty);
 	}
 	
-	public static final CoachDomain create(final UUID id, final String firstName, final String middleName, final String firstSurName, final String secondSurName,
+	static final CoachDomain create(final UUID id, final String firstName, final String middleName, final String firstSurName, final String secondSurName,
 											final String phoneNumber2, final String emergencyNumber2, final String email, final Date birthDate,
 											final IdentificationTypeDomain tipoIdentificacion, final String identificacion, final EpsDomain eps, final String address,
 											final StateDomain state, final CityDomain city, final SpecialtyDomain specialty) {

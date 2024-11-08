@@ -14,7 +14,7 @@ public class DomainDTO {
 	protected String getId() {
 		return id;
 	}
-
+	
 	protected void setIdentifier(final String id) {
 		this.id = TextHelper.getDefault(id, UUIDHelper.getDefaultAsString());
 	}

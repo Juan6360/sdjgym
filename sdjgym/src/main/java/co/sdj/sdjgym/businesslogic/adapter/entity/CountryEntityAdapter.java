@@ -23,28 +23,22 @@ public final class CountryEntityAdapter implements Adapter<CountryDomain,Country
 	}
 
 	@Override
-	public CountryDomain adaptSource(CountryEntity data) {
-		// TODO Auto-generated method stub
-		return null;
+	public CountryDomain adaptSource(final CountryEntity data) {
+		var entityToAdapt = ObjectHelper.getDefault(data, new CountryEntity());
+		return CountryDomain.create(entityToAdapt.getId(),entityToAdapt.getName()) ;
 	}
 
 	@Override
-	public CountryEntity adaptTarget(CountryDomain data) {
-		// TODO Auto-generated method stub
-		return null;
+	public CountryEntity adaptTarget(final CountryDomain data) {
+		var domainToAdapt = ObjectHelper.getDefault(data, CountryDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY));
+		var entityAdapted = new CountryEntity(); entityAdapted.setId(domainToAdapt.getId()); entityAdapted.setName(domainToAdapt.getName());
+		
+		return entityAdapted;
 	}
 
-	@Override
-	public List<CountryEntity> adaptTarget(List<CountryDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public List<CountryDomain> adaptSource(List<CountryEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+
 
 	
 }

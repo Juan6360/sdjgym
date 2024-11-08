@@ -25,7 +25,7 @@ public class BranchDomain extends Domain {
 		return address;
 	}
 	
-	public static final BranchDomain create(final UUID id, final String address, final CityDomain city) {
+	static final BranchDomain create(final UUID id, final String address, final CityDomain city) {
 		return new BranchDomain(id, address, city);
 	}
 	

@@ -29,6 +29,7 @@ public class EpsDomain extends Domain {
 
 	private void setName(final String name) {
 		this.name = TextHelper.applyTrim(name);
+
 	}
 	
 	@Override

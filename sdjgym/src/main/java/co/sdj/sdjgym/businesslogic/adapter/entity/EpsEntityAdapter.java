@@ -23,17 +23,6 @@ public class EpsEntityAdapter implements Adapter<EpsDomain,EpsEntity> {
 		return null;
 	}
 
-	@Override
-	public List<EpsEntity> adaptTarget(List<EpsDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<EpsDomain> adaptSource(List<EpsEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	
 
