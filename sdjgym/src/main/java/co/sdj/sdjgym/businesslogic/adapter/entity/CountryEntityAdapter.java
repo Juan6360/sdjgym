@@ -12,7 +12,7 @@ import co.sdj.sdjgym.entity.basedata.CountryEntity;
 
 public final class CountryEntityAdapter implements Adapter<CountryDomain,CountryEntity> {
 	
-private static final Adapter<CountryDomain,CountryEntity> instance = new CountryEntityAdapter();
+    private static final Adapter<CountryDomain,CountryEntity> instance = new CountryEntityAdapter();
 	
 	private CountryEntityAdapter() {
 		
@@ -21,22 +21,17 @@ private static final Adapter<CountryDomain,CountryEntity> instance = new Country
 	public static Adapter<CountryDomain,CountryEntity> getCountryEntityAdapter(){
 		return instance;
 	}
-	
+
 	@Override
-	public CountryDomain adaptSource(final CountryEntity data) {
-		var entityToAdapt = ObjectHelper.getDefault(data,new CountryEntity());
-		return CountryDomain.create(entityToAdapt.getId(), entityToAdapt.getName());
+	public CountryDomain adaptSource(CountryEntity data) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public CountryEntity adaptTarget(final CountryDomain data) {
-		var domainToAdapt = ObjectHelper.getDefault(data, CountryDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY));
-		
-		var entityAdapted = new CountryEntity();
-		entityAdapted.setId(domainToAdapt.getId());
-		entityAdapted.setName(domainToAdapt.getName());
-		
-		return entityAdapted;
+	public CountryEntity adaptTarget(CountryDomain data) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -45,10 +40,5 @@ private static final Adapter<CountryDomain,CountryEntity> instance = new Country
 		return null;
 	}
 
-	@Override
-	public List<CountryDomain> adaptSource(List<CountryEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }

@@ -14,7 +14,7 @@ import co.sdj.sdjgym.data.dao.CountryDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
 import co.sdj.sdjgym.entity.basedata.CountryEntity;
 
-public final class CountrySqlServerDAO<preparedStatement> extends SqlDAO implements CountryDAO {
+public final class CountrySqlServerDAO extends SqlDAO implements CountryDAO {
 
 	public CountrySqlServerDAO(final Connection connection) {
 		super(connection);
@@ -77,10 +77,10 @@ public final class CountrySqlServerDAO<preparedStatement> extends SqlDAO impleme
 		{
 		
 			var userMessage = "se ha presentado un problema tratando de llevar a cabo la consulta de los paises en el filtro deseado. por favor intente de nuevo y si el problema persiste reporte la novedad....";
-			var technicalMessage = "se ha presentado un problema a tratar de consultar la informacion de los paises del filtro deseado en la base de datos de SQL tratando de ejecutar la setencia SQL que se iba a ejectar .por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
+			var technicalMessage = "se ha presentado un problema a tratar de consultar la informacion de los paises del filtro deseado en la base de datos de SQL tratando de ejecutar la setencia SQL definida .por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
 			
 			if(statementWasPrepared) {
-				technicalMessage = "se ha presentado un problema a tratar de consultar la informacion de los paises del filtro deseado en la base de datos de SQL tratando de ejecutar la setencia SQL Definida.por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
+				technicalMessage = "se ha presentado un problema a tratar de consultar la informacion de los paises del filtro deseado en la base de datos de SQL server tratando de ejecutar la setencia SQL Definida.por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
 			}
 			
 		

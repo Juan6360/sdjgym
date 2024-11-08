@@ -6,7 +6,10 @@ import co.sdj.crosscutting.helpers.SqlConnectionHelper;
 import co.sdj.sdjgym.data.dao.CityDAO;
 import co.sdj.sdjgym.data.dao.CountryDAO;
 import co.sdj.sdjgym.data.dao.DAOFactory;
+import co.sdj.sdjgym.data.dao.EpsDAO;
+import co.sdj.sdjgym.data.dao.IdentificationTypeDAO;
 import co.sdj.sdjgym.data.dao.StateDAO;
+import co.sdj.sdjgym.data.dao.UserDAO;
 
 public final class SqlServerDAOFactory extends DAOFactory {
 
@@ -56,6 +59,24 @@ public final class SqlServerDAOFactory extends DAOFactory {
 	@Override
 	public CountryDAO getCountryDAO() {
 		return new CountrySqlServerDAO(connection);
+	}
+
+	@Override
+	public IdentificationTypeDAO getIdentificationTypeDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public EpsDAO getEpsDAO() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public UserDAO getUserDAO() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

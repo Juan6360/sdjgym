@@ -37,14 +37,6 @@ public final class CountryDTOAdapter implements Adapter<CountryDomain,CountryDTO
 	public List<CountryDTO> adaptTarget(List<CountryDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public List<CountryDomain> adaptSource(List<CountryDTO> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
+	}	
 
 }

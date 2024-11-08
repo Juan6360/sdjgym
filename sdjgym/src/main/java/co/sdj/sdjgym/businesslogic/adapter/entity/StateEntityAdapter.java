@@ -2,11 +2,8 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 import java.util.List;
 
-import co.sdj.crosscutting.helpers.ObjectHelper;
-import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.StateDomain;
-import co.sdj.sdjgym.dto.basedata.StateDTO;
 import co.sdj.sdjgym.entity.basedata.StateEntity;
 
 public final class StateEntityAdapter implements Adapter<StateDomain, StateEntity> {
@@ -20,11 +17,11 @@ private static final Adapter<StateDomain, StateEntity> instance = new StateEntit
 	public static Adapter<StateDomain, StateEntity> getStateEntityAdapter(){
 		return instance;
 	}
-	
+
 	@Override
-	public StateDomain adaptSource(final StateEntity data) {
-		var entityToAdapt = ObjectHelper.getDefault(data, new StateEntity());
-		return StateDomain.create(entityToAdapt.getId(), entityToAdapt.getName(), CountryEntityAdapter.getCountryEntityAdapter().adaptSource(entityToAdapt.getCountry()) );
+	public StateDomain adaptSource(StateEntity data) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
@@ -39,11 +36,6 @@ private static final Adapter<StateDomain, StateEntity> instance = new StateEntit
 		return null;
 	}
 
-	@Override
-	public List<StateDomain> adaptSource(List<StateEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 
 }

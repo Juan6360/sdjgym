@@ -6,38 +6,32 @@ import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CityDomain;
 import co.sdj.sdjgym.entity.basedata.CityEntity;
 
-public final class CityEntityAdapter implements Adapter<CityDomain,CityEntity> {
+public final class CityEntityAdapter implements Adapter<CityEntity,CityDomain> {
 
-	private static final Adapter<CityDomain,CityEntity> instance = new CityEntityAdapter();
+	private static final Adapter<CityEntity, CityDomain> instance = new CityEntityAdapter();
 	
 	private CityEntityAdapter() {
 		
 	}
 	
-	public static Adapter<CityDomain,CityEntity> getCityEntityAdapter(){
+	public static Adapter<CityEntity, CityDomain> getCityEntityAdapter(){
 		return instance;
 	}
 
 	@Override
-	public CityDomain adaptSource(CityEntity data) {
+	public CityEntity adaptSource(CityDomain data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public CityEntity adaptTarget(CityDomain data) {
+	public CityDomain adaptTarget(CityEntity data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<CityEntity> adaptTarget(List<CityDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<CityDomain> adaptSource(List<CityEntity> data) {
+	public List<CityDomain> adaptTarget(List<CityEntity> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
