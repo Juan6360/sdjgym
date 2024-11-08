@@ -52,4 +52,13 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 
 
+
+	@Override
+	public List<IdentificationTypeDomain> adaptSource(List<IdentificationTypeEntity> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
 }

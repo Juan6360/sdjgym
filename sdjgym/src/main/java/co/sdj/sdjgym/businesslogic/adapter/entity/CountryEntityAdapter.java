@@ -40,5 +40,11 @@ public final class CountryEntityAdapter implements Adapter<CountryDomain,Country
 		return null;
 	}
 
+	@Override
+	public List<CountryDomain> adaptSource(List<CountryEntity> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 }
