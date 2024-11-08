@@ -14,7 +14,7 @@ import co.sdj.sdjgym.data.dao.CountryDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
 import co.sdj.sdjgym.entity.basedata.CountryEntity;
 
-public final class CountrySqlServerDAO extends SqlDAO implements CountryDAO {
+final class CountrySqlServerDAO extends SqlDAO implements CountryDAO {
 
 	public CountrySqlServerDAO(final Connection connection) {
 		super(connection);

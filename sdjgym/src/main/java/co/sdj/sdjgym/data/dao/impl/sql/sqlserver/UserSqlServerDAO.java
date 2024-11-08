@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.data.dao.impl.sql.sqlserver.user;
+package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
 import java.sql.Connection;
 import java.sql.SQLException;

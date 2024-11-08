@@ -63,20 +63,17 @@ public final class SqlServerDAOFactory extends DAOFactory {
 
 	@Override
 	public IdentificationTypeDAO getIdentificationTypeDAO() {
-		// TODO Auto-generated method stub
-		return null;
+		return new IdentificationTypeSqlServerDAO(connection) ;
 	}
 
 	@Override
 	public EpsDAO getEpsDAO() {
-		// TODO Auto-generated method stub
-		return null;
+		return new EpsSqlServerDAO(connection);
 	}
 
 	@Override
 	public UserDAO getUserDAO() {
-		// TODO Auto-generated method stub
-		return null;
+		return new UserSqlServerDAO(connection);
 	}
 
 }
