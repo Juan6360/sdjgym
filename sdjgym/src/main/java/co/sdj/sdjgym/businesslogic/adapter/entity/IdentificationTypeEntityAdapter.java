@@ -3,6 +3,9 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 
 
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
 import co.sdj.sdjgym.entity.basedata.IdentificationTypeEntity;
@@ -26,22 +29,19 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 	@Override
 	public IdentificationTypeDomain adaptSource(IdentificationTypeEntity data) {
-		// TODO Auto-generated method stub
-		return null;
+		var entityToAdapt = ObjectHelper.getDefault(data, new IdentificationTypeEntity());
+		return IdentificationTypeDomain.create(entityToAdapt.getId(),entityToAdapt.getName());
 	}
-
-
 
 
 	@Override
 	public IdentificationTypeEntity adaptTarget(IdentificationTypeDomain data) {
-		// TODO Auto-generated method stub
-		return null;
+		var domainToAdapt = ObjectHelper.getDefault(data, IdentificationTypeDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY));
+		
+		var entityAdapted = new IdentificationTypeEntity();entityAdapted.setId(domainToAdapt.getId());entityAdapted.setName(domainToAdapt.getName());
+		
+		return entityAdapted;
 	}
-
-
-
-
 
 
 }

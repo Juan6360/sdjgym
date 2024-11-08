@@ -1,8 +1,5 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
-
-
-
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;

@@ -1,6 +1,6 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
-import java.util.List;
+
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
