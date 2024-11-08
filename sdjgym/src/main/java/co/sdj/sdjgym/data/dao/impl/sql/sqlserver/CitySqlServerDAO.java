@@ -8,7 +8,7 @@ import java.util.UUID;
 import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.CityDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
-import co.sdj.sdjgym.entity.basedata.CityEntity;
+import co.sdj.sdjgym.entity.CityEntity;
 
 
 final class CitySqlServerDAO extends SqlDAO implements CityDAO {

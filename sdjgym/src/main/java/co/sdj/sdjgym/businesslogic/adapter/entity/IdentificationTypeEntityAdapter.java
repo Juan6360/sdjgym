@@ -5,7 +5,7 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
-import co.sdj.sdjgym.entity.basedata.IdentificationTypeEntity;
+import co.sdj.sdjgym.entity.IdentificationTypeEntity;
 
 public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTypeDomain,IdentificationTypeEntity> {
 	

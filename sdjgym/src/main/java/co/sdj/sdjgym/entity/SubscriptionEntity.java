@@ -1,8 +1,6 @@
-package co.sdj.sdjgym.entity.subscription;
+package co.sdj.sdjgym.entity;
 
 import java.util.UUID;
-
-import co.sdj.sdjgym.entity.DomainEntity;
 
 public class SubscriptionEntity extends DomainEntity {
 

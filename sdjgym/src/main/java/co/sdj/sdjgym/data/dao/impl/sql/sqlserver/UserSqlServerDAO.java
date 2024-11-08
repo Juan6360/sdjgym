@@ -14,7 +14,7 @@ import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.UserDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
-import co.sdj.sdjgym.entity.user.UserEntity;
+import co.sdj.sdjgym.entity.UserEntity;
 
 public final class UserSqlServerDAO extends SqlDAO implements UserDAO{
 

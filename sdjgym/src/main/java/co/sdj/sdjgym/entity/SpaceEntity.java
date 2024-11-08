@@ -1,21 +1,17 @@
-package co.sdj.sdjgym.entity.basedata;
+package co.sdj.sdjgym.entity;
 
 import java.util.UUID;
 
+import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.entity.DomainEntity;
 
-public class SpecialtyEntity extends DomainEntity{	
+public class SpaceEntity extends DomainEntity{	
 	
-	protected SpecialtyEntity(UUID id) {
-		super(id);
-		// TODO Auto-generated constructor stub
-	}
-
 	private String name;
+	private BranchEntity branch;
 	
-	public SpecialtyEntity() {
+	public SpaceEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 	}
@@ -37,6 +33,13 @@ public class SpecialtyEntity extends DomainEntity{
 	public UUID getId() {
 		return super.getId();
 	}
+
+	public BranchEntity getBranch() {
+		return branch;
+	}
+
+	public void setBranch(BranchEntity branch) {
+		this.branch = ObjectHelper.getDefault(branch, new BranchEntity());
+	}
 	
 }
-

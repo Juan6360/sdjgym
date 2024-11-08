@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.entity.session;
+package co.sdj.sdjgym.entity;
 
 import java.util.Date;
 import java.util.UUID;
@@ -7,10 +7,6 @@ import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.NumericHelper;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-
-import co.sdj.sdjgym.entity.DomainEntity;
-import co.sdj.sdjgym.entity.basedata.SpecialtyEntity;
-import co.sdj.sdjgym.entity.space.SpaceEntity;
 
 
 

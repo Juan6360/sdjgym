@@ -1,17 +1,20 @@
-package co.sdj.sdjgym.entity.basedata;
+package co.sdj.sdjgym.entity;
 
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.entity.DomainEntity;
 
-
-public class CountryEntity extends DomainEntity{	
+public class SpecialtyEntity extends DomainEntity{	
 	
+	protected SpecialtyEntity(UUID id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
 	private String name;
 	
-	public CountryEntity() {
+	public SpecialtyEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 	}
@@ -35,3 +38,4 @@ public class CountryEntity extends DomainEntity{
 	}
 	
 }
+

@@ -1,10 +1,9 @@
-package co.sdj.sdjgym.entity.subscription;
+package co.sdj.sdjgym.entity;
 
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.entity.DomainEntity;
 
 public class SubscriptionTypeEntity extends DomainEntity{
 	

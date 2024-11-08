@@ -1,7 +1,6 @@
-package co.sdj.sdjgym.entity.coach;
+package co.sdj.sdjgym.entity;
 
 import co.sdj.sdjgym.entity.PersonEntity;
-import co.sdj.sdjgym.entity.basedata.SpecialtyEntity;
 
 public class CoachEntity extends PersonEntity {
 	

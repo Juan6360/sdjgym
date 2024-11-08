@@ -12,7 +12,7 @@ import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.CountryDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
-import co.sdj.sdjgym.entity.basedata.CountryEntity;
+import co.sdj.sdjgym.entity.CountryEntity;
 
 final class CountrySqlServerDAO extends SqlDAO implements CountryDAO {
 

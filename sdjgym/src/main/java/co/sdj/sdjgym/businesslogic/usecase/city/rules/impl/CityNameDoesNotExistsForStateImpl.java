@@ -4,8 +4,8 @@ import co.sdj.sdjgym.businesslogic.usecase.city.rules.CityNameDoesNotExistsForSt
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.domain.basedata.CityDomain;
-import co.sdj.sdjgym.entity.basedata.CityEntity;
-import co.sdj.sdjgym.entity.basedata.StateEntity;
+import co.sdj.sdjgym.entity.CityEntity;
+import co.sdj.sdjgym.entity.StateEntity;
 
 
 public final class CityNameDoesNotExistsForStateImpl implements CityNameDoesNotExistsForState {

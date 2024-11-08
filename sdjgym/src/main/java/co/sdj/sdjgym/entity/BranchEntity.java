@@ -1,12 +1,10 @@
-package co.sdj.sdjgym.entity.branch;
+package co.sdj.sdjgym.entity;
 
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.entity.DomainEntity;
-import co.sdj.sdjgym.entity.basedata.CityEntity;
 
 public class BranchEntity extends DomainEntity {
 

@@ -7,7 +7,7 @@ import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CountryDomain;
-import co.sdj.sdjgym.entity.basedata.CountryEntity;
+import co.sdj.sdjgym.entity.CountryEntity;
 
 
 public final class CountryEntityAdapter implements Adapter<CountryDomain,CountryEntity> {

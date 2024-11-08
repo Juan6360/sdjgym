@@ -5,7 +5,7 @@ import java.util.List;
 
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.EpsDomain;
-import co.sdj.sdjgym.entity.basedata.EpsEntity;
+import co.sdj.sdjgym.entity.EpsEntity;
 
 
 

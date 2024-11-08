@@ -12,7 +12,7 @@ import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.EpsDAO;
 import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
-import co.sdj.sdjgym.entity.basedata.EpsEntity;
+import co.sdj.sdjgym.entity.EpsEntity;
 
 public class EpsSqlServerDAO extends SqlDAO implements EpsDAO{
 

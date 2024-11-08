@@ -1,27 +1,24 @@
-package co.sdj.sdjgym.entity.basedata;
+package co.sdj.sdjgym.entity;
 
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.entity.DomainEntity;
 
-public class StateEntity extends DomainEntity{	
-	
+public class IdentificationTypeEntity extends DomainEntity {
+
 	private String name;
-	private CountryEntity country;
 	
-	public StateEntity() {
+	public IdentificationTypeEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
-		setCountry(new CountryEntity());
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(final String name) {
+	public void setName(String name) {
 		this.name = TextHelper.applyTrim(name);
 	}
 	
@@ -35,12 +32,4 @@ public class StateEntity extends DomainEntity{
 		return super.getId();
 	}
 
-	public CountryEntity getCountry() {
-		return country;
-	}
-
-	public void setCountry(CountryEntity country) {
-		this.country = country;
-	}
-	
 }

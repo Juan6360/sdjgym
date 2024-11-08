@@ -5,7 +5,7 @@ import java.util.UUID;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 
-public class DomainEntity {
+class DomainEntity {
 	
 	private UUID id;
 	

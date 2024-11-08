@@ -4,7 +4,7 @@ import java.util.List;
 
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.CityDomain;
-import co.sdj.sdjgym.entity.basedata.CityEntity;
+import co.sdj.sdjgym.entity.CityEntity;
 
 public final class CityEntityAdapter implements Adapter<CityEntity,CityDomain> {
 

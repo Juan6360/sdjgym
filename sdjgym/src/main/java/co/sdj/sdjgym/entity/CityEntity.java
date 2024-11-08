@@ -1,21 +1,19 @@
-package co.sdj.sdjgym.entity.space;
+package co.sdj.sdjgym.entity;
 
 import java.util.UUID;
 
-import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.entity.DomainEntity;
-import co.sdj.sdjgym.entity.branch.BranchEntity;
 
-public class SpaceEntity extends DomainEntity{	
+public class CityEntity extends DomainEntity{	
 	
 	private String name;
-	private BranchEntity branch;
+	private StateEntity state;
 	
-	public SpaceEntity() {
+	public CityEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
+		setState(new StateEntity());
 	}
 
 	public String getName() {
@@ -36,12 +34,12 @@ public class SpaceEntity extends DomainEntity{
 		return super.getId();
 	}
 
-	public BranchEntity getBranch() {
-		return branch;
+	public StateEntity getState() {
+		return state;
 	}
 
-	public void setBranch(BranchEntity branch) {
-		this.branch = ObjectHelper.getDefault(branch, new BranchEntity());
+	public void setState(StateEntity state) {
+		this.state = state;
 	}
 	
 }
