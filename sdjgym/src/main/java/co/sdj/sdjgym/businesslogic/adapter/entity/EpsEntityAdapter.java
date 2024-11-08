@@ -1,8 +1,9 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
-import java.util.List;
 
-
+import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.basedata.EpsDomain;
 import co.sdj.sdjgym.entity.EpsEntity;
@@ -11,18 +12,32 @@ import co.sdj.sdjgym.entity.EpsEntity;
 
 public class EpsEntityAdapter implements Adapter<EpsDomain,EpsEntity> {
 
-	@Override
-	public EpsDomain adaptSource(EpsEntity data) {
-		// TODO Auto-generated method stub
-		return null;
+	private static final Adapter<EpsDomain, EpsEntity> instance = new EpsEntityAdapter();
+		
+	private EpsEntityAdapter() {
+		
+	}
+	
+	public static Adapter<EpsDomain, EpsEntity> getInstance() {
+		return instance;
 	}
 
 	@Override
-	public EpsEntity adaptTarget(EpsDomain data) {
-		// TODO Auto-generated method stub
-		return null;
+	public EpsDomain adaptSource(final EpsEntity data) {
+		var entityToAdapt = ObjectHelper.getDefault(data, new EpsEntity());
+		return EpsDomain.create(entityToAdapt.getId(),entityToAdapt.getName());
 	}
 
+	@Override
+	public EpsEntity adaptTarget(final EpsDomain data) {
+		var domainToAdapt = ObjectHelper.getDefault(data, EpsDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY));
+		
+		var entityAdapted = new EpsEntity();
+		entityAdapted.setId(domainToAdapt.getId());
+		entityAdapted.setName(domainToAdapt.getName());
+		
+		return entityAdapted;
+	}
 
 	
 
