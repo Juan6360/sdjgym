@@ -6,9 +6,7 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-import co.sdj.sdjgym.domain.basedata.CountryDomain;
 import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
-import co.sdj.sdjgym.entity.basedata.CountryEntity;
 import co.sdj.sdjgym.entity.basedata.IdentificationTypeEntity;
 
 public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTypeDomain,IdentificationTypeEntity> {
@@ -47,13 +45,10 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 
 	@Override
-	public List<IdentificationTypeEntity> adaptTarget(List<IdentificationTypeDomain> data) {
+	public List<IdentificationTypeEntity> adaptTarget(final List<IdentificationTypeDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-
 
 
 
