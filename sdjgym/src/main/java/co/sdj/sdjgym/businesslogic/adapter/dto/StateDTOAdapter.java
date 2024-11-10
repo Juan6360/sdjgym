@@ -2,6 +2,8 @@ package co.sdj.sdjgym.businesslogic.adapter.dto;
 
 
 
+import java.util.List;
+
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
@@ -33,6 +35,18 @@ public final class StateDTOAdapter implements Adapter<StateDomain, StateDTO>{
 	public StateDTO adaptTarget(final StateDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, StateDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, CountryDomain.create()));
 		return StateDTO.create().setId("").setName(domainToAdapt.getName());
+	}
+
+	@Override
+	public List<StateDTO> adaptTarget(List<StateDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StateDomain> adaptSource(List<StateDTO> data) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,0 +1,15 @@
+package co.sdj.sdjgym.businesslogic.usecase.city.impl.copy;
+
+import java.util.UUID;
+
+import co.sdj.sdjgym.businesslogic.usecase.city.DeleteCity;
+
+public final class DeleteCityImpl implements DeleteCity {
+
+	@Override
+	public void execute(final UUID data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

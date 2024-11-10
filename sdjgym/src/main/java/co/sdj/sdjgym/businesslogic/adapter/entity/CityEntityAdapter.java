@@ -2,6 +2,8 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 
 
+import java.util.List;
+
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
@@ -37,6 +39,18 @@ public final class CityEntityAdapter implements Adapter<CityDomain,CityEntity> {
 		entityAdapted.setState(StateEntityAdapter.getStateEntityAdapter().adaptTarget(domainToAdapt.getState()));
 		
 		return entityAdapted;
+	}
+
+	@Override
+	public List<CityEntity> adaptTarget(List<CityDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CityDomain> adaptSource(List<CityEntity> data) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

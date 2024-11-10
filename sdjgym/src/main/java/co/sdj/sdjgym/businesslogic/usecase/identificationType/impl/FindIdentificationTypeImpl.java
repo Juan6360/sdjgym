@@ -2,15 +2,14 @@ package co.sdj.sdjgym.businesslogic.usecase.identificationType.impl;
 
 import java.util.List;
 
-import co.sdj.crosscutting.exceptions.SdjApplicationException;
-import co.sdj.crosscutting.exceptions.enums.Layer;
+
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.sdjgym.businesslogic.adapter.entity.IdentificationTypeEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.identificationType.FindIdentificationType;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
-import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
+
 import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
+import co.sdj.sdjgym.domain.IdentificationTypeDomain;
 
 public final class FindIdentificationTypeImpl implements FindIdentificationType {
 	
@@ -38,6 +37,8 @@ public final class FindIdentificationTypeImpl implements FindIdentificationType 
 		
 		this.daoFactory = daoFactory;
 	}
+
+
 	
 	
 	

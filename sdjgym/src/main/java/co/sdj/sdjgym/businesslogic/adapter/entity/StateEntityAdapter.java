@@ -1,6 +1,8 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 
+import java.util.List;
+
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
@@ -36,6 +38,18 @@ private static final Adapter<StateDomain, StateEntity> instance = new StateEntit
 		entityAdapted.setCountry(CountryEntityAdapter.getCountryEntityAdapter().adaptTarget(domainToAdapt.getCountry()));
 		
 		return entityAdapted;
+	}
+
+	@Override
+	public List<StateEntity> adaptTarget(List<StateDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<StateDomain> adaptSource(List<StateEntity> data) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	

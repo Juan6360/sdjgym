@@ -1,5 +1,7 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
+import java.util.List;
+
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
@@ -32,6 +34,18 @@ public final class CityDTOAdapter implements Adapter<CityDomain, CityDTO> {
 	public CityDTO adaptTarget(final CityDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, CityDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, StateDomain.create()));
 		return CityDTO.create().setId("").setName(domainToAdapt.getName());
+	}
+
+	@Override
+	public List<CityDTO> adaptTarget(List<CityDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CityDomain> adaptSource(List<CityDTO> data) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

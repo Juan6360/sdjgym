@@ -1,5 +1,7 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
+import java.util.List;
+
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
@@ -27,6 +29,16 @@ public class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
 	public EpsDTO adaptTarget(final EpsDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, EpsDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY));
 		return EpsDTO.create().setId("").setName(domainToAdapt.getName());
+	}
+	@Override
+	public List<EpsDTO> adaptTarget(List<EpsDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<EpsDomain> adaptSource(List<EpsDTO> data) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
