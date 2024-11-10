@@ -19,4 +19,6 @@ public class CoachEntity extends DomainEntity {
 		this.specialty = specialty;
 	}
 	
+	//HOLA
+	
 }
