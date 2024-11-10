@@ -1,10 +1,7 @@
-package co.sdj.sdjgym.dto.assistance;
+package co.sdj.sdjgym.dto;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.dto.DomainDTO;
-import co.sdj.sdjgym.dto.session.SessionDTO;
-import co.sdj.sdjgym.dto.user.UserDTO;
 
 public class AssistanceDTO extends DomainDTO {
 	

@@ -4,8 +4,8 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
-import co.sdj.sdjgym.dto.basedata.IdentificationTypeDTO;
+import co.sdj.sdjgym.domain.IdentificationTypeDomain;
+import co.sdj.sdjgym.dto.IdentificationTypeDTO;
 
 public final class IdentificationTypeDTOAdapter implements Adapter<IdentificationTypeDomain, IdentificationTypeDTO>  {
 	

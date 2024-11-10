@@ -4,7 +4,7 @@ import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.sdjgym.businesslogic.usecase.RuleWithFactory;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.basedata.CityDomain;
+import co.sdj.sdjgym.domain.CityDomain;
 
 public class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomain>{
 

@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.domain.session;
+package co.sdj.sdjgym.domain;
 
 
 import java.util.Date;
@@ -8,9 +8,6 @@ import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.NumericHelper;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.domain.Domain;
-import co.sdj.sdjgym.domain.basedata.SpecialtyDomain;
-import co.sdj.sdjgym.domain.space.SpaceDomain;
 
 public class SessionDomain extends Domain {
 	

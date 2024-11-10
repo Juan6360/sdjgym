@@ -4,8 +4,8 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-import co.sdj.sdjgym.domain.basedata.EpsDomain;
-import co.sdj.sdjgym.dto.basedata.EpsDTO;
+import co.sdj.sdjgym.domain.EpsDomain;
+import co.sdj.sdjgym.dto.EpsDTO;
 
 public class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
 	

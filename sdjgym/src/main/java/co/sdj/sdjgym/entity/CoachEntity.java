@@ -1,13 +1,13 @@
 package co.sdj.sdjgym.entity;
 
-import co.sdj.sdjgym.entity.PersonEntity;
+import co.sdj.crosscutting.helpers.UUIDHelper;
 
-public class CoachEntity extends PersonEntity {
+public class CoachEntity extends DomainEntity {
 	
 	private SpecialtyEntity specialty;
 	
 	public CoachEntity() {
-		super();
+		super(UUIDHelper.getDefault());
 		setSpecialty(new SpecialtyEntity());
 	}
 

@@ -7,7 +7,7 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
+import co.sdj.sdjgym.domain.IdentificationTypeDomain;
 import co.sdj.sdjgym.entity.IdentificationTypeEntity;
 
 public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTypeDomain,IdentificationTypeEntity> {

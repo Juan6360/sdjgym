@@ -1,19 +1,13 @@
-package co.sdj.sdjgym.domain.coach;
+package co.sdj.sdjgym.domain;
 
 import java.util.Date;
 import java.util.UUID;
 
-import co.sdj.sdjgym.domain.PersonDomain;
-import co.sdj.sdjgym.domain.basedata.CityDomain;
-import co.sdj.sdjgym.domain.basedata.EpsDomain;
-import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
-import co.sdj.sdjgym.domain.basedata.SpecialtyDomain;
-import co.sdj.sdjgym.domain.basedata.StateDomain;
 import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 
-public class CoachDomain extends PersonDomain {
+public class CoachDomain extends Domain {
 	
 	private SpecialtyDomain specialty;
 
@@ -22,8 +16,7 @@ public class CoachDomain extends PersonDomain {
 							final IdentificationTypeDomain tipoIdentificacion, final String identificacion, final EpsDomain eps, final String address,
 							final StateDomain state, final CityDomain city, final SpecialtyDomain specialty) {
 		
-		super(id, firstName, middleName, firstSurName, secondSurName, phoneNumber2, emergencyNumber2, email, birthDate,
-				tipoIdentificacion, identificacion, eps, address, state, city);
+		super(id);
 		setSpecialty(specialty);
 	}
 	

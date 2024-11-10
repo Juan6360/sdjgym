@@ -1,14 +1,10 @@
-package co.sdj.sdjgym.dto.session;
+package co.sdj.sdjgym.dto;
 
 import java.util.Date;
 import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.NumericHelper;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-
-import co.sdj.sdjgym.dto.DomainDTO;
-import co.sdj.sdjgym.dto.basedata.SpecialtyDTO;
-import co.sdj.sdjgym.dto.space.SpaceDTO;
 
 public class SessionDTO extends DomainDTO {
 
