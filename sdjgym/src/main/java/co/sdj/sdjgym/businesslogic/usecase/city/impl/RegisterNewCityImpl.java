@@ -34,7 +34,7 @@ public final class RegisterNewCityImpl implements RegisterNewCity{
 		stateExists.execute(data.getState().getId(), daoFactory);
 		
 		var CityDomainToMap = CityDomain.create(generateId(), data.getName(), data.getState());
-		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptSource(data);
+		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptTarget(data);
 		daoFactory.getCityDAO().create(cityEntity);
 		
 	}

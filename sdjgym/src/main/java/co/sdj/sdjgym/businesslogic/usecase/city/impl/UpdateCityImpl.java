@@ -24,14 +24,14 @@ public final class UpdateCityImpl implements UpdateCity {
 		}
 		this.daoFactory = daoFactory;
 			
-		}
-		
 	}
+		
+
 
 	@Override
 	public void execute(final CityDomain data) {
 		
-		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptSource(data);
+		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptTarget(data);
 		daoFactory.getCityDAO().update(cityEntity);
 		
 		

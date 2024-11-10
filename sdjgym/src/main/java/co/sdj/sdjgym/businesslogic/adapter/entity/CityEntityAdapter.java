@@ -20,7 +20,7 @@ public final class CityEntityAdapter implements Adapter<CityDomain,CityEntity> {
 		
 	}
 
-	public static Adapter<CityDomain, CityEntity> getInstance() {
+	public static Adapter<CityDomain, CityEntity> getCityEntityAdapter() {
 		return instance;
 	}
 
