@@ -1,13 +1,8 @@
-package co.sdj.sdjgym.dto.user;
+package co.sdj.sdjgym.dto;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.dto.DomainDTO;
-import co.sdj.sdjgym.dto.basedata.CityDTO;
-import co.sdj.sdjgym.dto.basedata.EpsDTO;
-import co.sdj.sdjgym.dto.basedata.IdentificationTypeDTO;
-import co.sdj.sdjgym.dto.basedata.StateDTO;
 
 public class UserDTO extends DomainDTO{
 	

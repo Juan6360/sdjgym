@@ -3,7 +3,7 @@ package co.sdj.sdjgym.businesslogic.usecase.city.rules.impl;
 import co.sdj.sdjgym.businesslogic.usecase.city.rules.CityNameDoesNotExistsForState;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.basedata.CityDomain;
+import co.sdj.sdjgym.domain.CityDomain;
 import co.sdj.sdjgym.entity.CityEntity;
 import co.sdj.sdjgym.entity.StateEntity;
 

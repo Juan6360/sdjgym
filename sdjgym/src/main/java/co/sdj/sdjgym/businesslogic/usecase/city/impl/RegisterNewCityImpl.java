@@ -10,7 +10,7 @@ import co.sdj.sdjgym.businesslogic.adapter.entity.CityEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.city.RegisterNewCity;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.basedata.CityDomain;
+import co.sdj.sdjgym.domain.CityDomain;
 import co.sdj.sdjgym.businesslogic.usecase.city.rules.CityNameConsistencyIsValid;
 import co.sdj.sdjgym.businesslogic.usecase.city.rules.CityNameDoesNotExistsForState;
 import co.sdj.sdjgym.businesslogic.usecase.city.state.rules.impl.StateExistsImpl;

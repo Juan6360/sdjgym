@@ -4,8 +4,6 @@ import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.domain.session.SessionDomain;
-import co.sdj.sdjgym.domain.user.UserDomain;
 
 public class AssistanceDomain extends Domain  {
 	

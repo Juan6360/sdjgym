@@ -4,15 +4,15 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-import co.sdj.sdjgym.domain.basedata.CityDomain;
-import co.sdj.sdjgym.domain.basedata.EpsDomain;
-import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
-import co.sdj.sdjgym.domain.basedata.StateDomain;
-import co.sdj.sdjgym.domain.user.UserDomain;
-import co.sdj.sdjgym.dto.basedata.CityDTO;
-import co.sdj.sdjgym.dto.basedata.IdentificationTypeDTO;
-import co.sdj.sdjgym.dto.basedata.StateDTO;
-import co.sdj.sdjgym.dto.user.UserDTO;
+import co.sdj.sdjgym.domain.CityDomain;
+import co.sdj.sdjgym.domain.EpsDomain;
+import co.sdj.sdjgym.domain.IdentificationTypeDomain;
+import co.sdj.sdjgym.domain.StateDomain;
+import co.sdj.sdjgym.domain.UserDomain;
+import co.sdj.sdjgym.dto.CityDTO;
+import co.sdj.sdjgym.dto.IdentificationTypeDTO;
+import co.sdj.sdjgym.dto.StateDTO;
+import co.sdj.sdjgym.dto.UserDTO;
 
 public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 	

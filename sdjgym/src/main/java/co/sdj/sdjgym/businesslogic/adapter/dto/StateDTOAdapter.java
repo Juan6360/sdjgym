@@ -6,9 +6,9 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-import co.sdj.sdjgym.domain.basedata.CountryDomain;
-import co.sdj.sdjgym.domain.basedata.StateDomain;
-import co.sdj.sdjgym.dto.basedata.StateDTO;
+import co.sdj.sdjgym.domain.CountryDomain;
+import co.sdj.sdjgym.domain.StateDomain;
+import co.sdj.sdjgym.dto.StateDTO;
 
 public final class StateDTOAdapter implements Adapter<StateDomain, StateDTO>{
 	

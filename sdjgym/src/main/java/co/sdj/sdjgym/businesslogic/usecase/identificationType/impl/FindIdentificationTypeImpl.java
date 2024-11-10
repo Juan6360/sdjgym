@@ -10,7 +10,7 @@ import co.sdj.sdjgym.businesslogic.usecase.identificationType.FindIdentification
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
+import co.sdj.sdjgym.domain.IdentificationTypeDomain;
 
 public final class FindIdentificationTypeImpl implements FindIdentificationType {
 	

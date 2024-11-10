@@ -1,10 +1,8 @@
-package co.sdj.sdjgym.dto.session;
+package co.sdj.sdjgym.dto;
 
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
-import co.sdj.sdjgym.dto.DomainDTO;
-import co.sdj.sdjgym.dto.coach.CoachDTO;
 
 public class SessionByCoachDTO extends DomainDTO{
 	

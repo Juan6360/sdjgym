@@ -4,7 +4,7 @@ import java.util.List;
 
 import co.sdj.sdjgym.businesslogic.usecase.city.FindCity;
 import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.basedata.CityDomain;
+import co.sdj.sdjgym.domain.CityDomain;
 
 public final class FindCityImpl implements FindCity {
 	public FindCityImpl(final DAOFactory daoFactory) {

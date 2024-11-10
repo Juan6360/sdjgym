@@ -1,15 +1,14 @@
-package co.sdj.sdjgym.dto.coach;
+package co.sdj.sdjgym.dto;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
-import co.sdj.sdjgym.dto.PersonDTO;
-import co.sdj.sdjgym.dto.basedata.SpecialtyDTO;
+import co.sdj.crosscutting.helpers.UUIDHelper;
 
-public class CoachDTO extends PersonDTO {
+public class CoachDTO extends DomainDTO {
 
 	private SpecialtyDTO specialty;
 	
 	protected CoachDTO() {
-		super();
+		super(UUIDHelper.getDefaultAsString());
 		setSpecialty(specialty);
 	}
 	
