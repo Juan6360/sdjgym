@@ -16,7 +16,7 @@ public class UserDomain extends Domain{
 	private String phoneNumber;
 	private String emergencyNumber;
 	private String email;
-	private Date birthDate;
+	private String birthDate;
 	private IdentificationTypeDomain tipoIdentificacion;
 	private String identificacion;
 	private EpsDomain eps;
@@ -32,7 +32,7 @@ public class UserDomain extends Domain{
 			final String phoneNumber,
 			final String emergencyNumber,
 			final String email,
-			final Date birthDate,
+			final String birthDate,
 			final IdentificationTypeDomain tipoIdentificacion,
 			final String identificacion,
 			final EpsDomain eps,
@@ -56,8 +56,8 @@ public class UserDomain extends Domain{
 		setState(state);
 		setCity(city);
 	}
-	
-	
+
+
 	public static final UserDomain create(	final UUID id,
 											final String firstName,
 											final String middleName,
@@ -66,7 +66,7 @@ public class UserDomain extends Domain{
 											final String phoneNumber,
 											final String emergencyNumber,
 											final String email,
-											final Date birthDate,
+											final String birthDate,
 											final IdentificationTypeDomain tipoIdentificacion,
 											final String identificacion,
 											final EpsDomain eps,
@@ -99,7 +99,7 @@ public class UserDomain extends Domain{
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
-				DateHelper.DEFAULT_DATE,
+				TextHelper.EMPTY,
 				IdentificationTypeDomain.create(),
 				TextHelper.EMPTY,
 				EpsDomain.create(),
@@ -164,15 +164,13 @@ public class UserDomain extends Domain{
 		this.email = email;
 	}
 
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
-
-	
 
 	public IdentificationTypeDomain getTipoIdentificacion() {
 		return tipoIdentificacion;
