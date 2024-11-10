@@ -10,7 +10,7 @@ import co.sdj.sdjgym.businesslogic.usecase.identificationType.FindIdentification
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.crosscutting.exceptions.DataSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.IdentificationTypeDomain;
+import co.sdj.sdjgym.domain.basedata.IdentificationTypeDomain;
 
 public final class FindIdentificationTypeImpl implements FindIdentificationType {
 	
@@ -22,8 +22,7 @@ public final class FindIdentificationTypeImpl implements FindIdentificationType 
 	
 	
 	@Override
-	public List<IdentificationTypeDomain> execute(final IdentificationTypeDomain data) 
-	{
+	public List<IdentificationTypeDomain> execute(final IdentificationTypeDomain data) {
 		var listIdentificationTypeEntity = IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(data);
 		return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findByFilter(listIdentificationTypeEntity)) ;
 	}
