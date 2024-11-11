@@ -6,7 +6,7 @@ import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.domain.CityDomain;
 
-public class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomain>{
+public final class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomain>{
 
 	@Override
 	public void execute(String data) {
@@ -41,5 +41,6 @@ public class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomai
 		 }
 			
     }
+
 
 }
