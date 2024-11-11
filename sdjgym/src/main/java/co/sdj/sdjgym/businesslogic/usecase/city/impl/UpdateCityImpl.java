@@ -15,16 +15,8 @@ public final class UpdateCityImpl implements UpdateCity {
 
 	
 }
-	@Override
-	public void execute(final CityDomain data) {
-		
-		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptTarget(data);
-		daoFactory.getCityDAO().update(cityEntity);
-		
-		
-	}
 
-	private void setDaoFactory(final DAOFactory daoFactory2) {
+	private void setDaoFactory(final DAOFactory daoFactory) {
 		if (ObjectHelper.isNull(daoFactory)) {
 			var userMessage = "se ha presentado un problema inesperado tratando de llevar a cabo la modificación de la información de la cuidad deseada.porfavor intenta de nuevo y si el problema persiste llame a luz mery rios Alzate..";
 			var technicalMessage = "El dao factory requerido para crear la clase que se actualiza la cuidad llegó nula.";
@@ -35,4 +27,10 @@ public final class UpdateCityImpl implements UpdateCity {
 	}
 		
 
+
+	@Override
+	public void execute(final CityDomain data) {
+		var cityEntity = CityEntityAdapter.getCityEntityAdapter().adaptTarget(data);
+		daoFactory.getCityDAO().update(cityEntity);
+	}
 }

@@ -12,7 +12,7 @@ public final class FindCityImpl implements FindCity {
 	}
 
 	@Override
-	public List<CityDomain> execute(CityDomain data) {
+	public List<CityDomain> execute(final CityDomain data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
