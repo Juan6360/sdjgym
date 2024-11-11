@@ -36,7 +36,7 @@ public final class CityEntityAdapter implements Adapter<CityEntity,CityDomain> {
 		var entityAdapted = new CityEntity();
 		entityAdapted.setId(domainToAdapt.getId());
 		entityAdapted.setName(domainToAdapt.getName());
-		entityAdapted.setState(StateEntityAdapter.getStateEntityAdapter().adaptTarget(domainToAdapt.getState()));
+		entityAdapted.setState(StateEntityAdapter.getStateEntityAdapter().adaptSource(domainToAdapt.getState()));
 		
 		return entityAdapted;
 	}
