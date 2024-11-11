@@ -20,7 +20,7 @@ public class EpsEntityAdapter implements Adapter<EpsDomain,EpsEntity> {
 		
 	}
 	
-	public static Adapter<EpsDomain, EpsEntity> getInstance() {
+	public static Adapter<EpsDomain, EpsEntity> getEpsEntityAdapter() {
 		return instance;
 	}
 

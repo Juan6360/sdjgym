@@ -1,9 +1,11 @@
 package co.sdj.sdjgym.businesslogic.usecase.identificationType.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
+import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.sdjgym.businesslogic.adapter.entity.IdentificationTypeEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.identificationType.FindIdentificationType;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
@@ -21,11 +23,24 @@ public final class FindIdentificationTypeImpl implements FindIdentificationType 
 	
 	
 	@Override
-	public List<IdentificationTypeDomain> execute(final IdentificationTypeDomain data) {
+	public List<IdentificationTypeDomain> execute(final IdentificationTypeDomain data, final List<Parameter> parameters) {
 		
 		
 		var listIdentificationTypeEntity = IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(data);
-		return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findAll()) ;
+	    
+	    
+	    if (!ObjectHelper.isNull(listIdentificationTypeEntity.getId())) {
+	        var listIdFinal = new ArrayList<IdentificationTypeDomain>();
+	        listIdFinal.add(IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findByID(listIdentificationTypeEntity.getId())));
+	        return listIdFinal;
+	    } else if (!TextHelper.isNull(parameters) && !TextHelper.isEmpty(parameters)) {
+	        
+	        return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findByFilter(parameters));
+	    } else {
+	        
+	        return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findAll());
+	    }
+	
 	}
 
 
