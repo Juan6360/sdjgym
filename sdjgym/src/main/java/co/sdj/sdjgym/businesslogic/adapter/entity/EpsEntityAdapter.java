@@ -12,26 +12,26 @@ import co.sdj.sdjgym.entity.EpsEntity;
 
 
 
-public class EpsEntityAdapter implements Adapter<EpsDomain,EpsEntity> {
+public class EpsEntityAdapter implements Adapter<EpsEntity,EpsDomain> {
 
-	private static final Adapter<EpsDomain, EpsEntity> instance = new EpsEntityAdapter();
+	private static final Adapter<EpsEntity,EpsDomain> instance = new EpsEntityAdapter();
 		
 	private EpsEntityAdapter() {
 		
 	}
 	
-	public static Adapter<EpsDomain, EpsEntity> getEpsEntityAdapter() {
+	public static Adapter<EpsEntity,EpsDomain> getEpsEntityAdapter() {
 		return instance;
 	}
 
 	@Override
-	public EpsDomain adaptSource(final EpsEntity data) {
+	public EpsDomain adaptTarget(final EpsEntity data) {
 		var entityToAdapt = ObjectHelper.getDefault(data, new EpsEntity());
 		return EpsDomain.create(entityToAdapt.getId(),entityToAdapt.getName());
 	}
 
 	@Override
-	public EpsEntity adaptTarget(final EpsDomain data) {
+	public EpsEntity adaptSource(final EpsDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, EpsDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY));
 		
 		var entityAdapted = new EpsEntity();
@@ -42,16 +42,17 @@ public class EpsEntityAdapter implements Adapter<EpsDomain,EpsEntity> {
 	}
 
 	@Override
-	public List<EpsEntity> adaptTarget(List<EpsDomain> data) {
+	public List<EpsDomain> adaptTarget(List<EpsEntity> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<EpsDomain> adaptSource(List<EpsEntity> data) {
+	public List<EpsEntity> adaptSource(List<EpsDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 	
 

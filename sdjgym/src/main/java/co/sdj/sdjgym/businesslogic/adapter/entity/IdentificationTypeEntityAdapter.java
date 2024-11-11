@@ -12,9 +12,9 @@ import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.IdentificationTypeDomain;
 import co.sdj.sdjgym.entity.IdentificationTypeEntity;
 
-public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTypeDomain,IdentificationTypeEntity> {
+public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTypeEntity,IdentificationTypeDomain> {
 	
-	private static final Adapter<IdentificationTypeDomain,IdentificationTypeEntity> instance = new IdentificationTypeEntityAdapter();
+	private static final Adapter<IdentificationTypeEntity,IdentificationTypeDomain> instance = new IdentificationTypeEntityAdapter();
 	
 	private IdentificationTypeEntityAdapter() {
 	}
@@ -22,7 +22,7 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 	
 	
 
-	public static Adapter<IdentificationTypeDomain, IdentificationTypeEntity> getIdentificationTypeEntityAdapter() {
+	public static Adapter<IdentificationTypeEntity,IdentificationTypeDomain> getIdentificationTypeEntityAdapter() {
 		return instance;
 	}
 
@@ -30,14 +30,14 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 
 	@Override
-	public IdentificationTypeDomain adaptSource(IdentificationTypeEntity data) {
+	public IdentificationTypeDomain adaptTarget(IdentificationTypeEntity data) {
 		var entityToAdapt = ObjectHelper.getDefault(data, new IdentificationTypeEntity());
 		return IdentificationTypeDomain.create(entityToAdapt.getId(),entityToAdapt.getName());
 	}
 
 
 	@Override
-	public IdentificationTypeEntity adaptTarget(IdentificationTypeDomain data) {
+	public IdentificationTypeEntity adaptSource(IdentificationTypeDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, IdentificationTypeDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY));
 		
 		var entityAdapted = new IdentificationTypeEntity();entityAdapted.setId(domainToAdapt.getId());entityAdapted.setName(domainToAdapt.getName());
@@ -49,7 +49,7 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 
 	@Override
-	public List<IdentificationTypeEntity> adaptTarget(List<IdentificationTypeDomain> data) {
+	public List<IdentificationTypeDomain> adaptTarget(List<IdentificationTypeEntity> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -58,10 +58,15 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 
 	@Override
-	public List<IdentificationTypeDomain> adaptSource(List<IdentificationTypeEntity> data) {
+	public List<IdentificationTypeEntity> adaptSource(List<IdentificationTypeDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
+
+
 
 
 }
