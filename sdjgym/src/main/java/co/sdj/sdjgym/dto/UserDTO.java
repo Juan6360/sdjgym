@@ -47,112 +47,126 @@ public class UserDTO extends DomainDTO{
 		return firstName;
 	}
 
-	public void setFirstName(String firstName) {
+	public UserDTO setFirstName(String firstName) {
 		this.firstName = TextHelper.applyTrim(firstName);
+		return this;
 	}
 
 	public String getMiddleName() {
 		return middleName;
 	}
 
-	public void setMiddleName(String middleName) {
+	public UserDTO setMiddleName(String middleName) {
 		this.middleName = TextHelper.applyTrim(middleName);
+		return this;
 	}
 
 	public String getFirstSurName() {
 		return firstSurName;
 	}
 
-	public void setFirstSurName(String firstSurName) {
+	public UserDTO setFirstSurName(String firstSurName) {
 		this.firstSurName = TextHelper.applyTrim(firstSurName);
+		return this;
 	}
 
 	public String getSecondSurName() {
 		return secondSurName;
 	}
 
-	public void setSecondSurName(String secondSurName) {
+	public UserDTO setSecondSurName(String secondSurName) {
 		this.secondSurName = TextHelper.applyTrim(secondSurName);
+		return this;
 	}
 
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
+	public UserDTO setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = TextHelper.applyTrim(phoneNumber);
+		return this;
 	}
 
 	public String getEmergencyNumber() {
 		return emergencyNumber;
 	}
 
-	public void setEmergencyNumber(String emergencyNumber) {
+	public UserDTO setEmergencyNumber(String emergencyNumber) {
 		this.emergencyNumber = TextHelper.applyTrim(emergencyNumber);
+		return this;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public UserDTO setEmail(String email) {
 		this.email = TextHelper.applyTrim(email);
+		return this;
 	}
 
 	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(String birthDate) {
+	public UserDTO setBirthDate(String birthDate) {
 		this.birthDate = TextHelper.applyTrim(birthDate);
+		return this;
 	}
 
 	public IdentificationTypeDTO getIdentificationType() {
 		return identificationType;
 	}
 
-	public void setIdentificationType(final IdentificationTypeDTO identificationType) {
+	public UserDTO setIdentificationType(final IdentificationTypeDTO identificationType) {
 		this.identificationType = ObjectHelper.getDefault(identificationType, IdentificationTypeDTO.create());
+		return this;
 	}
 
 	public String getIdentification() {
 		return identification;
 	}
 
-	public void setIdentification(String identification) {
+	public UserDTO setIdentification(String identification) {
 		this.identification = TextHelper.applyTrim(identification);
+		return this;
 	}
 
 	public EpsDTO getEps() {
 		return eps;
 	}
 
-	public void setEps(final EpsDTO eps) {
+	public UserDTO setEps(final EpsDTO eps) {
 		this.eps = ObjectHelper.getDefault(eps, EpsDTO.create());
+		return this;
 	}
 
 	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
+	public UserDTO setAddress(String address) {
 		this.address = address;
+		return this;
 	}
 
 	public StateDTO getState() {
 		return state;
 	}
 
-	public void setState(StateDTO state) {
+	public UserDTO setState(StateDTO state) {
 		this.state = ObjectHelper.getDefault(state, StateDTO.create());
+		return this;
 	}
 
 	public CityDTO getCity() {
 		return city;
 	}
 
-	public void setCity(CityDTO city) {
+	public UserDTO setCity(CityDTO city) {
 		this.city = ObjectHelper.getDefault(city, CityDTO.create());
+		return this;
 	}
 	
 	public UserDTO setId(final String id) {

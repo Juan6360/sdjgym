@@ -1,9 +1,7 @@
 package co.sdj.sdjgym.domain;
 
-import java.util.Date;
 import java.util.UUID;
 
-import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 
@@ -17,8 +15,8 @@ public class UserDomain extends Domain{
 	private String emergencyNumber;
 	private String email;
 	private String birthDate;
-	private IdentificationTypeDomain tipoIdentificacion;
-	private String identificacion;
+	private IdentificationTypeDomain identificationType;
+	private String identification;
 	private EpsDomain eps;
 	private String address;
 	private StateDomain state;
@@ -33,8 +31,8 @@ public class UserDomain extends Domain{
 			final String emergencyNumber,
 			final String email,
 			final String birthDate,
-			final IdentificationTypeDomain tipoIdentificacion,
-			final String identificacion,
+			final IdentificationTypeDomain identificationType,
+			final String identification,
 			final EpsDomain eps,
 			final String address,
 			final StateDomain state,
@@ -49,8 +47,8 @@ public class UserDomain extends Domain{
 		setEmergencyNumber(emergencyNumber);
 		setEmail(email);
 		setBirthDate(birthDate);
-		setTipoIdentificacion(tipoIdentificacion);
-		setIdentificacion(identificacion);
+		setIdentificationType(identificationType);
+		setIdentification(identification);
 		setEps(eps);
 		setAddress(address);
 		setState(state);
@@ -67,8 +65,8 @@ public class UserDomain extends Domain{
 											final String emergencyNumber,
 											final String email,
 											final String birthDate,
-											final IdentificationTypeDomain tipoIdentificacion,
-											final String identificacion,
+											final IdentificationTypeDomain identificationType,
+											final String identification,
 											final EpsDomain eps,
 											final String address,
 											final StateDomain state,
@@ -82,8 +80,8 @@ public class UserDomain extends Domain{
 								emergencyNumber,
 								email,
 								birthDate,
-								tipoIdentificacion,
-								identificacion,
+								identificationType,
+								identification,
 								eps,
 								address,
 								state,
@@ -172,20 +170,20 @@ public class UserDomain extends Domain{
 		this.birthDate = birthDate;
 	}
 
-	public IdentificationTypeDomain getTipoIdentificacion() {
-		return tipoIdentificacion;
+	public IdentificationTypeDomain getIdentificationType() {
+		return identificationType;
 	}
 
-	public void setTipoIdentificacion(IdentificationTypeDomain tipoIdentificacion) {
-		this.tipoIdentificacion = tipoIdentificacion;
+	public void setIdentificationType(IdentificationTypeDomain tipoIdentificacion) {
+		this.identificationType = tipoIdentificacion;
 	}
 
 	public String getIdentificacion() {
-		return identificacion;
+		return identification;
 	}
 
-	public void setIdentificacion(String identificacion) {
-		this.identificacion = identificacion;
+	public void setIdentification(String identificacion) {
+		this.identification = identificacion;
 	}
 
 	public EpsDomain getEps() {

@@ -38,8 +38,8 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 
 	@Override
 	public UserDTO adaptTarget(final UserDomain data) {
-		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(),UUIDHelper.getDefault(), TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY,  TextHelper.EMPTY, IdentificationTypeDomain.create(),  TextHelper.EMPTY, EpsDomain.create(),  TextHelper.EMPTY,  StateDomain.create(), CityDomain.create());
-		return UserDTO.create().setId("").setFirstName(domainToAdapt.getFirstName()).setMiddleName(domainToAdapt.getMiddleName()).setFirstSurName(domainToAdapt.getFirstSurName()).setSecondSurName(domainToAdapt.getSecondSurName()).setPhoneNumber(domainToAdapt.getPhoneNumber()).setEmergencyNumber(domainToAdapt.getEmergencyNumber()).setEmail(domainToAdapt.getEmail()).setBirthDate(domainToAdapt.getBirthDate()).setIdentificationType(IdentificationTypeDTO.create()) .setIdentification(domainToAdapt.getIdentification()).setEps(EpsDTO.create()) .setAddress(domainToAdapt.getAddress()).setState(StateDTO.create()) .setCity(CityDTO.create());
+		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, IdentificationTypeDomain.create(), TextHelper.EMPTY, EpsDomain.create(), TextHelper.EMPTY, StateDomain.create(), CityDomain.create()));
+		return UserDTO.create().setId("").setFirstName(domainToAdapt.getFirstName()).setMiddleName(domainToAdapt.getMiddleName()).setFirstSurName(domainToAdapt.getFirstSurName()).setSecondSurName(domainToAdapt.getSecondSurName()).setPhoneNumber(domainToAdapt.getPhoneNumber()).setEmergencyNumber(domainToAdapt.getEmergencyNumber()).setEmail(domainToAdapt.getEmail()).setBirthDate(domainToAdapt.getBirthDate()).setIdentificationType(domainToAdapt.getIdentificationType());
 	    }
 
 	@Override
@@ -53,6 +53,7 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 		// TODO Auto-generated method stub
 		return null;
 	}
-	}
+
+}
 
 
