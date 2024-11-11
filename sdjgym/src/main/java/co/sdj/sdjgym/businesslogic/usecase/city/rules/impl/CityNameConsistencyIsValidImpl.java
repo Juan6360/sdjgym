@@ -42,6 +42,4 @@ public class CityNameConsistencyIsValidImpl implements RuleWithFactory<CityDomai
 			
     }
 
-
-
 }

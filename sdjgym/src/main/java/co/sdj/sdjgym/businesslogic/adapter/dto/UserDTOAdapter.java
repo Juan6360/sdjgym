@@ -24,7 +24,7 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 		
 	}
 
-	public static Adapter<UserDomain, UserDTO> getInstance() {
+	public static Adapter<UserDomain, UserDTO> getUserDTOAdapter() {
 		return instance;
 	}
 
