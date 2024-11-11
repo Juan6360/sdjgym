@@ -17,7 +17,7 @@ public final class IdentificationTypeDTOAdapter implements Adapter<Identificatio
 		
 	}
 
-	public static Adapter<IdentificationTypeDomain, IdentificationTypeDTO> getInstance() {
+	public static Adapter<IdentificationTypeDomain, IdentificationTypeDTO> getdentificationTypeDTOAdapter() {
 		return instance;
 	}
 

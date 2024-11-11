@@ -39,8 +39,10 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 	@Override
 	public UserDTO adaptTarget(final UserDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, IdentificationTypeDomain.create(), TextHelper.EMPTY, EpsDomain.create(), TextHelper.EMPTY, StateDomain.create(), CityDomain.create()));
-		return UserDTO.create().setId("").setFirstName(domainToAdapt.getFirstName()).setMiddleName(domainToAdapt.getMiddleName()).setFirstSurName(domainToAdapt.getFirstSurName()).setSecondSurName(domainToAdapt.getSecondSurName()).setPhoneNumber(domainToAdapt.getPhoneNumber()).setEmergencyNumber(domainToAdapt.getEmergencyNumber()).setEmail(domainToAdapt.getEmail()).setBirthDate(domainToAdapt.getBirthDate()).setIdentificationType(domainToAdapt.getIdentificationType());
-	    }
+		return UserDTO.create().setId("").setFirstName(domainToAdapt.getFirstName()).setMiddleName(domainToAdapt.getMiddleName()).setFirstSurName(domainToAdapt.getFirstSurName()).setSecondSurName(domainToAdapt.getSecondSurName()).setPhoneNumber(domainToAdapt.getPhoneNumber()).setEmergencyNumber(domainToAdapt.getEmergencyNumber()).setEmail(domainToAdapt.getEmail()).setBirthDate(domainToAdapt.getBirthDate())
+				.setIdentificationType(IdentificationTypeDTOAdapter.getdentificationTypeDTOAdapter().adaptTarget(domainToAdapt.getIdentificationType())).setIdentification(domainToAdapt.getIdentificacion()).setEps(EpsDTOAdapter.getEpsDTOAdapter().adaptTarget(domainToAdapt.getEps())).setState(StateDTOAdapter.getStateDTOAdapter().adaptTarget(domainToAdapt.getState()))
+				.setCity(CityDTOAdapter.getCityDTOAdapter().adaptTarget(domainToAdapt.getCity()));
+	}
 
 	@Override
 	public List<UserDTO> adaptTarget(List<UserDomain> data) {

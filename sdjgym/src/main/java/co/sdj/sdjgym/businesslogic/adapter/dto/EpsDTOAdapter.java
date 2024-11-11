@@ -16,7 +16,7 @@ public class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
 	private EpsDTOAdapter() {
 		
 	}
-	public static Adapter<EpsDomain, EpsDTO> getInstance() {
+	public static Adapter<EpsDomain, EpsDTO> getEpsDTOAdapter() {
 		return instance;
 	}
 	@Override
