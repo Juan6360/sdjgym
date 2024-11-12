@@ -109,7 +109,8 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 		}
 		
 		
-		
+		var technicalMessage="Se a presentado un problema al tratar de consultar la información de los tipos de identificación por el filtro deseado en la base de datos SQL Server tratando de preparar la sentencia SQL que se iba a ejecutar, por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
+		throw DataSdjException.crear(technicalMessage);
 		
 	}
 
