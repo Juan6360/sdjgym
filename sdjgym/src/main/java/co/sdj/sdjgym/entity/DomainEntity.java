@@ -2,7 +2,7 @@ package co.sdj.sdjgym.entity;
 
 import java.util.UUID;
 
-import co.sdj.crosscutting.helpers.TextHelper;
+
 import co.sdj.crosscutting.helpers.UUIDHelper;
 
 class DomainEntity {

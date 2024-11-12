@@ -10,12 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.sdj.crosscutting.exceptions.SdjApplicationException;
 import co.sdj.sdjgym.businesslogic.facade.country.impl.FindCountryFacadeImpl;
-import co.sdj.sdjgym.businesslogic.facade.eps.impl.FindEpsFacadeImpl;
 import co.sdj.sdjgym.controller.response.GenerateResponse;
 import co.sdj.sdjgym.controller.response.concrete.CountryResponse;
-import co.sdj.sdjgym.controller.response.concrete.EpsResponse;
 import co.sdj.sdjgym.dto.CountryDTO;
-import co.sdj.sdjgym.dto.EpsDTO;
 
 @RestController
 @RequestMapping("/api/v1/countries")
