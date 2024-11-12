@@ -49,23 +49,10 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 
 	@Override
-	public List<IdentificationTypeDomain> adaptTarget(List<IdentificationTypeEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
-
-	@Override
 	public List<IdentificationTypeEntity> adaptSource(List<IdentificationTypeDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-
-
 
 
 

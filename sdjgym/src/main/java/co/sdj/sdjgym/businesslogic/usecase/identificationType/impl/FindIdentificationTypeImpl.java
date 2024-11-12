@@ -22,7 +22,7 @@ public final class FindIdentificationTypeImpl implements FindIdentificationType 
 	public List<IdentificationTypeDomain> execute(final IdentificationTypeDomain data) {
 		
 		
-		var IdentificationTypeEntity = IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(data);
+		
 
 	    return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(daoFactory.getIdentificationTypeDAO().findAll());
 	    

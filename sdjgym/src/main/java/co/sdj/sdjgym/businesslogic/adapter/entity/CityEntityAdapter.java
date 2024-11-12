@@ -42,12 +42,6 @@ public final class CityEntityAdapter implements Adapter<CityEntity,CityDomain> {
 	}
 
 	@Override
-	public List<CityDomain> adaptTarget(List<CityEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<CityEntity> adaptSource(List<CityDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
