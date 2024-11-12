@@ -22,7 +22,7 @@ public final class SqlServerDAOFactory extends DAOFactory {
 	@Override
 	protected void openConnection() {
 		SqlConnectionHelper.validateIfConnectionIsOpen(connection);
-		var connectionString = "jdbc:sqlserver://ucobet-server.database.windows.net:1433;database=ucobet-db;user=ucobetdbuser;password=uc0b3tdbus3r!;encrypt=true;trustServerCertificate=true;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+		var connectionString = "jdbc:sqlserver://sdjgym-app.database.windows.net:1433;database=sdjgym;user=sdjgymDevelopTeam@sdjgym-app;password=UcoDoo2024!;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 		connection = SqlConnectionHelper.openConnection(connectionString);
 	}
 
