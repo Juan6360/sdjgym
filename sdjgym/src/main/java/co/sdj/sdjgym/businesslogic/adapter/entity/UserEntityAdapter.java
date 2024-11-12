@@ -3,6 +3,7 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
@@ -36,7 +37,7 @@ public class UserEntityAdapter implements Adapter<UserEntity,UserDomain>{
 
 	@Override
 	public UserEntity adaptSource(final UserDomain data) {
-		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,IdentificationTypeDomain.create(),TextHelper.EMPTY,EpsDomain.create(),TextHelper.EMPTY,StateDomain.create(),CityDomain.create()));
+		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,DateHelper.DEFAULT_DATE,IdentificationTypeDomain.create(),TextHelper.EMPTY,EpsDomain.create(),TextHelper.EMPTY,StateDomain.create(),CityDomain.create()));
 		
 		var entityToAdapted = new UserEntity();
 		
