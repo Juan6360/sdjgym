@@ -38,7 +38,7 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 	}
 	
 	@Override
-	public List<IdentificationTypeEntity> findByFilter(IdentificationTypeEntity filter) {
+	public List<IdentificationTypeEntity> findByFilter(final IdentificationTypeEntity filter) {
 		final var statement = new StringBuilder();
 		final var parameters = new ArrayList<>();
 		final var resultSelect= new ArrayList<IdentificationTypeEntity>();
@@ -56,16 +56,16 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 				preparedStatement.setObject(statementIndex, parameters.get(arrayIndex));
 				
 			}
-			statementWasPrepared = true;
-			
-			final var result = preparedStatement.executeQuery();
+				statementWasPrepared = true;
 				
-			while(result.next()) {
-				var countryEntityTmp = new IdentificationTypeEntity();
-				countryEntityTmp.setId(UUIDHelper.convertToUUID(result.getString("id")));
-				countryEntityTmp.setName(result.getString("name"));
-				
-				resultSelect.add(countryEntityTmp);
+				final var result = preparedStatement.executeQuery();
+					
+				while(result.next()) {
+					var identificationTypEntityTmp = new IdentificationTypeEntity();
+					identificationTypEntityTmp.setId(UUIDHelper.convertToUUID(result.getString("id")));
+					identificationTypEntityTmp.setName(result.getString("name"));
+					
+					resultSelect.add(identificationTypEntityTmp);
 			}	
 			
 			
@@ -109,8 +109,6 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 		}
 		
 		
-		var technicalMessage="Hola Dani";
-		throw DataSdjException.crear(technicalMessage);
 		
 	}
 
