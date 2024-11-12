@@ -33,7 +33,7 @@ public final class CityDTOAdapter implements Adapter<CityDomain, CityDTO> {
 	@Override
 	public CityDTO adaptTarget(final CityDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, CityDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, StateDomain.create()));
-		return CityDTO.create().setId("").setName(domainToAdapt.getName());
+		return CityDTO.create().setId(domainToAdapt.getId().toString()).setName(domainToAdapt.getName());
 	}
 
 	@Override
