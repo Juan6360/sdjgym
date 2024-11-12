@@ -41,9 +41,10 @@ public final class DateHelper {
         return getDefault(date, DEFAULT_DATE);
     }
 
-    public static boolean validateDateFormat(String string) {
+    public static boolean validateDateFormat(Date date) {
+    	String dateString = DATE_FORMAT.format(date);
         try {
-            DATE_FORMAT.parse(string);
+            DATE_FORMAT.parse(dateString);
             return true;
         } catch (ParseException e) {
             return false; 
