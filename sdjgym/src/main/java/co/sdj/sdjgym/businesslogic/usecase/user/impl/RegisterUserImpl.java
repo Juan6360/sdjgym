@@ -1,11 +1,14 @@
 package co.sdj.sdjgym.businesslogic.usecase.user.impl;
 
+
 import java.util.UUID;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.entity.UserEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.user.RegisterUser;
+
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserStringConsistencyIsValidImpl;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.domain.UserDomain;
@@ -13,6 +16,7 @@ import co.sdj.sdjgym.domain.UserDomain;
 public final class RegisterUserImpl implements RegisterUser{
 	
 	private DAOFactory daoFactory;
+	private UserStringConsistencyIsValidImpl userStringConsistencyIsValidImpl = new UserStringConsistencyIsValidImpl();
 	
 	public RegisterUserImpl(final DAOFactory daoFactory) {
 		setDaoFactory(daoFactory);
@@ -20,6 +24,12 @@ public final class RegisterUserImpl implements RegisterUser{
 
 	@Override
 	public void execute(UserDomain data) {
+		
+		
+		userStringConsistencyIsValidImpl.execute(data.getFirstName());
+		userStringConsistencyIsValidImpl.execute(data.getMiddleName());
+		userStringConsistencyIsValidImpl.execute(data.getFirstSurName());
+		userStringConsistencyIsValidImpl.execute(data.getSecondSurName());
 		
 		
 		

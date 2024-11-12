@@ -5,6 +5,7 @@ public class TextHelper {
 	
 	public static final String EMPTY = "";
 	public static final String ONLY_LETTERS_SPACES = "[A-Za-záÁéÉíÍóÓúÚñÑ]*";
+	private static final String ONLY_NUMBERS = "[0-9]";
 	
 	private TextHelper() {
 		
@@ -13,6 +14,10 @@ public class TextHelper {
 	public static final boolean patternIsValid(final String string, final String pattern) {
 		return applyTrim(string).matches(concat("^", pattern, "$"));
 	}
+	
+	public static boolean containsOnlyIntegers(final String string) {
+        return patternIsValid(string, ONLY_NUMBERS);
+    }
 	
 	public static boolean containsOnlyLettersAndSpaces(final String string) {
 		return patternIsValid(string, ONLY_LETTERS_SPACES);
