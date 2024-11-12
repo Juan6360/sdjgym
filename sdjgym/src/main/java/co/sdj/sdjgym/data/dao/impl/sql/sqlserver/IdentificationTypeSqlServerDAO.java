@@ -23,11 +23,9 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 	
 	@Override
 	public IdentificationTypeEntity findByID(UUID id) {
-		var IdentificationTypeEntityFilter = new IdentificationTypeEntity();
-		IdentificationTypeEntityFilter.setId(id);
-		
-		var result = findByFilter(IdentificationTypeEntityFilter);
-		
+		var identificationTypeEntityFilter = new IdentificationTypeEntity();
+		identificationTypeEntityFilter.setId(id);
+		var result = findByFilter(identificationTypeEntityFilter);	
 		return (result.isEmpty())? new IdentificationTypeEntity(): result.get(0);
 	}
 	
@@ -71,48 +69,48 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 			
 			
 			
-		} catch (final SQLException exception) {
-			var userMenssage = "Se a presentado un problema inesperado tratando de llevar a cabo la consulta de los tipos de identificación por el filtro deseado, por favor intente de nuevo, y si el problema persiste reporte la novedad...";
-			var technicalMessage="Se a presentado un problema al tratar de consultar la información de los tipos de identificación por el filtro deseado en la base de datos SQL Server tratando de preparar la sentencia SQL que se iba a ejecutar, por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
-
-			if(statementWasPrepared) {
-				technicalMessage="Se a presentado un problema al tratar de consultar la información de los tipos de identificación por el filtro deseado en la base de datos SQL Server tratando de ejecutar la sentencia SQL definida, por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
-
+			} catch (final SQLException exception) {
+				var userMenssage = "Se a presentado un problema inesperado tratando de llevar a cabo la consulta de los tipos de identificación por el filtro deseado, por favor intente de nuevo, y si el problema persiste reporte la novedad...";
+				var technicalMessage="Se a presentado un problema al tratar de consultar la información de los tipos de identificación por el filtro deseado en la base de datos SQL Server tratando de preparar la sentencia SQL que se iba a ejecutar, por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
+	
+				if(statementWasPrepared) {
+					technicalMessage="Se a presentado un problema al tratar de consultar la información de los tipos de identificación por el filtro deseado en la base de datos SQL Server tratando de ejecutar la sentencia SQL definida, por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
+	
+				}
+				
+				throw DataSdjException.crear(userMenssage, technicalMessage, exception);
 			}
 			
-			throw DataSdjException.crear(userMenssage, technicalMessage, exception);
+			return resultSelect;
+		}
+	
+		private void createSelect(final StringBuilder statement) {
+			statement.append("SELECT id, name");
+		}
+	
+		private void createFrom(final StringBuilder statement) {
+			statement.append("FROM IdentificationType");
 		}
 		
-		return resultSelect;
-	}
-	
-	private void createSelect(final StringBuilder statement) {
-		statement.append("SELECT id, name");
-	}
-
-	private void createFrom(final StringBuilder statement) {
-		statement.append("FROM IdentificationType");
-	}
-	
-	private void createWhere(final StringBuilder statement, final IdentificationTypeEntity filter, final List<Object> parameters) {
-		
-		if(!ObjectHelper.isNull(filter)) {
-			if(!UUIDHelper.isDefault(filter.getId())) {
-				statement.append("WHERE id = ? ");
-				parameters.add(filter.getId());
+		private void createWhere(final StringBuilder statement, final IdentificationTypeEntity filter, final List<Object> parameters) {
+			
+			if(!ObjectHelper.isNull(filter)) {
+				if(UUIDHelper.isDefault(filter.getId())) {
+					statement.append("WHERE id = ? ");
+					parameters.add(filter.getId());
+				}
+				if (!TextHelper.isEmptyApplyingTrim(filter.getName())) {
+					statement.append((parameters.isEmpty()) ? "WHERE " : "AND ");
+					statement.append("name = ? ");
+					parameters.add(filter.getName());
+				}
 			}
-			if (!TextHelper.isEmptyApplyingTrim(filter.getName())) {
-				statement.append((parameters.isEmpty()) ? "WHERE " : "AND ");
-				statement.append("name = ? ");
-				parameters.add(filter.getName());
-			}
+			
+			
+			
 		}
-		
-		
-		
-	}
-
-	private void createOrderBy(final StringBuilder statement) {
-		statement.append("ORDER BY name ASC");
-	}
+	
+		private void createOrderBy(final StringBuilder statement) {
+			statement.append("ORDER BY name ASC");
+		}
 }
