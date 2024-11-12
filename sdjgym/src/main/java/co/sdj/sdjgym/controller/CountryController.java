@@ -30,12 +30,12 @@ public final class CountryController {
 			var findCountryFacade = new FindCountryFacadeImpl();
 			list = findCountryFacade.execute(CountryDTO.create());
 			
-			messages.add("Las Eps se consultaron de forma satisfactoria");
+			messages.add("Los paises se consultaron de forma satisfactoria");
 		} catch (final SdjApplicationException exception) {
 			messages.add(exception.getMessage());
 			exception.printStackTrace();
 		} catch (final Exception exception) {
-			messages.add("Se ha presentado un problema inesperado al consultar las Eps");
+			messages.add("Se ha presentado un problema inesperado al consultar los paises");
 			exception.printStackTrace();
 		}
 		

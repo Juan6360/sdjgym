@@ -33,7 +33,7 @@ public final class UserController {
 			var registerUserFacade = new RegisterUserFacadeImpl();
 			registerUserFacade.execute(user);
 
-			messages.add("La ciudad se registró de forma satisfactoria");
+			messages.add("El usuario se registró de forma satisfactoria");
 
 			return GenerateResponse.generateSuccessResponse(messages);
 		} catch (final SdjException exception) {
@@ -48,63 +48,12 @@ public final class UserController {
 			return GenerateResponse.generateFailedResponse(messages);
 		} catch (final Exception exception) {
 			messages.add(
-					"Se ha presentado un problema inesperado tratando de llevar a cabo el registro de la ciudad de forma satisfactoria....");
+					"Se ha presentado un problema inesperado tratando de llevar a cabo el registro del usuario de forma satisfactoria....");
 			exception.printStackTrace();
 
 			return GenerateResponse.generateFailedResponse(messages);
 		}
 
-	}
-
-	@PutMapping("/{id}")
-	public ResponseEntity<GenericResponse> update(@PathVariable String id, @RequestBody UserDTO user) {
-		var messages = new ArrayList<String>();
-		messages.add("La ciudad se actualizó de forma satisfactoria");
-
-		return GenerateResponse.generateSuccessResponse(messages);
-
-	}
-
-	@DeleteMapping("/{id}")
-	public ResponseEntity<GenericResponse> delete(@PathVariable String id) {
-		var messages = new ArrayList<String>();
-		messages.add("La ciudad se eliminó de forma satisfactoria");
-
-		return GenerateResponse.generateSuccessResponse(messages);
-
-	}
-
-	@GetMapping
-	public ResponseEntity<UserResponse> retrieveAll() {
-
-		
-		UserResponse responseWithData = new UserResponse();
-		var messages = new ArrayList<String>();
-		messages.add("Las ciudades se consultaron de forma satisfactoria");
-
-		var list = new ArrayList<UserDTO>();
-
-		responseWithData.setData(list);
-		responseWithData.setMessages(messages);
-
-		return ((new GenerateResponse<UserResponse>()).generateSuccessResponseWithData(responseWithData));
-	}
-
-	@GetMapping("/{id}")
-	public ResponseEntity<UserResponse> retrieveById(@PathVariable String id) {
-
-
-		UserResponse responseWithData = new UserResponse();
-		
-		var messages = new ArrayList<String>();
-		messages.add("La ciudad se consultaron de forma satisfactoria");
-		
-		var list = new ArrayList<UserDTO>();
-		
-		responseWithData.setData(list);
-		responseWithData.setMessages(messages);
-		
-		return ((new GenerateResponse<UserResponse>()).generateSuccessResponseWithData(responseWithData));
 	}
 	
 }
