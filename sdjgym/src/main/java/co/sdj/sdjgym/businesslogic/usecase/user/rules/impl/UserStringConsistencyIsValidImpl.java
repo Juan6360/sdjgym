@@ -33,7 +33,7 @@ public class UserStringConsistencyIsValidImpl implements  UserStringConsistencyI
 
 	private void validateNotNull(final String data) {
 		if(TextHelper.isEmpty(data)) {
-			 var userMessage ="no existe un departamento con el identificador " + data.toString();
+			 var userMessage ="el dato ingresado está vacio, favor ingresarlo nuevamente. " + data.toString();
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 			

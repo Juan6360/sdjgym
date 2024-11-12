@@ -18,7 +18,7 @@ public class UserEmailDoesNotExistsForOtherUserImpl implements UserEmailDoesNotE
 		
 		
 		if (!results.isEmpty()) {
-			var userMessage = "Ya existe un Usuario "+results.get(0).getFirstName()+" "+results.get(0).getMiddleName() +"con el mismo " + results.get(0).getEmail();
+			var userMessage = "Ya existe un Correo "+results.get(0).getFirstName()+" "+results.get(0).getMiddleName() +"con el mismo " + results.get(0).getEmail();
 			throw BusinessLogicSdjException.crear(userMessage);
 		}
 	}
