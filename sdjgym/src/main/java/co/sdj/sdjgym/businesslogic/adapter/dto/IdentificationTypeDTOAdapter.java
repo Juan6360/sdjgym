@@ -38,10 +38,7 @@ public final class IdentificationTypeDTOAdapter implements Adapter<Identificatio
 		return null;
 	}
 
-	@Override
-	public List<IdentificationTypeDomain> adaptSource(List<IdentificationTypeDTO> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
+	
 }

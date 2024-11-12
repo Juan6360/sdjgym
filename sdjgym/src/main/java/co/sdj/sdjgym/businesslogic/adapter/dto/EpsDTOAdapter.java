@@ -35,10 +35,8 @@ public class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
-	public List<EpsDomain> adaptSource(List<EpsDTO> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
+	
 
 }

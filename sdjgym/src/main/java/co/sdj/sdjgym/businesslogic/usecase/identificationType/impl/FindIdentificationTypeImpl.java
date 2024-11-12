@@ -23,12 +23,15 @@ public final class FindIdentificationTypeImpl implements FindIdentificationType 
 		
 		
 		
+        return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(daoFactory.getIdentificationTypeDAO().findAll());
 
-	    return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(daoFactory.getIdentificationTypeDAO().findAll());
+	    
+	    
+	    
 	    
 	
 	}
-
+	
 
 	public void setDaoFactory(final DAOFactory daoFactory) {
 		

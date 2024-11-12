@@ -21,7 +21,7 @@ public class FindEpsImpl implements FindEps{
 	
 	@Override
 	public List<EpsDomain> execute(EpsDomain data) {
-		var EpsEntity = EpsEntityAdapter.getEpsEntityAdapter().adaptSource(data);
+		
 		
 			return EpsEntityAdapter.getEpsEntityAdapter().adaptTarget(daoFactory.getEpsDAO().findAll());
 		

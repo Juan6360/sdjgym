@@ -42,13 +42,9 @@ public final class CityDTOAdapter implements Adapter<CityDomain, CityDTO> {
 		return null;
 	}
 
-	@Override
-	public List<CityDomain> adaptSource(List<CityDTO> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
-
+	
 
 
 }
