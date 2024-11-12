@@ -8,24 +8,23 @@ import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.entity.UserEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.user.RegisterUser;
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserNumberConsistencyIsValidImpl;
-import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserStringConsistencyIsValidImpl;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.domain.UserDomain;
-import co.sdj.sdjgym.businesslogic.usecase.user.city.rules.CityExists;
-import co.sdj.sdjgym.businesslogic.usecase.user.state.rules.StateExists;
-import co.sdj.sdjgym.businesslogic.usecase.user.state.rules.impl.StateExistsImpl;
+
+
+
 
 public final class RegisterUserImpl implements RegisterUser{
 	
 	private DAOFactory daoFactory;
-	private UserStringConsistencyIsValidImpl userStringConsistencyIsValidImpl = new UserStringConsistencyIsValidImpl();
+	private UserStringConsistencyIsValid userStringConsistencyIsValid = new UserStringConsistencyIsValidImpl();
 
 	private CityExists cityExists = new CityExistsImpl();
 	private StateExists stateExists = new StateExistsImpl();
 	
 
-	private UserNumberConsistencyIsValidImpl userNumberConsistencyIsValidImpl = new UserNumberConsistencyIsValidImpl();
+	private UserNumberConsistencyIsValid userNumberConsistencyIsValidImpl = new UserNumberConsistencyIsValidImpl();
 	
 	public RegisterUserImpl(final DAOFactory daoFactory) {
 		setDaoFactory(daoFactory);
@@ -35,10 +34,10 @@ public final class RegisterUserImpl implements RegisterUser{
 	public void execute(UserDomain data) {
 		
 		
-		userStringConsistencyIsValidImpl.execute(data.getFirstName());
-		userStringConsistencyIsValidImpl.execute(data.getMiddleName());
-		userStringConsistencyIsValidImpl.execute(data.getFirstSurName());
-		userStringConsistencyIsValidImpl.execute(data.getSecondSurName());
+		userStringConsistencyIsValid.execute(data.getFirstName());
+		userStringConsistencyIsValid.execute(data.getMiddleName());
+		userStringConsistencyIsValid.execute(data.getFirstSurName());
+		userStringConsistencyIsValid.execute(data.getSecondSurName());
 
 		cityExists.execute(data.getState().getId(), daoFactory);
 		stateExists.execute(data.getState().getId(), daoFactory);
