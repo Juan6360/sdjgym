@@ -11,6 +11,8 @@ import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserNumberConsistency
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.domain.UserDomain;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserStringConsistencyIsValid;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserStringConsistencyIsValidImpl;
 
 
 
