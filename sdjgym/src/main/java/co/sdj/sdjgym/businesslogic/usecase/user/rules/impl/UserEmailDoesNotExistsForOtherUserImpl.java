@@ -22,5 +22,7 @@ public class UserEmailDoesNotExistsForOtherUserImpl implements UserEmailDoesNotE
 			throw BusinessLogicSdjException.crear(userMessage);
 		}
 	}
+	
+	
 
 }
