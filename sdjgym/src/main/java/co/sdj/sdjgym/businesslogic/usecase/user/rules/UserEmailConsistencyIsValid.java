@@ -1,5 +1,7 @@
 package co.sdj.sdjgym.businesslogic.usecase.user.rules;
 
-public interface UserEmailConsistencyIsValid {
+import co.sdj.sdjgym.businesslogic.usecase.RuleWithoutFactory;
+
+public interface UserEmailConsistencyIsValid extends RuleWithoutFactory<String>{
 
 }

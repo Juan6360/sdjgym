@@ -7,6 +7,7 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.entity.UserEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.user.RegisterUser;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserBirthdayConsistencyIsValidImpl;
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserNumberConsistencyIsValidImpl;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
@@ -15,12 +16,14 @@ import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserStringConsistencyIsVal
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserStringConsistencyIsValidImpl;
 
 
-
-
 public final class RegisterUserImpl implements RegisterUser{
 	
 	private DAOFactory daoFactory;
-	private UserStringConsistencyIsValid userStringConsistencyIsValid = new UserStringConsistencyIsValidImpl();
+
+	private UserStringConsistencyIsValidImpl userStringConsistencyIsValidImpl = new UserStringConsistencyIsValidImpl();
+	private UserNumberConsistencyIsValidImpl userNumberConsistencyIsValidImpl = new UserNumberConsistencyIsValidImpl();
+	private UserBirthdayConsistencyIsValidImpl userBirthdayConsistencyIsValidImpl = new UserBirthdayConsistencyIsValidImpl();
+	private UserStringConsistencyIsValidImpl userStringConsistencyIsValid = new UserStringConsistencyIsValidImpl();
 
 	private CityExists cityExists = new CityExistsImpl();
 	private StateExists stateExists = new StateExistsImpl();
@@ -36,20 +39,24 @@ public final class RegisterUserImpl implements RegisterUser{
 	public void execute(UserDomain data) {
 		
 		
-		userStringConsistencyIsValid.execute(data.getFirstName());
-		userStringConsistencyIsValid.execute(data.getMiddleName());
-		userStringConsistencyIsValid.execute(data.getFirstSurName());
-		userStringConsistencyIsValid.execute(data.getSecondSurName());
+
+		userStringConsistencyIsValidImpl.execute(data.getFirstName());
+		userStringConsistencyIsValidImpl.execute(data.getMiddleName());
+		userStringConsistencyIsValidImpl.execute(data.getFirstSurName());
+		userStringConsistencyIsValidImpl.execute(data.getSecondSurName());
+
 
 		cityExists.execute(data.getState().getId(), daoFactory);
 		stateExists.execute(data.getState().getId(), daoFactory);
 		
 
+
 		
 		userNumberConsistencyIsValidImpl.execute(data.getPhoneNumber());
 		userNumberConsistencyIsValidImpl.execute(data.getEmergencyNumber());
 		userNumberConsistencyIsValidImpl.execute(data.getIdentificacion());
-
+		
+		userBirthdayConsistencyIsValidImpl.execute(data.getBirthDate());
 		
 		var userDomainToMap = UserDomain.create(generateId(), data.getFirstName(), data.getMiddleName(), data.getFirstSurName(), data.getSecondSurName(), data.getPhoneNumber(), data.getEmergencyNumber(), data.getEmail(), data.getBirthDate(), data.getIdentificationType(), data.getIdentificacion(), data.getEps(), data.getAddress(), data.getState(), data.getCity());
 		var userEntity = UserEntityAdapter.getUserEntityAdapter().adaptSource(userDomainToMap);
