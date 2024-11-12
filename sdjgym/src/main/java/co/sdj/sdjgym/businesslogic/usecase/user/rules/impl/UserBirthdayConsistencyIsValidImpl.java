@@ -26,7 +26,7 @@ public class UserBirthdayConsistencyIsValidImpl implements UserBirthdayConsisten
 
 	private void validateNotNull(final String data) {
 		if(TextHelper.isEmpty(data)) {
-			 var userMessage ="No se a presentado una fecha de nacimiento, favor ingresarla nuuevamente...";
+			 var userMessage ="No se a presentado una fecha de nacimiento, favor ingresarla nuevamente...";
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 			

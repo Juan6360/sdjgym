@@ -6,6 +6,8 @@ public class TextHelper {
 	public static final String EMPTY = "";
 	public static final String ONLY_LETTERS_SPACES = "[A-Za-záÁéÉíÍóÓúÚñÑ]*";
 	private static final String ONLY_NUMBERS = "[0-9]";
+	private static final String EMAIL_PATTERN = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
+	private static final String ADdRESS_PATTERN = "[a-zA-Z0-9-]";
 	
 	private TextHelper() {
 		
@@ -18,6 +20,13 @@ public class TextHelper {
 	public static boolean containsOnlyIntegers(final String string) {
         return patternIsValid(string, ONLY_NUMBERS);
     }
+	
+	public static boolean isValidEmail(final String string) {
+        return patternIsValid(string, EMAIL_PATTERN);
+    }
+	public static boolean isValidAddress(final String string) {
+		return patternIsValid(string, ADdRESS_PATTERN);
+	}
 	
 	public static boolean containsOnlyLettersAndSpaces(final String string) {
 		return patternIsValid(string, ONLY_LETTERS_SPACES);
