@@ -70,11 +70,11 @@ class StateSqlServerDAO extends SqlDAO implements StateDAO{
 								
 		    }catch(final SQLException exception) {
 		
-			var userMessage = "se ha presentado un problema tratando de llevar a cabo la consulta de las entidad de EPS en el filtro deseado. por favor intente de nuevo y si el problema persiste reporte la novedad....";
-			var technicalMessage = "se ha presentado un problema a tratar de consultar la informacion de las EPS del filtro deseado en la base de datos de SQL tratando de ejecutar la setencia SQL que se iba a ejectar .por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
+			var userMessage = "se ha presentado un problema tratando de llevar a cabo la consulta de las entidad del state en el filtro deseado. por favor intente de nuevo y si el problema persiste reporte la novedad....";
+			var technicalMessage = "se ha presentado un problema a tratar de consultar la informacion de los state del filtro deseado en la base de datos de SQL tratando de ejecutar la setencia SQL que se iba a ejectar .por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
 			
 			if(statementWasPrepared) {
-				technicalMessage = "se ha presentado un problema a tratar de consultar la informacion de las EPS del filtro deseado en la base de datos de SQL tratando de ejecutar la setencia SQL Definida.por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
+				technicalMessage = "se ha presentado un problema a tratar de consultar la informacion de los state del filtro deseado en la base de datos de SQL tratando de ejecutar la setencia SQL Definida.por favor valide el log de errores para encontrar mayores detalles del problema presentado...";
 			}
 			
 		
