@@ -2,6 +2,7 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -42,9 +43,14 @@ public final class CityEntityAdapter implements Adapter<CityEntity,CityDomain> {
 	}
 
 	@Override
-	public List<CityDomain> adaptTarget(List<CityEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CityDomain> adaptTarget(final List<CityEntity> data) {
+		var results = new ArrayList<CityDomain>();
+
+		for (CityEntity entity : data) {
+			results.add(adaptTarget(entity));
+		}
+
+		return results;
 	}
 
 	

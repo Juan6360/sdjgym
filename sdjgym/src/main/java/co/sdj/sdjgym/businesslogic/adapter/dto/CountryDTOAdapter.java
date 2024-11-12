@@ -33,9 +33,8 @@ public final class CountryDTOAdapter implements Adapter<CountryDomain,CountryDTO
 	@Override
 	public CountryDTO adaptTarget(final CountryDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, CountryDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY));
-		return CountryDTO.create().setId("").setName(domainToAdapt.getName());
+		return CountryDTO.create().setId(domainToAdapt.getId().toString()).setName(domainToAdapt.getName());
 	}
-
 	@Override
 	public List<CountryDTO> adaptTarget(final List<CountryDomain> data) {
 		var results = new ArrayList<CountryDTO>();

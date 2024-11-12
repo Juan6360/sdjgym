@@ -38,7 +38,7 @@ public final class CityDTOAdapter implements Adapter<CityDomain, CityDTO> {
 	}
 
 	@Override
-	public List<CityDTO> adaptTarget(List<CityDomain> data) {
+	public List<CityDTO> adaptTarget(final List<CityDomain> data) {
 		var results = new ArrayList<CityDTO>();
 
 		for (CityDomain domain : data) {

@@ -1,6 +1,7 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -42,11 +43,16 @@ public class EpsEntityAdapter implements Adapter<EpsEntity,EpsDomain> {
 	}
 
 	@Override
-	public List<EpsDomain> adaptTarget(List<EpsEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<EpsDomain> adaptTarget(final List<EpsEntity> data) {
+		var results = new ArrayList<EpsDomain>();
 
+		for (EpsEntity entity : data) {
+			results.add(adaptTarget(entity));
+		}
+
+		return results;
+	}
+	
 	
 	
 

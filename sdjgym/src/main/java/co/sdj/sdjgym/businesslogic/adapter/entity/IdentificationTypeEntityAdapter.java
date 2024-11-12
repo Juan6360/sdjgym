@@ -3,6 +3,7 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -30,14 +31,14 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 
 	@Override
-	public IdentificationTypeDomain adaptTarget(IdentificationTypeEntity data) {
+	public IdentificationTypeDomain adaptTarget(final IdentificationTypeEntity data) {
 		var entityToAdapt = ObjectHelper.getDefault(data, new IdentificationTypeEntity());
 		return IdentificationTypeDomain.create(entityToAdapt.getId(),entityToAdapt.getName());
 	}
 
 
 	@Override
-	public IdentificationTypeEntity adaptSource(IdentificationTypeDomain data) {
+	public IdentificationTypeEntity adaptSource(final IdentificationTypeDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, IdentificationTypeDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY));
 		
 		var entityAdapted = new IdentificationTypeEntity();
@@ -51,22 +52,15 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 
 
 	@Override
-	public List<IdentificationTypeDomain> adaptTarget(List<IdentificationTypeEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<IdentificationTypeDomain> adaptTarget(final List<IdentificationTypeEntity> data) {
+		var results = new ArrayList<IdentificationTypeDomain>();
+
+		for (IdentificationTypeEntity entity : data) {
+			results.add(adaptTarget(entity));
+		}
+
+		return results;
 	}
-
-
-
-
-	@Override
-	public List<IdentificationTypeEntity> adaptSource(List<IdentificationTypeDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
 
 
 

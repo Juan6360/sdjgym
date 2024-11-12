@@ -7,12 +7,10 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
-import co.sdj.sdjgym.domain.CityDomain;
 import co.sdj.sdjgym.domain.EpsDomain;
-import co.sdj.sdjgym.dto.CityDTO;
 import co.sdj.sdjgym.dto.EpsDTO;
 
-public class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
+public final class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
 	
 	private static final Adapter<EpsDomain, EpsDTO> instance = new EpsDTOAdapter();
 	
@@ -31,10 +29,10 @@ public class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
 	@Override
 	public EpsDTO adaptTarget(final EpsDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, EpsDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY));
-		return EpsDTO.create().setId("").setName(domainToAdapt.getName());
+		return EpsDTO.create().setId((domainToAdapt.getId().toString())).setName(domainToAdapt.getName());
 	}
 	@Override
-	public List<EpsDTO> adaptTarget(List<EpsDomain> data) {
+	public List<EpsDTO> adaptTarget(final List<EpsDomain> data) {
 		var results = new ArrayList<EpsDTO>();
 
 		for (EpsDomain domain : data) {
