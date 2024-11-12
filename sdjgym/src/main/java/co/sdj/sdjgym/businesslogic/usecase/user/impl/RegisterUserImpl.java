@@ -22,7 +22,11 @@ import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserStringConsistencyIsVal
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserNumberConsistencyIsValidImpl;
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserNumberConsistencyIsValid;
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserBirthdayConsistencyIsValidImpl;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserEmailConsistencyIsValidImpl;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserEmailDoesNotExistsForOtherUserImpl;
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserBirthdayConsistencyIsValid;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserEmailConsistencyIsValid;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserEmailDoesNotExistsForOtherUser;
 
 
 
@@ -33,6 +37,8 @@ public final class RegisterUserImpl implements RegisterUser {
     private UserStringConsistencyIsValid userStringConsistencyIsValid = new UserStringConsistencyIsValidImpl();
     private UserNumberConsistencyIsValid userNumberConsistencyIsValid = new UserNumberConsistencyIsValidImpl();
     private UserBirthdayConsistencyIsValid userBirthdayConsistencyIsValid = new UserBirthdayConsistencyIsValidImpl();
+    private UserEmailConsistencyIsValid userEmailConsistencyIsValid = new UserEmailConsistencyIsValidImpl();
+    private UserEmailDoesNotExistsForOtherUser userEmailDoesNotExistsForOtherUser = new UserEmailDoesNotExistsForOtherUserImpl();
     private CityExists cityExists = new CityExistsImpl();
     private StateExists stateExists = new StateExistsImpl();
     private IdentificationTypeExists identificationTypeExists = new IdentificationTypeExistsImpl();
@@ -62,6 +68,11 @@ public final class RegisterUserImpl implements RegisterUser {
         userNumberConsistencyIsValid.execute(data.getIdentificacion());
         
         userBirthdayConsistencyIsValid.execute(data.getBirthDate());
+        
+        userEmailConsistencyIsValid.execute(data.getEmail());
+        userEmailDoesNotExistsForOtherUser.execute(data, daoFactory);
+        
+        
         
         var userDomainToMap = UserDomain.create(
             generateId(),
