@@ -44,17 +44,6 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 				.setCity(CityDTOAdapter.getCityDTOAdapter().adaptTarget(domainToAdapt.getCity()));
 	}
 
-	@Override
-	public List<UserDTO> adaptTarget(List<UserDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<UserDomain> adaptSource(List<UserDTO> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
 

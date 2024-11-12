@@ -41,16 +41,11 @@ private static final Adapter<StateEntity, StateDomain> instance = new StateEntit
 	}
 
 	@Override
-	public List<StateDomain> adaptTarget(List<StateEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public List<StateEntity> adaptSource(List<StateDomain> data) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 
 	
