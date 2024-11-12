@@ -64,11 +64,11 @@ final class CitySqlServerDAO extends SqlDAO implements CityDAO {
 			  final var result = preparedStatement.executeQuery(); 
 							
 			  while(result.next()) {
-				var EpsEntityTmp = new CityEntity();
-				EpsEntityTmp.setId(UUIDHelper.convertToUUID(result.getString("id")));
-				EpsEntityTmp.setName(result.getString("name"));
+				var CityEntityTmp = new CityEntity();
+				CityEntityTmp.setId(UUIDHelper.convertToUUID(result.getString("id")));
+				CityEntityTmp.setName(result.getString("name"));
 							
-			    resultSelect.add(EpsEntityTmp);
+			    resultSelect.add(CityEntityTmp);
 		    } 
 			
 								
@@ -92,7 +92,7 @@ final class CitySqlServerDAO extends SqlDAO implements CityDAO {
 		statement.append("SELECT id, name ");
 	}
 	private void createFrom(final StringBuilder statement) {
-		statement.append("FROM Eps ");
+		statement.append("FROM City ");
 	}
 	
 	private void createWhere(final StringBuilder statement,
@@ -106,7 +106,7 @@ final class CitySqlServerDAO extends SqlDAO implements CityDAO {
 				parameters.add(filter.getId());
 			}
 			
-			if(!TextHelper.isEmptyApplyingTrim(filter.getName()));{
+			if(!TextHelper.isEmptyApplyingTrim(filter.getName())){
 				statement.append((parameters.isEmpty()) ? "WHERE " : "AND ");
 				statement.append("name = ?");
 				parameters.add(filter.getName());

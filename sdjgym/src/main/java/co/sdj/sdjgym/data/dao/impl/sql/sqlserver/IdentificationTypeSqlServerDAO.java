@@ -60,11 +60,11 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 			  final var result = preparedStatement.executeQuery(); 
 							
 			  while(result.next()) {
-				var EpsEntityTmp = new IdentificationTypeEntity();
-				EpsEntityTmp.setId(UUIDHelper.convertToUUID(result.getString("id")));
-				EpsEntityTmp.setName(result.getString("name"));
+				var IdentificationTypeEntityTmp = new IdentificationTypeEntity();
+				IdentificationTypeEntityTmp.setId(UUIDHelper.convertToUUID(result.getString("id")));
+				IdentificationTypeEntityTmp.setName(result.getString("name"));
 							
-			    resultSelect.add(EpsEntityTmp);
+			    resultSelect.add(IdentificationTypeEntityTmp);
 		    } 
 			
 								
@@ -88,7 +88,7 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 		statement.append("SELECT id, name ");
 	}
 	private void createFrom(final StringBuilder statement) {
-		statement.append("FROM Eps ");
+		statement.append("FROM IdentificationType ");
 	}
 	
 	private void createWhere(final StringBuilder statement,
@@ -102,7 +102,7 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 				parameters.add(filter.getId());
 			}
 			
-			if(!TextHelper.isEmptyApplyingTrim(filter.getName()));{
+			if(!TextHelper.isEmptyApplyingTrim(filter.getName())){
 				statement.append((parameters.isEmpty()) ? "WHERE " : "AND ");
 				statement.append("name = ?");
 				parameters.add(filter.getName());
