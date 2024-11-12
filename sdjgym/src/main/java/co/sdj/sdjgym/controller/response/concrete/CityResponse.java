@@ -4,7 +4,7 @@ import java.util.List;
 
 import co.sdj.sdjgym.controller.response.Response;
 import co.sdj.sdjgym.controller.response.ResponseWithData;
-import co.sdj.sdjgym.dto.basedata.CityDTO;
+import co.sdj.sdjgym.dto.CityDTO;
 
 public final class CityResponse extends ResponseWithData<CityDTO> {
 	

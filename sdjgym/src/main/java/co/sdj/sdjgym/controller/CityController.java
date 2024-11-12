@@ -19,7 +19,7 @@ import co.sdj.sdjgym.controller.response.GenerateResponse;
 import co.sdj.sdjgym.controller.response.ResponseWithData;
 import co.sdj.sdjgym.controller.response.concrete.CityResponse;
 import co.sdj.sdjgym.controller.response.concrete.GenericResponse;
-import co.sdj.sdjgym.dto.basedata.CityDTO;
+import co.sdj.sdjgym.dto.CityDTO;
 
 @RestController
 @RequestMapping("/api/v1/cities")
@@ -47,7 +47,7 @@ public final class CityController {
 			
 			return GenerateResponse.generateFailedResponse(messages);
 		} catch (final Exception exception) {
-			messages.add("Se ha presentado un problema inesperado tratando de llevar a cabo el resgistro de la ciudad de forma satisfactoria... ")
+			messages.add("Se ha presentado un problema inesperado tratando de llevar a cabo el resgistro de la ciudad de forma satisfactoria... ");
 			exception.printStackTrace();
 			
 			return GenerateResponse.generateFailedResponse(messages);
