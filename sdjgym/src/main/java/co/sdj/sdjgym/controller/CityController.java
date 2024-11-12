@@ -52,9 +52,6 @@ public final class CityController {
 			
 			return GenerateResponse.generateFailedResponse(messages);
 		}
-		
-		messages.add("La ciudad se resgistró de forma satisfactoria");
-		return GenerateResponse.generateSuccessResponse(messages);
 	}
 	
 	@PutMapping("/{id}")
@@ -74,7 +71,7 @@ public final class CityController {
 	@GetMapping
 	public ResponseEntity<CityResponse> retrieveAll() {
 		
-		ResponseWithData<CityDTO> responseWithData = new CityResponse();
+		CityResponse responseWithData = new CityResponse();
 		
 		var messages = new ArrayList<String>();
 		messages.add("La ciudad se consultaron de forma satisfactoria");
@@ -93,7 +90,18 @@ public final class CityController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<CityResponse> retrieveById(@PathVariable String id) {
-		return getDummy().setId(id);
+CityResponse responseWithData = new CityResponse();
+		
+		var messages = new ArrayList<String>();
+		messages.add("La ciudad se consultaron de forma satisfactoria");
+		
+		var list = new ArrayList<CityDTO>();
+		list.add(getDummy());
+		
+		responseWithData.setData(list);
+		responseWithData.setMessages(messages);
+		
+		return ((new GenerateResponse<CityResponse>()).generateSuccessResponseWithData(responseWithData));
 	}
 	
 }

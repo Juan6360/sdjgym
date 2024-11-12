@@ -23,12 +23,12 @@ public final class GenerateResponse<T> {
 		return new ResponseEntity<>(genericResponse, HttpStatus.BAD_REQUEST);
 	}
 	
-	public ResponseEntity<ResponseWithData<T>> generateSuccessResponseWithData(final ResponseWithData<T> responseWithData) {
+	public ResponseEntity<T> generateSuccessResponseWithData(final T responseWithData) {
 		
 		return new ResponseEntity<>(responseWithData, HttpStatus.OK);
 	}
 	
-public ResponseEntity<ResponseWithData<T>> generateFailedResponseWithData(final ResponseWithData<T> responseWithData) {
+	public ResponseEntity<Object> generateFailedResponseWithData(final Object responseWithData) {
 		
 		return new ResponseEntity<>(responseWithData, HttpStatus.BAD_REQUEST);
 	}
