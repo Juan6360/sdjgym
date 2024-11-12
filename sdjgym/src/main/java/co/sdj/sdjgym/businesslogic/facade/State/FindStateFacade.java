@@ -1,4 +1,4 @@
-package co.sdj.sdjgym.businesslogic.facade.state;
+package co.sdj.sdjgym.businesslogic.facade.State;
 
 import java.util.List;
 

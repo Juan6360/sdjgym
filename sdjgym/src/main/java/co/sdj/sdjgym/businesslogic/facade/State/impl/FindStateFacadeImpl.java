@@ -1,9 +1,9 @@
-package co.sdj.sdjgym.businesslogic.facade.state.impl;
+package co.sdj.sdjgym.businesslogic.facade.State.impl;
 
 import java.util.List;
 
 import co.sdj.sdjgym.businesslogic.adapter.dto.StateDTOAdapter;
-import co.sdj.sdjgym.businesslogic.facade.state.FindStateFacade;
+import co.sdj.sdjgym.businesslogic.facade.State.FindStateFacade;
 import co.sdj.sdjgym.businesslogic.usecase.state.impl.FindStateImpl;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.crosscutting.exceptions.SdjException;
@@ -19,7 +19,6 @@ public List<StateDTO> execute(StateDTO data) {
 
 	try {
 		var findStateUseCase = new FindStateImpl(factory);
-		var StateDomain = StateDTOAdapter.getStateDTOAdapter().adaptSource(data);
 
 		return StateDTOAdapter.getStateDTOAdapter().adaptTarget(findStateUseCase.execute());
 
