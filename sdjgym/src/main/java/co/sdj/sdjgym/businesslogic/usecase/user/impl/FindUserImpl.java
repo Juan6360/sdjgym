@@ -26,13 +26,10 @@ public final class FindUserImpl implements FindUser{
 	public List<UserDomain> execute(UserDomain data) {
 		
 		var userEntity = UserEntityAdapter.getUserEntityAdapter().adaptSource(data);
+		//TODO VER QUE LA LISTA NO SEA VACIA O DEFAULT (TAREA)
 		
-		if (UUIDHelper.isDefault(data.getId())) {
+		if (!TextHelper.isEmptyApplyingTrim(userEntity.getFirstName()) || !TextHelper.isEmptyApplyingTrim(userEntity.getMiddleName())  ) {
 	        return UserEntityAdapter.getUserEntityAdapter().adaptTarget(daoFactory.getUserDAO().findByFilter(userEntity));
-			
-	    }  else if (!TextHelper.isEmpty(data.getFirstName())){
-	    	//Collections.singletonList retorna una lista con solo un parametro, y esta lista es inmutable
-	    	 return Collections.singletonList(UserEntityAdapter.getUserEntityAdapter().adaptTarget(daoFactory.getUserDAO().findByID(userEntity.getId())));
 	    
 	    } else {
 	        
