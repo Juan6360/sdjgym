@@ -20,8 +20,8 @@ public class FindCountryImpl implements FindCountry{
 	
 
 	@Override
-	public List<CountryDomain> execute(final CountryDomain data) {
-		var CountryEntity = CountryEntityAdapter.getCountryEntityAdapter().adaptSource(data);
+	public List<CountryDomain> execute() {
+		
 		return CountryEntityAdapter.getCountryEntityAdapter().adaptTarget(daofactory.getCountryDAO().findAll());
 	}
 

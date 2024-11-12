@@ -2,14 +2,13 @@ package co.sdj.sdjgym.businesslogic.adapter;
 
 import java.util.List;
 
-public interface Adapter<D, T> {
-	D adaptSource(T data);
+public interface Adapter<T,D > {
+	D adaptTarget(T data);
 	
-	T adaptTarget(D data);
+	T adaptSource(D data);
 	
 	
 	
-	List<D> adaptSource(List<T> data);
-
+	List<D> adaptTarget(List<T> data);
 
 }

@@ -19,16 +19,19 @@ public final class FindIdentificationTypeImpl implements FindIdentificationType 
 	
 	
 	@Override
-	public List<IdentificationTypeDomain> execute(final IdentificationTypeDomain data) {
+	public List<IdentificationTypeDomain> execute() {
 		
 		
 		
+        return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(daoFactory.getIdentificationTypeDAO().findAll());
 
-	    return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(daoFactory.getIdentificationTypeDAO().findAll());
+	    
+	    
+	    
 	    
 	
 	}
-
+	
 
 	public void setDaoFactory(final DAOFactory daoFactory) {
 		

@@ -37,6 +37,16 @@ public final class StateDTOAdapter implements Adapter<StateDomain, StateDTO>{
 		return StateDTO.create().setId("").setName(domainToAdapt.getName());
 	}
 
+	@Override
+	public List<StateDTO> adaptTarget(List<StateDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	
+
 
 }
 
