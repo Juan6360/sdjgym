@@ -1,7 +1,9 @@
 package co.sdj.sdjgym.domain;
 
+import java.util.Date;
 import java.util.UUID;
 
+import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 
@@ -14,7 +16,7 @@ public class UserDomain extends Domain{
 	private String phoneNumber;
 	private String emergencyNumber;
 	private String email;
-	private String birthDate;
+	private Date birthDate;
 	private IdentificationTypeDomain identificationType;
 	private String identification;
 	private EpsDomain eps;
@@ -30,7 +32,7 @@ public class UserDomain extends Domain{
 			final String phoneNumber,
 			final String emergencyNumber,
 			final String email,
-			final String birthDate,
+			final Date birthDate,
 			final IdentificationTypeDomain identificationType,
 			final String identification,
 			final EpsDomain eps,
@@ -64,7 +66,7 @@ public class UserDomain extends Domain{
 											final String phoneNumber,
 											final String emergencyNumber,
 											final String email,
-											final String birthDate,
+											final Date birthDate,
 											final IdentificationTypeDomain identificationType,
 											final String identification,
 											final EpsDomain eps,
@@ -97,7 +99,7 @@ public class UserDomain extends Domain{
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
 				TextHelper.EMPTY,
-				TextHelper.EMPTY,
+				DateHelper.DEFAULT_DATE,
 				IdentificationTypeDomain.create(),
 				TextHelper.EMPTY,
 				EpsDomain.create(),
@@ -162,11 +164,11 @@ public class UserDomain extends Domain{
 		this.email = email;
 	}
 
-	public String getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(String birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 

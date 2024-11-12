@@ -1,5 +1,8 @@
 package co.sdj.sdjgym.dto;
 
+import java.util.Date;
+
+import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
@@ -13,7 +16,7 @@ public class UserDTO extends DomainDTO{
 	private String phoneNumber;
 	private String emergencyNumber;
 	private String email;
-	private String birthDate;
+	private Date birthDate;
 	private IdentificationTypeDTO identificationType;
 	private String identification;
 	private EpsDTO eps;
@@ -29,7 +32,7 @@ public class UserDTO extends DomainDTO{
 		setSecondSurName(TextHelper.EMPTY);
 		setEmergencyNumber(TextHelper.EMPTY);
 		setEmail(TextHelper.EMPTY);
-		setBirthDate(TextHelper.EMPTY);
+		setBirthDate(DateHelper.DEFAULT_DATE);
 		setIdentification(TextHelper.EMPTY);
 		setEps(EpsDTO.create());
 		setAddress(TextHelper.EMPTY);
@@ -106,12 +109,12 @@ public class UserDTO extends DomainDTO{
 		return this;
 	}
 
-	public String getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public UserDTO setBirthDate(String birthDate) {
-		this.birthDate = TextHelper.applyTrim(birthDate);
+	public UserDTO setBirthDate(Date birthDate) {
+		this.birthDate = DateHelper.getDefault(birthDate);
 		return this;
 	}
 

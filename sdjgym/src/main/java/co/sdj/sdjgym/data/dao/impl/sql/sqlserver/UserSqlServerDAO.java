@@ -1,6 +1,7 @@
 package co.sdj.sdjgym.data.dao.impl.sql.sqlserver;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
@@ -38,7 +40,7 @@ public final class UserSqlServerDAO extends SqlDAO implements UserDAO{
 			preparedStatement.setString(6, data.getPhoneNumber());
 			preparedStatement.setString(7, data.getEmergencyNumber());
 			preparedStatement.setString(8, data.getEmail());
-			preparedStatement.setString(9, data.getBirthDate());
+			preparedStatement.setDate(9,DateHelper.cambio(data.getBirthDate())  );
 			preparedStatement.setObject(10, data.getIdentificationType().getId());
 			preparedStatement.setString(11, data.getIdentification());
 			preparedStatement.setObject(12, data.getEps().getId());
