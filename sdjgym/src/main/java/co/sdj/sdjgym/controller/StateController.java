@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.sdj.crosscutting.exceptions.SdjApplicationException;
-import co.sdj.sdjgym.businesslogic.facade.eps.impl.FindEpsFacadeImpl;
+import co.sdj.sdjgym.businesslogic.facade.state.impl.FindStateFacadeImpl;
 import co.sdj.sdjgym.controller.response.GenerateResponse;
-import co.sdj.sdjgym.controller.response.concrete.EpsResponse;
-import co.sdj.sdjgym.dto.EpsDTO;
+import co.sdj.sdjgym.controller.response.concrete.StateResponse;
+import co.sdj.sdjgym.dto.StateDTO;
 
 @RestController
-@RequestMapping("/api/v1/eps")
-public final class EpsController {
-	
+@RequestMapping("/api/v1/states")
+public class StateController {
+
 	@GetMapping
-	public ResponseEntity<EpsResponse> retrieveAll() {
+	public ResponseEntity<StateResponse> retrieveAll() {
 		var messages = new ArrayList<String>();
-		List<EpsDTO> list = new ArrayList<>();
+		List<StateDTO> list = new ArrayList<>();
 		
 		try {
-			var findEpsFacade = new FindEpsFacadeImpl();
-			list = findEpsFacade.execute(EpsDTO.create());
+			var findStateFacade = new FindStateFacadeImpl();
+			list = findStateFacade.execute(StateDTO.create());
 			
 			messages.add("Las Eps se consultaron de forma satisfactoria");
 		} catch (final SdjApplicationException exception) {
@@ -36,12 +36,12 @@ public final class EpsController {
 			exception.printStackTrace();
 		}
 		
-		EpsResponse responseWithData = new EpsResponse();
+		StateResponse responseWithData = new StateResponse();
 		
 		responseWithData.setData(list);
 		responseWithData.setMessages(messages);
 		
-		return ((new GenerateResponse<EpsResponse>()).generateSuccessResponseWithData(responseWithData));
+		return ((new GenerateResponse<StateResponse>()).generateSuccessResponseWithData(responseWithData));
 	}
 	
 }

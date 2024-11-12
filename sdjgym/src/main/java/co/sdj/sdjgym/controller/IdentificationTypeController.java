@@ -10,38 +10,41 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.sdj.crosscutting.exceptions.SdjApplicationException;
 import co.sdj.sdjgym.businesslogic.facade.eps.impl.FindEpsFacadeImpl;
+import co.sdj.sdjgym.businesslogic.facade.identificationType.impl.FindIdentificationTypeFacadeImpl;
 import co.sdj.sdjgym.controller.response.GenerateResponse;
 import co.sdj.sdjgym.controller.response.concrete.EpsResponse;
+import co.sdj.sdjgym.controller.response.concrete.IdentificationTypeResponse;
 import co.sdj.sdjgym.dto.EpsDTO;
+import co.sdj.sdjgym.dto.IdentificationTypeDTO;
 
 @RestController
-@RequestMapping("/api/v1/eps")
-public final class EpsController {
+@RequestMapping("/api/v1/identificationtypes")
+public final class IdentificationTypeController {
 	
 	@GetMapping
-	public ResponseEntity<EpsResponse> retrieveAll() {
+	public ResponseEntity<IdentificationTypeResponse> retrieveAll() {
 		var messages = new ArrayList<String>();
-		List<EpsDTO> list = new ArrayList<>();
+		List<IdentificationTypeDTO> list = new ArrayList<>();
 		
 		try {
-			var findEpsFacade = new FindEpsFacadeImpl();
-			list = findEpsFacade.execute(EpsDTO.create());
+			var findIdentificationType = new FindIdentificationTypeFacadeImpl();
+			list = findIdentificationType.execute(IdentificationTypeDTO.create());
 			
-			messages.add("Las Eps se consultaron de forma satisfactoria");
+			messages.add("Los tipos de identificación se consultaron de forma satisfactoria");
 		} catch (final SdjApplicationException exception) {
 			messages.add(exception.getMessage());
 			exception.printStackTrace();
 		} catch (final Exception exception) {
-			messages.add("Se ha presentado un problema inesperado al consultar las Eps");
+			messages.add("Se ha presentado un problema inesperado al consultar los tipos de identificación");
 			exception.printStackTrace();
 		}
 		
-		EpsResponse responseWithData = new EpsResponse();
+		IdentificationTypeResponse responseWithData = new IdentificationTypeResponse();
 		
 		responseWithData.setData(list);
 		responseWithData.setMessages(messages);
 		
-		return ((new GenerateResponse<EpsResponse>()).generateSuccessResponseWithData(responseWithData));
+		return ((new GenerateResponse<IdentificationTypeResponse>()).generateSuccessResponseWithData(responseWithData));
 	}
-	
+
 }

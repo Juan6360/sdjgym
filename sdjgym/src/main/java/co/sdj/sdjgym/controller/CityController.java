@@ -1,7 +1,6 @@
 package co.sdj.sdjgym.controller;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import co.sdj.crosscutting.exceptions.SdjApplicationException;
 import co.sdj.sdjgym.businesslogic.facade.city.impl.RegisterNewCityFacadeImpl;
 import co.sdj.sdjgym.controller.response.GenerateResponse;
-import co.sdj.sdjgym.controller.response.ResponseWithData;
 import co.sdj.sdjgym.controller.response.concrete.CityResponse;
 import co.sdj.sdjgym.controller.response.concrete.GenericResponse;
 import co.sdj.sdjgym.crosscutting.exceptions.SdjException;
