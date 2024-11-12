@@ -1,6 +1,7 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -41,18 +42,16 @@ private static final Adapter<StateEntity, StateDomain> instance = new StateEntit
 	}
 
 	@Override
-	public List<StateDomain> adaptTarget(List<StateEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<StateDomain> adaptTarget(final List<StateEntity> data) {
+		var results = new ArrayList<StateDomain>();
+
+		for (StateEntity entity : data) {
+			results.add(adaptTarget(entity));
+		}
+
+		return results;
 	}
-
 	
-
-	
-
-	
-
-
 	
 
 }

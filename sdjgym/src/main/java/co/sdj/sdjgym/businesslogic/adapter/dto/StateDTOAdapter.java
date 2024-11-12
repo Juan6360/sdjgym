@@ -39,7 +39,7 @@ public final class StateDTOAdapter implements Adapter<StateDomain, StateDTO>{
 	}
 
 	@Override
-	public List<StateDTO> adaptTarget(List<StateDomain> data) {
+	public List<StateDTO> adaptTarget(final List<StateDomain> data) {
 		var results = new ArrayList<StateDTO>();
 
 		for (StateDomain domain : data) {

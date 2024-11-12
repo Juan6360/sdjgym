@@ -1,5 +1,6 @@
 package co.sdj.sdjgym.businesslogic.adapter.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -28,13 +29,13 @@ public class UserEntityAdapter implements Adapter<UserEntity,UserDomain>{
 	}
 	
 	@Override
-	public UserDomain adaptTarget(UserEntity data) {
+	public UserDomain adaptTarget(final UserEntity data) {
 		var entityToAdapt = ObjectHelper.getDefault(data, new UserEntity ());
 		return UserDomain.create(entityToAdapt.getId(), entityToAdapt.getFirstName(), entityToAdapt.getMiddleName(), entityToAdapt.getFirstSurName(), entityToAdapt.getSecondSurName(), entityToAdapt.getPhoneNumber(), entityToAdapt.getEmergencyNumber(), entityToAdapt.getEmail(), entityToAdapt.getBirthDate(), IdentificationTypeDomain.create(), entityToAdapt.getIdentification(), EpsDomain.create(), entityToAdapt.getAddress(), StateDomain.create(), CityDomain.create());
 	}
 
 	@Override
-	public UserEntity adaptSource(UserDomain data) {
+	public UserEntity adaptSource(final UserDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,IdentificationTypeDomain.create(),TextHelper.EMPTY,EpsDomain.create(),TextHelper.EMPTY,StateDomain.create(),CityDomain.create()));
 		
 		var entityToAdapted = new UserEntity();
@@ -61,9 +62,14 @@ public class UserEntityAdapter implements Adapter<UserEntity,UserDomain>{
 	}
 
 	@Override
-	public List<UserDomain> adaptTarget(List<UserEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<UserDomain> adaptTarget(final List<UserEntity> data) {
+		var results = new ArrayList<UserDomain>();
+
+		for (UserEntity entity : data) {
+			results.add(adaptTarget(entity));
+		}
+
+		return results;
 	}
 
 }

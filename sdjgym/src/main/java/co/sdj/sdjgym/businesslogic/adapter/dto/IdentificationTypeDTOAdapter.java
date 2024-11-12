@@ -34,7 +34,7 @@ public final class IdentificationTypeDTOAdapter implements Adapter<Identificatio
 	}
 
 	@Override
-	public List<IdentificationTypeDTO> adaptTarget(List<IdentificationTypeDomain> data) {
+	public List<IdentificationTypeDTO> adaptTarget(final List<IdentificationTypeDomain> data) {
 		var results = new ArrayList<IdentificationTypeDTO>();
 
 		for (IdentificationTypeDomain domain : data) {

@@ -2,6 +2,7 @@ package co.sdj.sdjgym.businesslogic.adapter.entity;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -9,7 +10,9 @@ import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.CountryDomain;
+import co.sdj.sdjgym.domain.EpsDomain;
 import co.sdj.sdjgym.entity.CountryEntity;
+import co.sdj.sdjgym.entity.EpsEntity;
 
 
 public final class CountryEntityAdapter implements Adapter<CountryEntity, CountryDomain> {
@@ -39,11 +42,15 @@ public final class CountryEntityAdapter implements Adapter<CountryEntity, Countr
 	}
 
 	@Override
-	public List<CountryDomain> adaptTarget(List<CountryEntity> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<CountryDomain> adaptTarget(final List<CountryEntity> data) {
+		var results = new ArrayList<CountryDomain>();
 
+		for (CountryEntity entity : data) {
+			results.add(adaptTarget(entity));
+		}
+
+		return results;
+	}
 	
 
 	

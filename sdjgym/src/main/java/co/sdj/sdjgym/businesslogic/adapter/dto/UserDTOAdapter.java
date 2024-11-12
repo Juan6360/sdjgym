@@ -43,7 +43,7 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 	}
 
 	@Override
-	public List<UserDTO> adaptTarget(List<UserDomain> data) {
+	public List<UserDTO> adaptTarget(final List<UserDomain> data) {
 		var results = new ArrayList<UserDTO>();
 
 		for (UserDomain domain : data) {
