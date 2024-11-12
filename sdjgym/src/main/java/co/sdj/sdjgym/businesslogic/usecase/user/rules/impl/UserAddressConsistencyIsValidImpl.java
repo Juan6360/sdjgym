@@ -1,10 +1,10 @@
 package co.sdj.sdjgym.businesslogic.usecase.user.rules.impl;
 
 import co.sdj.crosscutting.helpers.TextHelper;
-import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserStringConsistencyIsValid;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserAddressConsistencyIsValid;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 
-public class UserStringConsistencyIsValidImpl implements  UserStringConsistencyIsValid{
+public class UserAddressConsistencyIsValidImpl implements UserAddressConsistencyIsValid{
 
 	@Override
 	public void execute(String data) {
@@ -15,8 +15,8 @@ public class UserStringConsistencyIsValidImpl implements  UserStringConsistencyI
 	}
 	
 	private void validateLen(final String data) {
-		if(!TextHelper.maxLenIsvalid(data, 50)) {
-			 var userMessage = data.toString()+" solo puede contener 50 caracteres";
+		if(!TextHelper.maxLenIsvalid(data, 25)) {
+			 var userMessage = data.toString()+" solo puede contener 25 caracteres";
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 		
@@ -24,8 +24,8 @@ public class UserStringConsistencyIsValidImpl implements  UserStringConsistencyI
 	
 
 	private void validateFormat(final String data) {
-		if(!TextHelper.containsOnlyLettersAndSpaces(data)) {
-			 var userMessage =data.toString()+"solo puede contener letas y espacios";
+		if(!TextHelper.isValidAddress(data)) {
+			 var userMessage =data.toString()+"solo puede contener letas y caracteres especiales";
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 	}
@@ -33,10 +33,10 @@ public class UserStringConsistencyIsValidImpl implements  UserStringConsistencyI
 
 	private void validateNotNull(final String data) {
 		if(TextHelper.isEmpty(data)) {
-			 var userMessage ="el dato ingresado está vacio, favor ingresarlo nuevamente. " + data.toString();
+			 var userMessage ="No hay una direccion ingresada, favor ingresarlo nuevamente. " + data.toString();
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 			
     }
-
+		
 }
