@@ -1,5 +1,6 @@
 package co.sdj.sdjgym.businesslogic.usecase.user.rules.impl;
 
+import co.sdj.crosscutting.helpers.DateHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserBirthdayConsistencyIsValid;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
@@ -9,22 +10,14 @@ public class UserBirthdayConsistencyIsValidImpl implements UserBirthdayConsisten
 	@Override
 	public void execute(String data) {
 		validateNotNull(data);
-		validateLen(data);
 		validateFormat(data);
 		
 	}
 	
-	private void validateLen(final String data) {
-		if(!TextHelper.maxLenIsvalid(data, 50)) {
-			 var userMessage = data.toString()+" solo puede contener 50 caracteres";
-			 throw BusinessLogicSdjException.crear(userMessage); 
-		 }
-		
-	}
 	
 
 	private void validateFormat(final String data) {
-		if(!TextHelper.containsOnlyLettersAndSpaces(data)) {
+		if(!DateHelper.validateDateFormat(data)) {
 			 var userMessage =data.toString()+"solo puede contener letas y espacios";
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
