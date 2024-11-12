@@ -20,8 +20,7 @@ public class FindStateImpl implements FindState {
 	
 
 	@Override
-	public List<StateDomain> execute(final StateDomain data) {
-		var StateEntity = StateEntityAdapter.getStateEntityAdapter().adaptSource(data);
+	public List<StateDomain> execute() {
 		return StateEntityAdapter.getStateEntityAdapter().adaptTarget(daofactory.getStateDAO().findAll());
 	}
 
