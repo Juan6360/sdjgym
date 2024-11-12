@@ -8,4 +8,3 @@ import co.sdj.sdjgym.dto.StateDTO;
 public interface FindStateFacade extends FacadeWithReturn<StateDTO, List<StateDTO>>{
 
 }
-
