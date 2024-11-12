@@ -8,6 +8,8 @@ import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.entity.IdentificationTypeEntity;
 
+
+
 public final class IdentificationTypeExistsImpl implements IdentificationTypeExists {
 
 	@Override

@@ -4,10 +4,10 @@ import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.UserNumberConsistencyIsValid;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 
-public class UserNumberConsistencyIsValidImpl implements UserNumberConsistencyIsValid{
+public final class UserNumberConsistencyIsValidImpl implements UserNumberConsistencyIsValid{
 
 	@Override
-	public void execute(String data) {
+	public void execute(final String data) {
 		validateNotNull(data);
 		validateLen(data);
 		validateFormat(data);
