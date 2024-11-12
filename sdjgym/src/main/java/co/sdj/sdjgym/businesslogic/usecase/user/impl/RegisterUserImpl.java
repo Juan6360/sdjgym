@@ -7,7 +7,7 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.entity.UserEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.user.RegisterUser;
-import co.sdj.sdjgym.businesslogic.usecase.user.city.rules.impl.CityExistsImpl;
+import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserNumberConsistencyIsValidImpl;
 import co.sdj.sdjgym.businesslogic.usecase.user.rules.impl.UserStringConsistencyIsValidImpl;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
@@ -20,9 +20,12 @@ public final class RegisterUserImpl implements RegisterUser{
 	
 	private DAOFactory daoFactory;
 	private UserStringConsistencyIsValidImpl userStringConsistencyIsValidImpl = new UserStringConsistencyIsValidImpl();
+
 	private CityExists cityExists = new CityExistsImpl();
 	private StateExists stateExists = new StateExistsImpl();
 	
+
+	private UserNumberConsistencyIsValidImpl userNumberConsistencyIsValidImpl = new UserNumberConsistencyIsValidImpl();
 	
 	public RegisterUserImpl(final DAOFactory daoFactory) {
 		setDaoFactory(daoFactory);
@@ -36,9 +39,16 @@ public final class RegisterUserImpl implements RegisterUser{
 		userStringConsistencyIsValidImpl.execute(data.getMiddleName());
 		userStringConsistencyIsValidImpl.execute(data.getFirstSurName());
 		userStringConsistencyIsValidImpl.execute(data.getSecondSurName());
+
 		cityExists.execute(data.getState().getId(), daoFactory);
 		stateExists.execute(data.getState().getId(), daoFactory);
 		
+
+		
+		userNumberConsistencyIsValidImpl.execute(data.getPhoneNumber());
+		userNumberConsistencyIsValidImpl.execute(data.getEmergencyNumber());
+		userNumberConsistencyIsValidImpl.execute(data.getIdentificacion());
+
 		
 		var userDomainToMap = UserDomain.create(generateId(), data.getFirstName(), data.getMiddleName(), data.getFirstSurName(), data.getSecondSurName(), data.getPhoneNumber(), data.getEmergencyNumber(), data.getEmail(), data.getBirthDate(), data.getIdentificationType(), data.getIdentificacion(), data.getEps(), data.getAddress(), data.getState(), data.getCity());
 		var userEntity = UserEntityAdapter.getUserEntityAdapter().adaptSource(userDomainToMap);

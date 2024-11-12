@@ -30,13 +30,16 @@ public final class DateHelper {
         return getDefault(date, DEFAULT_DATE);
     }
 
-    public static Date changeStringToDate(String string){
+    public static boolean validateDateFormat(String string){
     	try {
-            return DATE_FORMAT.parse(string);
+    		DATE_FORMAT.parse(string);
+    		return true;
         } catch (ParseException e) {
             throw new RuntimeException("Error initializing default date", e);
         }
         
     }
+    
+    
 }
 
