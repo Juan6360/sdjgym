@@ -1,6 +1,7 @@
-package co.sdj.sdjgym.businesslogic.facade.user;
+package co.sdj.sdjgym.businesslogic.facade.user.impl;
 
 import co.sdj.sdjgym.businesslogic.adapter.dto.UserDTOAdapter;
+import co.sdj.sdjgym.businesslogic.facade.user.RegisterUserFacade;
 import co.sdj.sdjgym.businesslogic.usecase.user.impl.RegisterUserImpl;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.crosscutting.exceptions.SdjException;

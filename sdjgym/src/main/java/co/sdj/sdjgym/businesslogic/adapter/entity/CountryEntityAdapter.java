@@ -10,9 +10,8 @@ import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.CountryDomain;
-import co.sdj.sdjgym.domain.EpsDomain;
 import co.sdj.sdjgym.entity.CountryEntity;
-import co.sdj.sdjgym.entity.EpsEntity;
+
 
 
 public final class CountryEntityAdapter implements Adapter<CountryEntity, CountryDomain> {
