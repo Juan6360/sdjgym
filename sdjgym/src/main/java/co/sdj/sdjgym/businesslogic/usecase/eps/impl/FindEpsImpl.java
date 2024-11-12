@@ -1,35 +1,34 @@
-package co.sdj.sdjgym.businesslogic.usecase.identificationType.impl;
-
+package co.sdj.sdjgym.businesslogic.usecase.eps.impl;
 
 import java.util.List;
+
 import co.sdj.crosscutting.helpers.ObjectHelper;
-import co.sdj.sdjgym.businesslogic.adapter.entity.IdentificationTypeEntityAdapter;
-import co.sdj.sdjgym.businesslogic.usecase.identificationType.FindIdentificationType;
+import co.sdj.sdjgym.businesslogic.adapter.entity.EpsEntityAdapter;
+import co.sdj.sdjgym.businesslogic.usecase.eps.FindEps;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
-import co.sdj.sdjgym.domain.IdentificationTypeDomain;
+import co.sdj.sdjgym.domain.EpsDomain;
 
-public final class FindIdentificationTypeImpl implements FindIdentificationType {
+public class FindEpsImpl implements FindEps{
+	
 	
 	private DAOFactory daoFactory;
 	
-	public FindIdentificationTypeImpl(DAOFactory daoFactory) {
+	public FindEpsImpl(DAOFactory daoFactory) {
 		setDaoFactory(daoFactory);
 	}
 	
 	
 	@Override
-	public List<IdentificationTypeDomain> execute(final IdentificationTypeDomain data) {
+	public List<EpsDomain> execute(EpsDomain data) {
+		var EpsEntity = EpsEntityAdapter.getEpsEntityAdapter().adaptSource(data);
 		
+			return EpsEntityAdapter.getEpsEntityAdapter().adaptTarget(daoFactory.getEpsDAO().findAll());
 		
-		var IdentificationTypeEntity = IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(data);
-
-	    return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(daoFactory.getIdentificationTypeDAO().findAll());
-	    
-	
 	}
-
-
+	
+	
+	
 	public void setDaoFactory(final DAOFactory daoFactory) {
 		
 		if(ObjectHelper.isNull(daoFactory)) {
@@ -41,8 +40,4 @@ public final class FindIdentificationTypeImpl implements FindIdentificationType 
 		this.daoFactory = daoFactory;
 	}
 
-
-	
-	
-	
 }
