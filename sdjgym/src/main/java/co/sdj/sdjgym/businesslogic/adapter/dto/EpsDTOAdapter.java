@@ -1,12 +1,15 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
+import co.sdj.sdjgym.domain.CityDomain;
 import co.sdj.sdjgym.domain.EpsDomain;
+import co.sdj.sdjgym.dto.CityDTO;
 import co.sdj.sdjgym.dto.EpsDTO;
 
 public class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
@@ -32,8 +35,13 @@ public class EpsDTOAdapter implements Adapter<EpsDomain, EpsDTO> {
 	}
 	@Override
 	public List<EpsDTO> adaptTarget(List<EpsDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
+		var results = new ArrayList<EpsDTO>();
+
+		for (EpsDomain domain : data) {
+			results.add(adaptTarget(domain));
+		}
+
+		return results;
 	}
 	
 	

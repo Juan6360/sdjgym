@@ -1,5 +1,6 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -29,14 +30,20 @@ public final class IdentificationTypeDTOAdapter implements Adapter<Identificatio
 	@Override
 	public IdentificationTypeDTO adaptTarget(final IdentificationTypeDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, IdentificationTypeDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY));
-		return IdentificationTypeDTO.create().setId("").setName(domainToAdapt.getName());
+		return IdentificationTypeDTO.create().setId((domainToAdapt.getId().toString())).setName(domainToAdapt.getName());
 	}
 
 	@Override
 	public List<IdentificationTypeDTO> adaptTarget(List<IdentificationTypeDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
+		var results = new ArrayList<IdentificationTypeDTO>();
+
+		for (IdentificationTypeDomain domain : data) {
+			results.add(adaptTarget(domain));
+		}
+
+		return results;
 	}
+	
 
 	
 

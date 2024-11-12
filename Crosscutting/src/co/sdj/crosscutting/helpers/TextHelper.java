@@ -4,7 +4,7 @@ package co.sdj.crosscutting.helpers;
 public class TextHelper {
 	
 	public static final String EMPTY = "";
-	public static final String ONLY_LETTERS_SPACES = "[A-Za-záÁéÉíÍóÓúÚñÑ]";
+	public static final String ONLY_LETTERS_SPACES = "[A-Za-záÁéÉíÍóÓúÚñÑ]*";
 	
 	private TextHelper() {
 		

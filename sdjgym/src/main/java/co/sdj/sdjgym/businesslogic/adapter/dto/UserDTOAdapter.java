@@ -1,5 +1,6 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -11,9 +12,6 @@ import co.sdj.sdjgym.domain.EpsDomain;
 import co.sdj.sdjgym.domain.IdentificationTypeDomain;
 import co.sdj.sdjgym.domain.StateDomain;
 import co.sdj.sdjgym.domain.UserDomain;
-import co.sdj.sdjgym.dto.CityDTO;
-import co.sdj.sdjgym.dto.IdentificationTypeDTO;
-import co.sdj.sdjgym.dto.StateDTO;
 import co.sdj.sdjgym.dto.UserDTO;
 
 public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
@@ -39,16 +37,22 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 	@Override
 	public UserDTO adaptTarget(final UserDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, IdentificationTypeDomain.create(), TextHelper.EMPTY, EpsDomain.create(), TextHelper.EMPTY, StateDomain.create(), CityDomain.create()));
-		return UserDTO.create().setId("").setFirstName(domainToAdapt.getFirstName()).setMiddleName(domainToAdapt.getMiddleName()).setFirstSurName(domainToAdapt.getFirstSurName()).setSecondSurName(domainToAdapt.getSecondSurName()).setPhoneNumber(domainToAdapt.getPhoneNumber()).setEmergencyNumber(domainToAdapt.getEmergencyNumber()).setEmail(domainToAdapt.getEmail()).setBirthDate(domainToAdapt.getBirthDate())
+		return UserDTO.create().setId((domainToAdapt.getId().toString())).setFirstName(domainToAdapt.getFirstName()).setMiddleName(domainToAdapt.getMiddleName()).setFirstSurName(domainToAdapt.getFirstSurName()).setSecondSurName(domainToAdapt.getSecondSurName()).setPhoneNumber(domainToAdapt.getPhoneNumber()).setEmergencyNumber(domainToAdapt.getEmergencyNumber()).setEmail(domainToAdapt.getEmail()).setBirthDate(domainToAdapt.getBirthDate())
 				.setIdentificationType(IdentificationTypeDTOAdapter.getdentificationTypeDTOAdapter().adaptTarget(domainToAdapt.getIdentificationType())).setIdentification(domainToAdapt.getIdentificacion()).setEps(EpsDTOAdapter.getEpsDTOAdapter().adaptTarget(domainToAdapt.getEps())).setState(StateDTOAdapter.getStateDTOAdapter().adaptTarget(domainToAdapt.getState()))
 				.setCity(CityDTOAdapter.getCityDTOAdapter().adaptTarget(domainToAdapt.getCity()));
 	}
 
 	@Override
 	public List<UserDTO> adaptTarget(List<UserDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
+		var results = new ArrayList<UserDTO>();
+
+		for (UserDomain domain : data) {
+			results.add(adaptTarget(domain));
+		}
+
+		return results;
 	}
+	
 
 
 

@@ -2,6 +2,7 @@ package co.sdj.sdjgym.businesslogic.adapter.dto;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -36,9 +37,14 @@ public final class CountryDTOAdapter implements Adapter<CountryDomain,CountryDTO
 	}
 
 	@Override
-	public List<CountryDTO> adaptTarget(List<CountryDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CountryDTO> adaptTarget(final List<CountryDomain> data) {
+		var results = new ArrayList<CountryDTO>();
+
+		for (CountryDomain domain : data) {
+			results.add(adaptTarget(domain));
+		}
+
+		return results;
 	}
 
 	

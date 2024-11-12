@@ -1,5 +1,6 @@
 package co.sdj.sdjgym.businesslogic.adapter.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
@@ -38,10 +39,14 @@ public final class CityDTOAdapter implements Adapter<CityDomain, CityDTO> {
 
 	@Override
 	public List<CityDTO> adaptTarget(List<CityDomain> data) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		var results = new ArrayList<CityDTO>();
 
+		for (CityDomain domain : data) {
+			results.add(adaptTarget(domain));
+		}
+
+		return results;
+	}
 	
 
 	

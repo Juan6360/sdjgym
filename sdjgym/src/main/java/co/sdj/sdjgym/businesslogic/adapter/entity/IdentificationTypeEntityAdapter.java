@@ -40,7 +40,9 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 	public IdentificationTypeEntity adaptSource(IdentificationTypeDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, IdentificationTypeDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY));
 		
-		var entityAdapted = new IdentificationTypeEntity();entityAdapted.setId(domainToAdapt.getId());entityAdapted.setName(domainToAdapt.getName());
+		var entityAdapted = new IdentificationTypeEntity();
+		entityAdapted.setId(domainToAdapt.getId());
+		entityAdapted.setName(domainToAdapt.getName());
 		
 		return entityAdapted;
 	}
@@ -53,6 +55,16 @@ public class IdentificationTypeEntityAdapter implements Adapter<IdentificationTy
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
+
+	@Override
+	public List<IdentificationTypeEntity> adaptSource(List<IdentificationTypeDomain> data) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 
 

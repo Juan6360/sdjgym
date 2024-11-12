@@ -9,7 +9,8 @@ import co.sdj.sdjgym.data.dao.DAOFactory;
 import co.sdj.sdjgym.data.dao.enums.DAOSource;
 import co.sdj.sdjgym.dto.CityDTO;
 
-public class RegisterNewCityFacadeImpl implements RegisterNewCityFacade {
+public final class RegisterNewCityFacadeImpl implements RegisterNewCityFacade {
+	
 
 	@Override
 	public void execute(CityDTO data) {
@@ -34,7 +35,7 @@ public class RegisterNewCityFacadeImpl implements RegisterNewCityFacade {
 			var userMessage = "Se ha presentado un problema tratando registrar la información de la nnueva ciudad...";
 			var technicalMessage = "Se ha presentado un problema inesperado registrando la información de la nueva ciudad. Por favor revise el log para tener más detalles...";
 			
-			throw BusinessLogicSdjException.crear(userMessage, technicalMessage);
+			throw BusinessLogicSdjException.crear(userMessage, technicalMessage,exception);
 		} finally {
 			factory.closeConnection();
 		}
