@@ -1,9 +1,12 @@
 package co.sdj.sdjgym.businesslogic.usecase.user.impl;
 
+import java.util.Collections;
 import java.util.List;
 
 import co.sdj.crosscutting.helpers.ObjectHelper;
-import co.sdj.sdjgym.businesslogic.adapter.entity.IdentificationTypeEntityAdapter;
+import co.sdj.crosscutting.helpers.TextHelper;
+import co.sdj.crosscutting.helpers.UUIDHelper;
+import co.sdj.sdjgym.businesslogic.adapter.entity.UserEntityAdapter;
 import co.sdj.sdjgym.businesslogic.usecase.user.FindUser;
 import co.sdj.sdjgym.crosscutting.exceptions.BusinessLogicSdjException;
 import co.sdj.sdjgym.data.dao.DAOFactory;
@@ -22,18 +25,18 @@ public final class FindUserImpl implements FindUser{
 	@Override
 	public List<UserDomain> execute(UserDomain data) {
 		
-		var UserEntity = UserEntityAdapter.getuserEntityAdapter().adaptSource(data);
+		var userEntity = UserEntityAdapter.getUserEntityAdapter().adaptSource(data);
 		
-		if (!ObjectHelper.isNull(data)) {
-	        return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findByFilter(listIdentificationTypeEntity));
+		if (UUIDHelper.isDefault(data.getId())) {
+	        return UserEntityAdapter.getUserEntityAdapter().adaptTarget(daoFactory.getUserDAO().findByFilter(userEntity));
 			
-	    } else if {
-	    	
-	    	return return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findByFilter(listIdentificationTypeEntity));
+	    }  else if (!TextHelper.isEmpty(data.getFirstName())){
+	    	//Collections.singletonList retorna una lista con solo un parametro, y esta lista es inmutable
+	    	 return Collections.singletonList(UserEntityAdapter.getUserEntityAdapter().adaptTarget(daoFactory.getUserDAO().findByID(userEntity.getId())));
 	    
 	    } else {
 	        
-	        return IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(daoFactory.getIdentificationTypeDAO().findAll());
+	        return UserEntityAdapter.getUserEntityAdapter().adaptTarget(daoFactory.getUserDAO().findAll());
 	    }
 	}
 	
