@@ -27,12 +27,12 @@ public class StateController {
 			var findStateFacade = new FindStateFacadeImpl();
 			list = findStateFacade.execute(StateDTO.create());
 			
-			messages.add("Las Eps se consultaron de forma satisfactoria");
+			messages.add("Los estados se consultaron de forma satisfactoria");
 		} catch (final SdjApplicationException exception) {
 			messages.add(exception.getMessage());
 			exception.printStackTrace();
 		} catch (final Exception exception) {
-			messages.add("Se ha presentado un problema inesperado al consultar las Eps");
+			messages.add("Se ha presentado un problema inesperado al consultar los estados");
 			exception.printStackTrace();
 		}
 		
