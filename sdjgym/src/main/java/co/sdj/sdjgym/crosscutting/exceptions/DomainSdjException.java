@@ -4,6 +4,11 @@ import co.sdj.crosscutting.exceptions.enums.Layer;
 
 public class DomainSdjException extends SdjException{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public DomainSdjException(String userMessage, String technicalMessage, Exception rootException) {
 		super(userMessage, technicalMessage, rootException, Layer.DOMAIN);
 		// TODO Auto-generated constructor stub

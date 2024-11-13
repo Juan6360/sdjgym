@@ -15,7 +15,7 @@ public final class CityExistsImpl implements CityExists {
 		var city = ObjectHelper.getDefault(factory.getCityDAO().findByID(data), new CityEntity());
 
 		if (data.compareTo(city.getId()) != 0) {
-			var userMessage = "No existe una cuidad con el identificador " + data.toString();
+			var userMessage = "No existe una ciudad con el identificador " + data.toString();
 			throw BusinessLogicSdjException.crear(userMessage);
 		}
 

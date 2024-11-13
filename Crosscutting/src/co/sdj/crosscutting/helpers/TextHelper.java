@@ -6,8 +6,8 @@ public class TextHelper {
 	public static final String EMPTY = "";
 	public static final String ONLY_LETTERS_SPACES = "[A-Za-záÁéÉíÍóÓúÚñÑ]*";
 	private static final String ONLY_NUMBERS = "^[0-9]*$";
-	private static final String EMAIL_PATTERN = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
-	private static final String ADDRESS_PATTERN = "[a-zA-Z0-9-#]";
+	private static final String EMAIL_PATTERN = "^[a-zA-Z0-9._%+-]*+@^[a-zA-Z0-9.-]*+\\.^[a-zA-Z]*{2,}";
+	private static final String ADDRESS_PATTERN = "^[a-zA-Z0-9-#]*";
 	
 	private TextHelper() {
 		
