@@ -102,12 +102,12 @@ final class CountrySqlServerDAO extends SqlDAO implements CountryDAO {
 		
 		if(!ObjectHelper.isNull(filter)) {
 			
-			if(UUIDHelper.isDefault(filter.getId())) {
+			if(!UUIDHelper.isDefault(filter.getId())) {
 				statement.append("WHERE id = ?");
 				parameters.add(filter.getId());
 			}
 			
-			if(!TextHelper.isEmptyApplyingTrim(filter.getName()));{
+			if(!TextHelper.isEmptyApplyingTrim(filter.getName())){
 				statement.append((parameters.isEmpty()) ? "WHERE " : "AND ");
 				statement.append("name = ?");
 				parameters.add(filter.getName());

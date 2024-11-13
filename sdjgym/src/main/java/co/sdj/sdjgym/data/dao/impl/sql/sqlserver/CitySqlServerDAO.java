@@ -101,7 +101,7 @@ final class CitySqlServerDAO extends SqlDAO implements CityDAO {
 		
 		if(!ObjectHelper.isNull(filter)) {
 			
-			if(UUIDHelper.isDefault(filter.getId())) {
+			if(!UUIDHelper.isDefault(filter.getId())) {
 				statement.append("WHERE id = ?");
 				parameters.add(filter.getId());
 			}

@@ -87,7 +87,7 @@ class StateSqlServerDAO extends SqlDAO implements StateDAO{
 		statement.append("SELECT id, name ");
 	}
 	private void createFrom(final StringBuilder statement) {
-		statement.append("FROM Eps ");
+		statement.append("FROM State ");
 	}
 	
 	private void createWhere(final StringBuilder statement,
@@ -96,12 +96,12 @@ class StateSqlServerDAO extends SqlDAO implements StateDAO{
 		
 		if(!ObjectHelper.isNull(filter)) {
 			
-			if(UUIDHelper.isDefault(filter.getId())) {
+			if(!UUIDHelper.isDefault(filter.getId())) {
 				statement.append("WHERE id = ?");
 				parameters.add(filter.getId());
 			}
 			
-			if(!TextHelper.isEmptyApplyingTrim(filter.getName()));{
+			if(!TextHelper.isEmptyApplyingTrim(filter.getName())){
 				statement.append((parameters.isEmpty()) ? "WHERE " : "AND ");
 				statement.append("name = ?");
 				parameters.add(filter.getName());
