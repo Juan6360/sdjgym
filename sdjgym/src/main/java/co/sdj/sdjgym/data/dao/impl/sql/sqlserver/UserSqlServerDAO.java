@@ -40,12 +40,12 @@ public final class UserSqlServerDAO extends SqlDAO implements UserDAO{
 			preparedStatement.setString(6, data.getPhoneNumber());
 			preparedStatement.setString(7, data.getEmergencyNumber());
 			preparedStatement.setString(8, data.getEmail());
-			preparedStatement.setDate(9,DateHelper.cambio(data.getBirthDate())  );
+			preparedStatement.setDate(9,DateHelper.cambio(data.getBirthDate()));
 			preparedStatement.setObject(10, data.getIdentificationType().getId());
 			preparedStatement.setString(11, data.getIdentification());
 			preparedStatement.setObject(12, data.getEps().getId());
 			preparedStatement.setString(13, data.getAddress());
-			preparedStatement.setObject(15, data.getCity().getId());
+			preparedStatement.setObject(14, data.getCity().getId());
 			
 			preparedStatement.executeUpdate();
 			
