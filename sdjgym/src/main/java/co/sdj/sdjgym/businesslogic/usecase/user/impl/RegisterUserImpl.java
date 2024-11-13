@@ -40,7 +40,6 @@ public final class RegisterUserImpl implements RegisterUser {
     private UserEmailConsistencyIsValid userEmailConsistencyIsValid = new UserEmailConsistencyIsValidImpl();
     private UserEmailDoesNotExistsForOtherUser userEmailDoesNotExistsForOtherUser = new UserEmailDoesNotExistsForOtherUserImpl();
     private CityExists cityExists = new CityExistsImpl();
-    private StateExists stateExists = new StateExistsImpl();
     private IdentificationTypeExists identificationTypeExists = new IdentificationTypeExistsImpl();
     private EpsExists epsExists = new EpsExistsImpl();
     
@@ -69,7 +68,7 @@ public final class RegisterUserImpl implements RegisterUser {
         userBirthdayConsistencyIsValid.execute(data.getBirthDate());
         
         userEmailConsistencyIsValid.execute(data.getEmail());
-        userEmailDoesNotExistsForOtherUser.execute(data, daoFactory);
+        //userEmailDoesNotExistsForOtherUser.execute(data, daoFactory);
         
         
         

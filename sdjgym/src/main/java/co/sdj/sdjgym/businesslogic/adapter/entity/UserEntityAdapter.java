@@ -38,26 +38,26 @@ public class UserEntityAdapter implements Adapter<UserEntity,UserDomain>{
 	public UserEntity adaptSource(final UserDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,DateHelper.DEFAULT_DATE,IdentificationTypeDomain.create(),TextHelper.EMPTY,EpsDomain.create(),TextHelper.EMPTY,CityDomain.create()));
 		
-		var entityToAdapted = new UserEntity();
+		var entityToAdapt = new UserEntity();
 		
-		entityToAdapted.setId(domainToAdapt.getId());
-		entityToAdapted.setFirstName(domainToAdapt.getFirstName());
-		entityToAdapted.setMiddleName(domainToAdapt.getMiddleName());
-		entityToAdapted.setFirstSurName(domainToAdapt.getFirstSurName());
-		entityToAdapted.setSecondSurName(domainToAdapt.getSecondSurName());
-		entityToAdapted.setPhoneNumber(domainToAdapt.getPhoneNumber());
-		entityToAdapted.setEmergencyNumber(domainToAdapt.getEmergencyNumber());
-		entityToAdapted.setEmail(domainToAdapt.getEmail());
-		entityToAdapted.setBirthDate(domainToAdapt.getBirthDate());
-		entityToAdapted.setIdentificationType(IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(domainToAdapt.getIdentificationType()));
-		entityToAdapted.setIdentification(domainToAdapt.getIdentificacion());
-		entityToAdapted.setEps(EpsEntityAdapter.getEpsEntityAdapter().adaptSource(domainToAdapt.getEps()));
-		entityToAdapted.setAddress(domainToAdapt.getAddress());
-		entityToAdapted.setCity(CityEntityAdapter.getCityEntityAdapter().adaptSource(domainToAdapt.getCity()));
+		entityToAdapt.setId(domainToAdapt.getId());
+		entityToAdapt.setFirstName(domainToAdapt.getFirstName());
+		entityToAdapt.setMiddleName(domainToAdapt.getMiddleName());
+		entityToAdapt.setFirstSurName(domainToAdapt.getFirstSurName());
+		entityToAdapt.setSecondSurName(domainToAdapt.getSecondSurName());
+		entityToAdapt.setPhoneNumber(domainToAdapt.getPhoneNumber());
+		entityToAdapt.setEmergencyNumber(domainToAdapt.getEmergencyNumber());
+		entityToAdapt.setEmail(domainToAdapt.getEmail());
+		entityToAdapt.setBirthDate(domainToAdapt.getBirthDate());
+		entityToAdapt.setIdentificationType(IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptSource(domainToAdapt.getIdentificationType()));
+		entityToAdapt.setIdentification(domainToAdapt.getIdentificacion());
+		entityToAdapt.setEps(EpsEntityAdapter.getEpsEntityAdapter().adaptSource(domainToAdapt.getEps()));
+		entityToAdapt.setAddress(domainToAdapt.getAddress());
+		entityToAdapt.setCity(CityEntityAdapter.getCityEntityAdapter().adaptSource(domainToAdapt.getCity()));
 		
 		
 		
-		return null;
+		return entityToAdapt;
 	}
 
 	@Override

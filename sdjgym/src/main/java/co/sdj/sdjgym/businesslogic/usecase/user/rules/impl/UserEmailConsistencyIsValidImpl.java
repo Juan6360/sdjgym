@@ -24,8 +24,8 @@ public class UserEmailConsistencyIsValidImpl implements UserEmailConsistencyIsVa
 	
 
 	private void validateFormat(final String data) {
-		if(!TextHelper.containsOnlyLettersAndSpaces(data)) {
-			 var userMessage =data.toString()+"solo puede contener letas y espacios";
+		if(!TextHelper.isValidEmail(data)) {
+			 var userMessage =data.toString()+" no puede tener espacios.";
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 	}

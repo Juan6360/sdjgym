@@ -30,7 +30,7 @@ public class UserDTO extends DomainDTO{
 		setFirstSurName(TextHelper.EMPTY);
 		setSecondSurName(TextHelper.EMPTY);
 		setEmergencyNumber(TextHelper.EMPTY);
-		setEmail(TextHelper.EMPTY);
+		setEmail(TextHelper.DEFAULT_EMAIL);
 		setBirthDate(DateHelper.DEFAULT_DATE);
 		setIdentification(TextHelper.EMPTY);
 		setEps(EpsDTO.create());

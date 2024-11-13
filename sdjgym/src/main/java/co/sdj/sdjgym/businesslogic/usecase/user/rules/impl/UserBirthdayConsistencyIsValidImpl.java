@@ -20,7 +20,7 @@ public class UserBirthdayConsistencyIsValidImpl implements UserBirthdayConsisten
 
 	private void validateFormat(final Date data) {
 		if(!DateHelper.validateDateFormat(data)) {
-			 var userMessage =data.toString()+"no está en el formató indicado el formato es: dd/mm/aaaa";
+			 var userMessage =data.toString()+" no está en el formató indicado el formato es: yyyy-MM-dd";
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 	}
@@ -28,7 +28,7 @@ public class UserBirthdayConsistencyIsValidImpl implements UserBirthdayConsisten
 
 	private void validateNotNull(final Date data) {
 		if(DateHelper.isNull(data)) {
-			 var userMessage ="No se a presentado una fecha de nacimiento, favor ingresarla nuevamente...";
+			 var userMessage =" No se a presentado una fecha de nacimiento, favor ingresarla nuevamente...";
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 			

@@ -11,7 +11,6 @@ import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.CityDomain;
 import co.sdj.sdjgym.domain.EpsDomain;
 import co.sdj.sdjgym.domain.IdentificationTypeDomain;
-import co.sdj.sdjgym.domain.StateDomain;
 import co.sdj.sdjgym.domain.UserDomain;
 import co.sdj.sdjgym.dto.UserDTO;
 
@@ -31,7 +30,9 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 	public UserDomain adaptSource(final UserDTO data) {
 		var dtoToAdapt = ObjectHelper.getDefault(data, UserDTO.create());
 		var cityDomain = CityDTOAdapter.getCityDTOAdapter().adaptSource(data.getCity());
-		return UserDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()),data.getFirstName(), data.getMiddleName(), data.getFirstSurName(), data.getSecondSurName(), data.getPhoneNumber(), data.getEmergencyNumber(), data.getEmail(), data.getBirthDate(), IdentificationTypeDomain.create(), data.getIdentification(), EpsDomain.create(), data.getAddress(), cityDomain);
+		var identificationTypeDomain = IdentificationTypeDTOAdapter.getIdentificationTypeDTOAdapter().adaptSource(data.getIdentificationType());
+		var epsDomain = EpsDTOAdapter.getEpsDTOAdapter().adaptSource(data.getEps());
+		return UserDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()),data.getFirstName(), data.getMiddleName(), data.getFirstSurName(), data.getSecondSurName(), data.getPhoneNumber(), data.getEmergencyNumber(), data.getEmail(), data.getBirthDate(), identificationTypeDomain, data.getIdentification(), epsDomain, data.getAddress(), cityDomain);
 		
 		
 	}
