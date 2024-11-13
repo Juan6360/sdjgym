@@ -23,7 +23,6 @@ public class UserEntity extends DomainEntity {
 	private String identification;
 	private EpsEntity eps;
 	private String address;
-	private StateEntity state;
 	private CityEntity city;
 	
 	public UserEntity() {
@@ -40,7 +39,6 @@ public class UserEntity extends DomainEntity {
 		setAddress(TextHelper.EMPTY);
 		setIdentificationType(new IdentificationTypeEntity());
 		setIdentification(TextHelper.EMPTY);
-		setState(new StateEntity());
 		setCity(new CityEntity());
 	}
 	
@@ -52,14 +50,6 @@ public class UserEntity extends DomainEntity {
 	@Override
 	public void setId(UUID id) {
 		super.setId(id);
-	}
-
-	public StateEntity getState() {
-		return state;
-	}
-
-	public void setState(StateEntity state) {
-		this.state = ObjectHelper.getDefault(state, new StateEntity());
 	}
 
 	public CityEntity getCity() {

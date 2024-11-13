@@ -30,7 +30,8 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 	@Override
 	public UserDomain adaptSource(final UserDTO data) {
 		var dtoToAdapt = ObjectHelper.getDefault(data, UserDTO.create());
-		return UserDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()),data.getFirstName(), data.getMiddleName(), data.getFirstSurName(), data.getSecondSurName(), data.getPhoneNumber(), data.getEmergencyNumber(), data.getEmail(), data.getBirthDate(), IdentificationTypeDomain.create(), data.getIdentification(), EpsDomain.create(), data.getAddress(), StateDomain.create(), CityDomain.create());
+		var cityDomain = CityDTOAdapter.getCityDTOAdapter().adaptSource(data.getCity());
+		return UserDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()),data.getFirstName(), data.getMiddleName(), data.getFirstSurName(), data.getSecondSurName(), data.getPhoneNumber(), data.getEmergencyNumber(), data.getEmail(), data.getBirthDate(), IdentificationTypeDomain.create(), data.getIdentification(), EpsDomain.create(), data.getAddress(), cityDomain);
 		
 		
 	}

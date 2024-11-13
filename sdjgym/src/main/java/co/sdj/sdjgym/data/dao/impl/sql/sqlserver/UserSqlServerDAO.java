@@ -27,7 +27,7 @@ public final class UserSqlServerDAO extends SqlDAO implements UserDAO{
 		final StringBuilder statement = new StringBuilder();
 		statement.append("INSERT INTO User(id, firstName,middleName,firstSurName,secondSurName,"
 				+ "phoneNumber,emergencyNumber,email,birthDate,identificationType,identification,eps,"
-				+ "address, state, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+				+ "address, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		try(final var preparedStatement = getConnection().prepareStatement(statement.toString())){
 			
 			preparedStatement.setObject(1, data.getId());
@@ -43,7 +43,6 @@ public final class UserSqlServerDAO extends SqlDAO implements UserDAO{
 			preparedStatement.setString(11, data.getIdentification());
 			preparedStatement.setObject(12, data.getEps().getId());
 			preparedStatement.setString(13, data.getAddress());
-			preparedStatement.setObject(14, data.getState().getId());
 			preparedStatement.setObject(15, data.getCity().getId());
 			
 		} catch (final SQLException exception) {

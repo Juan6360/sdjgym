@@ -21,7 +21,6 @@ public class UserDTO extends DomainDTO{
 	private String identification;
 	private EpsDTO eps;
 	private String address;
-	private StateDTO state;
 	private CityDTO city;
 	
 	protected UserDTO() {
@@ -38,7 +37,6 @@ public class UserDTO extends DomainDTO{
 		setAddress(TextHelper.EMPTY);
 		setIdentificationType(IdentificationTypeDTO.create());
 		setIdentification(TextHelper.EMPTY);
-		setState(StateDTO.create());
 		setCity(CityDTO.create());
 	}
 	
@@ -151,15 +149,6 @@ public class UserDTO extends DomainDTO{
 
 	public UserDTO setAddress(String address) {
 		this.address = address;
-		return this;
-	}
-
-	public StateDTO getState() {
-		return state;
-	}
-
-	public UserDTO setState(StateDTO state) {
-		this.state = ObjectHelper.getDefault(state, StateDTO.create());
 		return this;
 	}
 
