@@ -26,7 +26,6 @@ public final class FindUserImpl implements FindUser{
 	public List<UserDomain> execute(UserDomain data) {
 		
 		var userEntity = UserEntityAdapter.getUserEntityAdapter().adaptSource(data);
-		//TODO VER QUE LA LISTA NO SEA VACIA O DEFAULT (TAREA)
 		
 		if (!TextHelper.isEmptyApplyingTrim(userEntity.getFirstName()) || !TextHelper.isEmptyApplyingTrim(userEntity.getMiddleName())  ) {
 	        return UserEntityAdapter.getUserEntityAdapter().adaptTarget(daoFactory.getUserDAO().findByFilter(userEntity));

@@ -12,8 +12,8 @@ import java.util.Date;
 
 public final class DateHelper {
 
-    public static final String DEFAULT_DATE_STRING = "01/01/1970"; 
-    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd/MM/yyyy");
+    public static final String DEFAULT_DATE_STRING = "1970-01-01"; 
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     public static final Date DEFAULT_DATE;
 
     static {

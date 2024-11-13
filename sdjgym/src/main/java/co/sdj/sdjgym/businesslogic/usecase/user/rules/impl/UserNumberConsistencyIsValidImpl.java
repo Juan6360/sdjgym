@@ -26,7 +26,7 @@ public final class UserNumberConsistencyIsValidImpl implements UserNumberConsist
 
 	private void validateFormat(final String data) {
 		if(!TextHelper.containsOnlyIntegers(data)) {
-			 var userMessage =data.toString()+"solo puede contener números";
+			 var userMessage =data+" solo puede contener números";
 			 throw BusinessLogicSdjException.crear(userMessage); 
 		 }
 	}
