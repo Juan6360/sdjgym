@@ -22,7 +22,7 @@ public final class FindIdentificationTypeFacadeImpl implements FindIdentificatio
 
 		try {
 			var findIdentificationTypeUseCase = new FindIdentificationTypeImpl(factory);
-			var identificationTypeDomain = IdentificationTypeDTOAdapter.getIdentificationTypeDTOAdapter().adaptSource(data);
+			
 
 			return IdentificationTypeDTOAdapter.getIdentificationTypeDTOAdapter().adaptTarget(findIdentificationTypeUseCase.execute());
 

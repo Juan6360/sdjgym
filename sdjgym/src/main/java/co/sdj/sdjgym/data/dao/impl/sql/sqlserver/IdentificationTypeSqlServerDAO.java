@@ -15,6 +15,8 @@ import co.sdj.sdjgym.data.dao.impl.sql.SqlDAO;
 import co.sdj.sdjgym.entity.IdentificationTypeEntity;
 
 public final class IdentificationTypeSqlServerDAO extends SqlDAO implements IdentificationTypeDAO{
+	
+	
 
 	protected IdentificationTypeSqlServerDAO(final Connection connection) {
 		super(connection);
@@ -97,7 +99,7 @@ public final class IdentificationTypeSqlServerDAO extends SqlDAO implements Iden
 		
 		if(!ObjectHelper.isNull(filter)) {
 			
-			if(UUIDHelper.isDefault(filter.getId())) {
+			if(!UUIDHelper.isDefault(filter.getId())) {
 				statement.append("WHERE id = ?");
 				parameters.add(filter.getId());
 			}
