@@ -3,6 +3,7 @@ package co.sdj.sdjgym.controller;
 import java.util.ArrayList;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,7 @@ import co.sdj.sdjgym.controller.response.concrete.GenericResponse;
 import co.sdj.sdjgym.crosscutting.exceptions.SdjException;
 import co.sdj.sdjgym.dto.UserDTO;
 
-
+@CrossOrigin(origins = "Http://localhost:8081")
 @RestController
 @RequestMapping("/api/v1/users")
 public final class UserController {

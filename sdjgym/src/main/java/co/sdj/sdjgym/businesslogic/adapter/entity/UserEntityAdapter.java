@@ -8,6 +8,9 @@ import co.sdj.crosscutting.helpers.ObjectHelper;
 import co.sdj.crosscutting.helpers.TextHelper;
 import co.sdj.crosscutting.helpers.UUIDHelper;
 import co.sdj.sdjgym.businesslogic.adapter.Adapter;
+import co.sdj.sdjgym.businesslogic.adapter.dto.CityDTOAdapter;
+import co.sdj.sdjgym.businesslogic.adapter.dto.EpsDTOAdapter;
+import co.sdj.sdjgym.businesslogic.adapter.dto.IdentificationTypeDTOAdapter;
 import co.sdj.sdjgym.domain.CityDomain;
 import co.sdj.sdjgym.domain.EpsDomain;
 import co.sdj.sdjgym.domain.IdentificationTypeDomain;
@@ -31,7 +34,10 @@ public class UserEntityAdapter implements Adapter<UserEntity,UserDomain>{
 	@Override
 	public UserDomain adaptTarget(final UserEntity data) {
 		var entityToAdapt = ObjectHelper.getDefault(data, new UserEntity ());
-		return UserDomain.create(entityToAdapt.getId(), entityToAdapt.getFirstName(), entityToAdapt.getMiddleName(), entityToAdapt.getFirstSurName(), entityToAdapt.getSecondSurName(), entityToAdapt.getPhoneNumber(), entityToAdapt.getEmergencyNumber(), entityToAdapt.getEmail(), entityToAdapt.getBirthDate(), IdentificationTypeDomain.create(), entityToAdapt.getIdentification(), EpsDomain.create(), entityToAdapt.getAddress(), CityDomain.create());
+		var cityDomain = CityEntityAdapter.getCityEntityAdapter().adaptTarget(data.getCity());
+		var identificationTypeDomain = IdentificationTypeEntityAdapter.getIdentificationTypeEntityAdapter().adaptTarget(data.getIdentificationType());
+		var epsDomain = EpsEntityAdapter.getEpsEntityAdapter().adaptTarget(data.getEps());
+		return UserDomain.create(entityToAdapt.getId(), entityToAdapt.getFirstName(), entityToAdapt.getMiddleName(), entityToAdapt.getFirstSurName(), entityToAdapt.getSecondSurName(), entityToAdapt.getPhoneNumber(), entityToAdapt.getEmergencyNumber(), entityToAdapt.getEmail(), entityToAdapt.getBirthDate(), identificationTypeDomain, entityToAdapt.getIdentification(), epsDomain, entityToAdapt.getAddress(), cityDomain);
 	}
 
 	@Override

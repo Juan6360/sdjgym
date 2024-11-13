@@ -122,7 +122,7 @@ public class UserEntity extends DomainEntity {
 	}
 
 	public void setBirthDate(Date birthDate) {
-		this.birthDate = DateHelper.getDefault(birthDate);
+		this.birthDate = DateHelper.getDefault(birthDate, DateHelper.getDefault());
 	}
 
 	public EpsEntity getEps() {

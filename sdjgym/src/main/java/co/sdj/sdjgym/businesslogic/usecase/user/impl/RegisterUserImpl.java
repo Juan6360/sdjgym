@@ -68,7 +68,7 @@ public final class RegisterUserImpl implements RegisterUser {
         userBirthdayConsistencyIsValid.execute(data.getBirthDate());
         
         userEmailConsistencyIsValid.execute(data.getEmail());
-        //userEmailDoesNotExistsForOtherUser.execute(data, daoFactory);
+        userEmailDoesNotExistsForOtherUser.execute(data, daoFactory);
         
         
         

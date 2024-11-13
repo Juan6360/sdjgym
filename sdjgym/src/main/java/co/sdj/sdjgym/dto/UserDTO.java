@@ -16,7 +16,7 @@ public class UserDTO extends DomainDTO{
 	private String phoneNumber;
 	private String emergencyNumber;
 	private String email;
-	private Date birthDate;
+	private String birthDate;
 	private IdentificationTypeDTO identificationType;
 	private String identification;
 	private EpsDTO eps;
@@ -31,7 +31,7 @@ public class UserDTO extends DomainDTO{
 		setSecondSurName(TextHelper.EMPTY);
 		setEmergencyNumber(TextHelper.EMPTY);
 		setEmail(TextHelper.DEFAULT_EMAIL);
-		setBirthDate(DateHelper.DEFAULT_DATE);
+		setBirthDate(DateHelper.getDateDefaultAsString());
 		setIdentification(TextHelper.EMPTY);
 		setEps(EpsDTO.create());
 		setAddress(TextHelper.EMPTY);
@@ -107,12 +107,12 @@ public class UserDTO extends DomainDTO{
 		return this;
 	}
 
-	public Date getBirthDate() {
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public UserDTO setBirthDate(Date birthDate) {
-		this.birthDate = DateHelper.getDefault(birthDate);
+	public UserDTO setBirthDate(String birthDate) {
+		this.birthDate = TextHelper.getDefault(birthDate, DateHelper.getDateDefaultAsString());
 		return this;
 	}
 

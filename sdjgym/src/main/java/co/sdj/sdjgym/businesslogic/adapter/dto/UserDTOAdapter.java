@@ -32,7 +32,7 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 		var cityDomain = CityDTOAdapter.getCityDTOAdapter().adaptSource(data.getCity());
 		var identificationTypeDomain = IdentificationTypeDTOAdapter.getIdentificationTypeDTOAdapter().adaptSource(data.getIdentificationType());
 		var epsDomain = EpsDTOAdapter.getEpsDTOAdapter().adaptSource(data.getEps());
-		return UserDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()),data.getFirstName(), data.getMiddleName(), data.getFirstSurName(), data.getSecondSurName(), data.getPhoneNumber(), data.getEmergencyNumber(), data.getEmail(), data.getBirthDate(), identificationTypeDomain, data.getIdentification(), epsDomain, data.getAddress(), cityDomain);
+		return UserDomain.create(UUIDHelper.convertToUUID(dtoToAdapt.getId()),data.getFirstName(), data.getMiddleName(), data.getFirstSurName(), data.getSecondSurName(), data.getPhoneNumber(), data.getEmergencyNumber(), data.getEmail(), DateHelper.convertToDate(data.getBirthDate()), identificationTypeDomain, data.getIdentification(), epsDomain, data.getAddress(), cityDomain);
 		
 		
 	}
@@ -40,7 +40,7 @@ public class UserDTOAdapter implements Adapter<UserDomain , UserDTO>{
 	@Override
 	public UserDTO adaptTarget(final UserDomain data) {
 		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(), TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, TextHelper.EMPTY, DateHelper.DEFAULT_DATE, IdentificationTypeDomain.create(), TextHelper.EMPTY, EpsDomain.create(), TextHelper.EMPTY,  CityDomain.create()));
-		return UserDTO.create().setId((domainToAdapt.getId().toString())).setFirstName(domainToAdapt.getFirstName()).setMiddleName(domainToAdapt.getMiddleName()).setFirstSurName(domainToAdapt.getFirstSurName()).setSecondSurName(domainToAdapt.getSecondSurName()).setPhoneNumber(domainToAdapt.getPhoneNumber()).setEmergencyNumber(domainToAdapt.getEmergencyNumber()).setEmail(domainToAdapt.getEmail()).setBirthDate(domainToAdapt.getBirthDate())
+		return UserDTO.create().setId((domainToAdapt.getId().toString())).setFirstName(domainToAdapt.getFirstName()).setMiddleName(domainToAdapt.getMiddleName()).setFirstSurName(domainToAdapt.getFirstSurName()).setSecondSurName(domainToAdapt.getSecondSurName()).setPhoneNumber(domainToAdapt.getPhoneNumber()).setEmergencyNumber(domainToAdapt.getEmergencyNumber()).setEmail(domainToAdapt.getEmail()).setBirthDate(domainToAdapt.getBirthDate().toString())
 				.setIdentificationType(IdentificationTypeDTOAdapter.getIdentificationTypeDTOAdapter().adaptTarget(domainToAdapt.getIdentificationType())).setIdentification(domainToAdapt.getIdentificacion()).setEps(EpsDTOAdapter.getEpsDTOAdapter().adaptTarget(domainToAdapt.getEps()))
 				.setCity(CityDTOAdapter.getCityDTOAdapter().adaptTarget(domainToAdapt.getCity()));
 	}
