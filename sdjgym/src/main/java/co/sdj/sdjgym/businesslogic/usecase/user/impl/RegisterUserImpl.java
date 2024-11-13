@@ -58,7 +58,6 @@ public final class RegisterUserImpl implements RegisterUser {
 
         
         cityExists.execute(data.getCity().getId(), daoFactory);
-        stateExists.execute(data.getState().getId(), daoFactory);
         identificationTypeExists.execute(data.getIdentificationType().getId(), daoFactory);
         epsExists.execute(data.getEps().getId(), daoFactory);
         
@@ -88,7 +87,6 @@ public final class RegisterUserImpl implements RegisterUser {
             data.getIdentificacion(),
             data.getEps(),
             data.getAddress(),
-            data.getState(),
             data.getCity()
         );
 

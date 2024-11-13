@@ -21,7 +21,6 @@ public class UserDomain extends Domain{
 	private String identification;
 	private EpsDomain eps;
 	private String address;
-	private StateDomain state;
 	private CityDomain city;
 	
 	protected UserDomain(final UUID id,
@@ -37,7 +36,6 @@ public class UserDomain extends Domain{
 			final String identification,
 			final EpsDomain eps,
 			final String address,
-			final StateDomain state,
 			final CityDomain city) {
 		
 		super(id);
@@ -53,7 +51,6 @@ public class UserDomain extends Domain{
 		setIdentification(identification);
 		setEps(eps);
 		setAddress(address);
-		setState(state);
 		setCity(city);
 	}
 
@@ -71,7 +68,6 @@ public class UserDomain extends Domain{
 											final String identification,
 											final EpsDomain eps,
 											final String address,
-											final StateDomain state,
 											final CityDomain city) {
 		return new UserDomain(	id,
 								firstName,
@@ -86,7 +82,6 @@ public class UserDomain extends Domain{
 								identification,
 								eps,
 								address,
-								state,
 								city);
 	}
 	
@@ -104,7 +99,6 @@ public class UserDomain extends Domain{
 				TextHelper.EMPTY,
 				EpsDomain.create(),
 				TextHelper.EMPTY,
-				StateDomain.create(),
 				CityDomain.create());
 	}
 	
@@ -202,15 +196,6 @@ public class UserDomain extends Domain{
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-
-	public StateDomain getState() {
-		return state;
-	}
-
-	public void setState(StateDomain state) {
-		this.state = state;
 	}
 
 

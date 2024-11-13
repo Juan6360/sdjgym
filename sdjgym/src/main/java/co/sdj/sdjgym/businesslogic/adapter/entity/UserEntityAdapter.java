@@ -11,7 +11,6 @@ import co.sdj.sdjgym.businesslogic.adapter.Adapter;
 import co.sdj.sdjgym.domain.CityDomain;
 import co.sdj.sdjgym.domain.EpsDomain;
 import co.sdj.sdjgym.domain.IdentificationTypeDomain;
-import co.sdj.sdjgym.domain.StateDomain;
 import co.sdj.sdjgym.domain.UserDomain;
 import co.sdj.sdjgym.entity.UserEntity;
 
@@ -32,12 +31,12 @@ public class UserEntityAdapter implements Adapter<UserEntity,UserDomain>{
 	@Override
 	public UserDomain adaptTarget(final UserEntity data) {
 		var entityToAdapt = ObjectHelper.getDefault(data, new UserEntity ());
-		return UserDomain.create(entityToAdapt.getId(), entityToAdapt.getFirstName(), entityToAdapt.getMiddleName(), entityToAdapt.getFirstSurName(), entityToAdapt.getSecondSurName(), entityToAdapt.getPhoneNumber(), entityToAdapt.getEmergencyNumber(), entityToAdapt.getEmail(), entityToAdapt.getBirthDate(), IdentificationTypeDomain.create(), entityToAdapt.getIdentification(), EpsDomain.create(), entityToAdapt.getAddress(), StateDomain.create(), CityDomain.create());
+		return UserDomain.create(entityToAdapt.getId(), entityToAdapt.getFirstName(), entityToAdapt.getMiddleName(), entityToAdapt.getFirstSurName(), entityToAdapt.getSecondSurName(), entityToAdapt.getPhoneNumber(), entityToAdapt.getEmergencyNumber(), entityToAdapt.getEmail(), entityToAdapt.getBirthDate(), IdentificationTypeDomain.create(), entityToAdapt.getIdentification(), EpsDomain.create(), entityToAdapt.getAddress(), CityDomain.create());
 	}
 
 	@Override
 	public UserEntity adaptSource(final UserDomain data) {
-		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,DateHelper.DEFAULT_DATE,IdentificationTypeDomain.create(),TextHelper.EMPTY,EpsDomain.create(),TextHelper.EMPTY,StateDomain.create(),CityDomain.create()));
+		var domainToAdapt = ObjectHelper.getDefault(data, UserDomain.create(UUIDHelper.getDefault(),TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,TextHelper.EMPTY,DateHelper.DEFAULT_DATE,IdentificationTypeDomain.create(),TextHelper.EMPTY,EpsDomain.create(),TextHelper.EMPTY,CityDomain.create()));
 		
 		var entityToAdapted = new UserEntity();
 		
@@ -54,7 +53,6 @@ public class UserEntityAdapter implements Adapter<UserEntity,UserDomain>{
 		entityToAdapted.setIdentification(domainToAdapt.getIdentificacion());
 		entityToAdapted.setEps(EpsEntityAdapter.getEpsEntityAdapter().adaptSource(domainToAdapt.getEps()));
 		entityToAdapted.setAddress(domainToAdapt.getAddress());
-		entityToAdapted.setState(StateEntityAdapter.getStateEntityAdapter().adaptSource(domainToAdapt.getState()));
 		entityToAdapted.setCity(CityEntityAdapter.getCityEntityAdapter().adaptSource(domainToAdapt.getCity()));
 		
 		
